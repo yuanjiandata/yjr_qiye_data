@@ -8,12 +8,12 @@ lifecycle: ACTIVE
 auto_continue: true
 
 latest_gate:
-  code: W0-SOURCE-FREEZE
+  code: W1-PERSON-NORMALIZE
   status: SEALED
   validation: PASS
 
 next_gate:
-  code: W1-PERSON-NORMALIZE
+  code: W2-EXISTING-ABSORB
   status: READY
 
 blocker: null
@@ -33,19 +33,34 @@ source:
   province_enrichment_folder:
     folder_id: 1Acztp5072E4_CuYMSR8FcSvBGv-Su6Y0
     canonical_final_files: 28
-    canonical_missing:
-      - 黑龙江
-      - 云南
-      - 西藏
-  source_scope_notes:
-    - all 31 province-level scopes are represented as sheets in the membership baseline workbook
-    - 西藏 has zero named rows; source contains a non-person marker "不需要"
-    - province-level files are enrichment/reference sources and must not override raw membership rows without reconciliation
+    canonical_missing: [黑龙江, 云南, 西藏]
+
+w1:
+  person_source_records: 10644
+  annotation_continuation_rows: 90
+  non_person_marker_rows: 10
+  blank_rows: 18
+  name_quality_ok: 10448
+  malformed_parenthesis_repaired: 95
+  severe_source_name_exceptions: 101
+  source_split_or_truncated: 70
+  source_compound_or_shifted: 31
+  exact_value_duplicate_candidate_groups: 9
+  same_name_review_groups: 1913
+  name_only_auto_merges: 0
 
 artifacts:
   source_inventory: projects/fc-exec-2515/evidence/W0_SOURCE_INVENTORY.yaml
   baseline_metrics: projects/fc-exec-2515/evidence/W0_BASELINE.csv
-  validation: projects/fc-exec-2515/evidence/W0_VALIDATION.md
+  w0_validation: projects/fc-exec-2515/evidence/W0_VALIDATION.md
+  master_person_roster: projects/fc-exec-2515/evidence/W1_MASTER_PERSON_ROSTER.csv.gz
+  source_row_map: projects/fc-exec-2515/evidence/W1_SOURCE_ROW_MAP.csv.gz
+  duplicate_review: projects/fc-exec-2515/evidence/W1_DUPLICATE_REVIEW.csv.gz
+  normalization_exceptions: projects/fc-exec-2515/evidence/W1_NORMALIZATION_EXCEPTIONS.csv
+  normalization_rules: projects/fc-exec-2515/evidence/W1_NORMALIZATION_RULES.yaml
+  w1_metrics: projects/fc-exec-2515/evidence/W1_METRICS.yaml
+  w1_artifact_manifest: projects/fc-exec-2515/evidence/W1_ARTIFACT_MANIFEST.yaml
+  w1_validation: projects/fc-exec-2515/evidence/W1_VALIDATION.md
 
 rgac:
   at_most_one_complete_gate_per_run: true

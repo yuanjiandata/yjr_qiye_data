@@ -1,0 +1,20 @@
+schema: fc-exec-w1-artifact-manifest-v1
+compression: gzip_mtime_0
+files:
+  W1_MASTER_PERSON_ROSTER.csv.gz:
+    rows: 10644
+    stored_sha256: e9809ea39592ca24dac4aa502c495dcebf84984c191342741d3762bad9f5b9d9
+    uncompressed_sha256: c6230b243f17b25d4c0f9893b6e75eb7673ce216d4a0be8a0798da4ce6b7da92
+  W1_SOURCE_ROW_MAP.csv.gz:
+    rows: 10762
+    stored_sha256: 26b23da00fde143bae85e2763d0236f3e44d9d27e9ae90492976d55ac44a22a6
+    uncompressed_sha256: 2c7242ff697f1d2f4e7e460e0cf56ae824208d1d33f03c3501feba8717eeded6
+  W1_DUPLICATE_REVIEW.csv.gz:
+    rows: 4349
+    stored_sha256: 9818d91ec8a81f6389434a198222bb5b906736c0d74ef49c965e701f20426e56
+    uncompressed_sha256: 4a1c989daef607036f2c9685d3ac874f7070dc8b91b3937ec1d1c8800ea1bb6b
+  W1_NORMALIZATION_EXCEPTIONS.csv:
+    rows: 296
+    stored_sha256: f57219bdbfaa1df2938cd22d2db249c14f906f58ab898a6a08216f9b2deb0a7e
+    uncompressed_sha256: f57219bdbfaa1df2938cd22d2db249c14f906f58ab898a6a08216f9b2deb0a7e
+read_note: compressed CSV artifacts are deterministic gzip; fetch path as base64 and gunzip

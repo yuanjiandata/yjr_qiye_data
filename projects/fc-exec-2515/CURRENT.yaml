@@ -1,22 +1,38 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
-current_phase: W1
-current_gate: W1-PERSON-NORMALIZE
+current_phase: W2
+current_gate: W2-EXISTING-ABSORB
 status: READY
 work_cursor: null
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
-completed_records: 0
+completed_records: 10644
 verified_records: 0
 entrepreneur_records: 0
-conflict_records: 0
-unresolved_records: 0
-last_evidence_at: '2026-09-19T18:02:26+08:00'
-last_commit: ebafd9f29cede2dd27e9522a13a2e6c53f966aa4
+conflict_records: 1913
+unresolved_records: 101
+last_evidence_at: '2026-09-19T18:49:02+08:00'
+last_commit: 8f1139a125266a042c05eba9b8e106a713836dcb
+
+normalization:
+  person_source_records: 10644
+  annotation_continuation_rows: 90
+  stable_person_ids_unique: 10644
+  severe_source_name_exceptions: 101
+  severe_by_province:
+    河南: 51
+    安徽: 27
+    浙江: 22
+    广东: 1
+  exact_value_duplicate_candidate_groups: 9
+  same_name_review_groups: 1913
+  name_only_auto_merges: 0
+
 notes:
-  - W0-SOURCE-FREEZE passed against frozen Google Drive workbook 1jlNP_ENJzQgBsMgZ2bwR6ZoiUdNZhqzR.
-  - Google Drive is source input, not project state authority.
-  - Project state authority is repository main HEAD under projects/fc-exec-2515/.
-  - W1 must preserve source workbook id, source sheet, and source Excel row for every transformed record.
+  - W1-PERSON-NORMALIZE passed deterministic count reconciliation against the frozen W0 workbook.
+  - person_id is source-row based; same names are never automatically merged.
+  - 90 annotation continuation rows map back to their preceding canonical person source row.
+  - 101 severe source-name anomalies remain explicit for later evidence-driven repair; no names were guessed.
+  - W2 must absorb existing organization/title data while preserving W1 source provenance and ambiguity groups.

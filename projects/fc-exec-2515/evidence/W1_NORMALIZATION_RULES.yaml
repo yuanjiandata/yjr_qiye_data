@@ -1,0 +1,18 @@
+schema: fc-exec-w1-normalization-rules-v1
+source_file_id: 1jlNP_ENJzQgBsMgZ2bwR6ZoiUdNZhqzR
+source_locator: file_id + source_sheet + excel_row
+unicode: NFKC
+whitespace: trim_and_collapse
+person_id: FC2515-P<sheet_order_2d>-R<excel_row_4d>
+name_policy:
+  gender: extract parenthetical 女/男
+  ethnicity: extract recognized PRC ethnicity annotation
+  other_parenthetical: preserve in annotation_other
+  structural_continuation: attach deterministic closing annotation fragment to preceding same-role/same-unit row
+  severe_corruption: preserve raw text and flag; never guess repaired identity
+role_policy:
+  method: earliest explicit recognized federation role token; longest token wins at same position
+identity_policy:
+  name_only_auto_merge: forbidden
+  exact_duplicate: review candidate only
+  same_normalized_name_within_province: ambiguity review only

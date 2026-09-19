@@ -1,0 +1,67 @@
+schema: fc-exec-w1-metrics-v1
+project_id: FC-EXEC-2515-01
+input:
+  source_file_id: 1jlNP_ENJzQgBsMgZ2bwR6ZoiUdNZhqzR
+  physical_rows_after_header: 10762
+  nonempty_rows: 10744
+  named_rows: 10743
+classification:
+  person_source_records: 10644
+  annotation_continuation_rows: 90
+  non_person_marker_rows: 10
+  blank_rows: 18
+name_quality:
+  OK: 10448
+  MALFORMED_PAREN_REPAIRED: 95
+  SOURCE_SPLIT_OR_TRUNCATED: 70
+  SOURCE_COMPOUND_OR_SHIFTED: 31
+severe_source_name_exceptions_by_province:
+  浙江: 22
+  安徽: 27
+  河南: 51
+  广东: 1
+identity_review:
+  exact_value_duplicate_candidate_groups: 9
+  exact_value_duplicate_candidate_rows: 18
+  same_name_review_groups: 1913
+  same_name_review_rows: 4331
+  name_only_auto_merges: 0
+gender_counts:
+  女: 1406
+ethnicity_nonempty_count: 352
+role_counts:
+  "执委": 6814
+  "常委": 2399
+  "副会长": 582
+  "副主席": 493
+  "兼职副主席": 153
+  "专职副主席": 83
+  "主席": 34
+  "常务副主席": 33
+  "秘书长": 30
+  "兼职副会长": 17
+  "二级巡视员": 2
+  "会长": 2
+  "专职副会长": 1
+  "委员": 1
+artifacts:
+  W1_MASTER_PERSON_ROSTER.csv.gz:
+    rows: 10644
+    uncompressed_sha256: c6230b243f17b25d4c0f9893b6e75eb7673ce216d4a0be8a0798da4ce6b7da92
+    stored_sha256: e9809ea39592ca24dac4aa502c495dcebf84984c191342741d3762bad9f5b9d9
+    stored_bytes: 212702
+  W1_SOURCE_ROW_MAP.csv.gz:
+    rows: 10762
+    uncompressed_sha256: 2c7242ff697f1d2f4e7e460e0cf56ae824208d1d33f03c3501feba8717eeded6
+    stored_sha256: 26b23da00fde143bae85e2763d0236f3e44d9d27e9ae90492976d55ac44a22a6
+    stored_bytes: 213005
+  W1_DUPLICATE_REVIEW.csv.gz:
+    rows: 4349
+    uncompressed_sha256: 4a1c989daef607036f2c9685d3ac874f7070dc8b91b3937ec1d1c8800ea1bb6b
+    stored_sha256: 9818d91ec8a81f6389434a198222bb5b906736c0d74ef49c965e701f20426e56
+    stored_bytes: 64171
+  W1_NORMALIZATION_EXCEPTIONS.csv:
+    rows: 296
+    uncompressed_sha256: f57219bdbfaa1df2938cd22d2db249c14f906f58ab898a6a08216f9b2deb0a7e
+    stored_sha256: f57219bdbfaa1df2938cd22d2db249c14f906f58ab898a6a08216f9b2deb0a7e
+    stored_bytes: 76461
