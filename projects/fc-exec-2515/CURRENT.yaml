@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0006
+current_gate: W3-BATCH-0007
 status: READY
-work_cursor: 300
+work_cursor: 360
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 67
+verified_records: 93
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10577
-last_evidence_at: 2026-09-20T03:58:58+08:00
-last_input_head: ae2818b476cf0bab94685b059491dfe6a192fd87
+unresolved_records: 10551
+last_evidence_at: 2026-09-20T04:51:04+08:00
+last_input_head: 91e538e53ce08ab46c1c06e4e27282e55bd58330
 
 w3_queue:
   total: 10644
-  processed: 300
-  actionable_remaining: 10344
-  next_queue_order: 301
+  processed: 360
+  actionable_remaining: 10284
+  next_queue_order: 361
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 199
-      remaining: 4132
+      processed: 259
+      remaining: 4072
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -97,6 +97,18 @@ w3_batch_0005:
   current_org_title_unresolved_rows: 38
   unsupported_current_title_claims: 0
 
+w3_batch_0006:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 48
+  b_grade_rows: 12
+  current_org_title_confirmed_rows: 26
+  current_org_title_unresolved_rows: 34
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -123,3 +135,9 @@ notes:
   - Fresh current-role evidence was added for 王力崇、王大玮、王英其、王季文、尤文武、卢庆国、田纯刚、刘宏志、李鹏亮; 孙清良 remains unresolved because the freshest strong title evidence found was not recent enough for a current-title claim.
   - No current organization/title was assigned from a name-only hit; high-frequency names remain unresolved without cross-source context.
   - Next deterministic queue order is 301.
+  - W3-BATCH-0006 processed queue orders 301-360 exactly: 57 河北 + 3 吉林 P1 identity/current-role rows.
+  - 26 rows received current organization/title confirmation; 34 remain explicitly unresolved where current evidence was insufficiently specific.
+  - Eighteen confirmations reuse prior sealed current-role evidence only after same-roster cross-list identity closure; no person_id merge was performed.
+  - Fresh current-role evidence was added for 张志祥、周超男、霍占利、魏立华、魏海金、李维斗、唐庆会、吕兵.
+  - 吉林 leadership claims were refreshed from 2026 evidence; 河北 common-name rows remain unresolved unless identity-to-role linkage is safe.
+  - Next deterministic queue order is 361.
