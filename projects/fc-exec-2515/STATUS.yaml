@@ -3,18 +3,18 @@ project_id: FC-EXEC-2515-01
 project_name: 31省工商联执委全名单企业任职核验工程
 repository: yuanjiandata/yjr_qiye_data
 truth_scope: projects/fc-exec-2515
-as_of: 2026-09-19
+as_of: 2026-09-20
 lifecycle: ACTIVE
 auto_continue: true
 
 latest_gate:
-  code: W3-BATCH-0001
+  code: W3-BATCH-0002
   phase: W3-EVIDENCE-ENRICH
   status: SEALED
   validation: PASS
 
 next_gate:
-  code: W3-BATCH-0002
+  code: W3-BATCH-0003
   phase: W3-EVIDENCE-ENRICH
   status: READY
 
@@ -71,17 +71,22 @@ w2:
     AMBIGUOUS_GROUP_NOT_ABSORBED: 120
 
 w3:
-  batches_sealed: 1
-  processed_queue_rows: 60
-  next_queue_order: 61
-  actionable_queue_remaining: 10584
+  batches_sealed: 2
+  processed_queue_rows: 120
+  next_queue_order: 121
+  actionable_queue_remaining: 10524
   p0_name_repair:
     initial: 101
-    processed: 60
-    remaining: 41
-  identity_evidence_rows: 60
-  structural_deferred_rows: 60
-  current_org_title_confirmed_rows: 0
+    processed: 101
+    remaining: 0
+  p1_identity:
+    initial: 4331
+    processed: 19
+    remaining: 4312
+  identity_evidence_rows: 120
+  structural_deferred_rows: 101
+  current_org_title_confirmed_rows: 13
+  current_org_title_unresolved_rows: 6
   unsupported_current_title_claims: 0
 
 artifacts:
@@ -94,6 +99,10 @@ artifacts:
   w3_evidence_ledger: projects/fc-exec-2515/evidence/W3_EVIDENCE_LEDGER.csv
   w3_batch_0001_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0001_METRICS.yaml
   w3_batch_0001_validation: projects/fc-exec-2515/evidence/W3_BATCH_0001_VALIDATION.md
+  w3_batch_0002_results: projects/fc-exec-2515/evidence/W3_BATCH_0002_RESULTS.csv
+  w3_batch_0002_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0002_METRICS.yaml
+  w3_batch_0002_validation: projects/fc-exec-2515/evidence/W3_BATCH_0002_VALIDATION.md
+  w3_verification_overlay: projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv
 
 rgac:
   at_most_one_complete_gate_per_run: true

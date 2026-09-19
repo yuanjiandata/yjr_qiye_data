@@ -1,36 +1,39 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0002
+current_gate: W3-BATCH-0003
 status: READY
-work_cursor: 60
+work_cursor: 120
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 0
+verified_records: 13
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10644
-last_evidence_at: '2026-09-19T23:46:19+08:00'
-last_input_head: 68cd8da24e1d7449ad1e9f99ed12b3aba1527e65
+unresolved_records: 10631
+last_evidence_at: '2026-09-20T00:46:56+08:00'
+last_input_head: d658bd5c9a024595882b59490cdaa87337e7c8b8
 
 w3_queue:
   total: 10644
-  processed: 60
-  actionable_remaining: 10584
-  next_queue_order: 61
+  processed: 120
+  actionable_remaining: 10524
+  next_queue_order: 121
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
       initial: 101
-      processed: 60
-      remaining: 41
-    P1_IDENTITY: 4331
+      processed: 101
+      remaining: 0
+    P1_IDENTITY:
+      initial: 4331
+      processed: 19
+      remaining: 4312
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -45,9 +48,26 @@ w3_batch_0001:
   current_org_title_confirmed_rows: 0
   unsupported_current_title_claims: 0
 
+
+w3_batch_0002:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p0_name_repair_rows: 41
+  p1_identity_rows: 19
+  evidence_backed_rows: 60
+  structural_deferred_rows: 41
+  current_org_title_confirmed_rows: 13
+  current_org_title_unresolved_rows: 6
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
   - Current organization/title assignment was intentionally deferred for all 60 because their canonical person_id is attached to malformed fragment/compound source rows; assigning employment data before canonical split/merge risks cross-person contamination.
   - These rows are processed for W3 active-queue cursor purposes and remain explicit structural conflicts for later canonical resolution.
-  - Next deterministic queue order is 61.
+  - W3-BATCH-0002 processed queue orders 61-120 exactly: final 41 P0 name-repair anomalies plus first 19 P1 identity rows.
+  - All 41 remaining P0 rows received A-grade official federation identity evidence; current employment remained deferred because canonical person_ids are structurally malformed.
+  - 13 P1 rows received current organization/title confirmation; 6 were explicitly left unresolved where evidence was stale, ambiguous, or insufficiently specific.
+  - Tianjin same-name records retained source qualifiers and were not merged by name; Chongqing 王敏 ambiguity was preserved.
+  - Next deterministic queue order is 121.
