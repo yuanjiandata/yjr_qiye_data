@@ -1,0 +1,167 @@
+schema: rgac-project-manifest-v1
+project_id: FC-EXEC-2515-01
+macro_scope: 31省级工商联执委人员全量单位与当前职务核验，重点识别企业家
+repository: yuanjiandata/yjr_qiye_data
+truth_root: projects/fc-exec-2515
+
+deliverables:
+  - master_person_roster
+  - entrepreneur_roster
+  - province_statistics
+  - unresolved_and_conflicts
+  - evidence_ledger
+  - final_xlsx
+
+canonical_fields:
+  - person_id
+  - province
+  - source_file
+  - source_row_id
+  - name_raw
+  - name_normalized
+  - gender
+  - federation_role
+  - person_type
+  - entrepreneur_flag
+  - current_organization
+  - current_title
+  - organization_standard_name
+  - group_or_brand
+  - ownership_type
+  - industry
+  - listed_status
+  - ticker
+  - employment_status
+  - source_1
+  - source_2
+  - source_date
+  - evidence_grade
+  - verification_status
+  - notes
+
+evidence_policy:
+  A:
+    - enterprise_official
+    - listed_company_filing
+    - stock_exchange
+    - government_official
+    - federation_official
+    - formal_association_official
+  B:
+    - authoritative_media
+    - official_conference_material
+    - enterprise_official_social
+  C:
+    - commercial_database
+    - encyclopedia
+    - secondary_business_media
+  entrepreneur_preferred_minimum: one_A_source
+
+identity_policy:
+  name_alone_is_never_sufficient: true
+  disambiguation_keys:
+    - name
+    - province
+    - federation_role
+    - organization_region
+    - historical_organization
+
+gates:
+  - code: W0-SOURCE-FREEZE
+    work:
+      - inventory the 31 provincial final files under Google Drive subfolder 各省
+      - parse every source row without dropping source identity
+      - establish true raw row count, province count and source-file ledger
+      - write source inventory and baseline metrics into repository
+    validation:
+      - 31 provincial scopes accounted for or explicitly flagged
+      - no silent row loss
+      - source rows traceable to original file and row
+    next: W1-PERSON-NORMALIZE
+
+  - code: W1-PERSON-NORMALIZE
+    work:
+      - normalize names, gender and ethnicity annotations, and federation roles
+      - generate stable person_id
+      - identify exact duplicates and same-name ambiguity candidates
+      - produce canonical master roster and duplicate-review ledger
+    validation:
+      - every W0 person row mapped to a canonical record or explicit duplicate relation
+      - counts reconcile
+    next: W2-EXISTING-ABSORB
+
+  - code: W2-EXISTING-ABSORB
+    work:
+      - absorb existing organization and title data from provincial files and top-level summaries
+      - standardize organization names and split organization/title fields
+      - classify obvious federation staff versus entrepreneur candidates without overclaiming
+      - create unresolved work queue
+    validation:
+      - existing source information preserved and provenance recorded
+      - unresolved queue is deterministic
+    next: W3-EVIDENCE-ENRICH
+
+  - code: W3-EVIDENCE-ENRICH
+    repeatable: true
+    gate_code_pattern: W3-BATCH-####
+    batch_size_max: 60
+    work:
+      - take the earliest unresolved deterministic batch
+      - verify current organization and current title using public web evidence
+      - update evidence ledger and canonical roster
+      - do not infer identity from name alone
+    validation:
+      - every touched row has evidence or explicit unresolved reason
+      - no unsupported current-title claims
+    exit_when: unresolved factual lookup queue is empty
+    next: W4-ENTREPRENEUR-DEEPEN
+
+  - code: W4-ENTREPRENEUR-DEEPEN
+    repeatable: true
+    gate_code_pattern: W4-BATCH-####
+    batch_size_max: 60
+    work:
+      - deepen confirmed entrepreneur records
+      - add standardized enterprise, role, industry, ownership, listing and ticker where applicable
+      - require preferred A-grade evidence where reasonably available
+    validation:
+      - entrepreneur classification evidence-backed
+      - enterprise metadata internally consistent
+    exit_when: entrepreneur deepen queue is empty
+    next: W5-CONFLICT-CLEAR
+
+  - code: W5-CONFLICT-CLEAR
+    repeatable: true
+    gate_code_pattern: W5-BATCH-####
+    batch_size_max: 40
+    work:
+      - resolve same-name, historical-role and multi-source conflicts
+      - preserve unresolved cases with explicit reason rather than guessing
+    validation:
+      - no hidden conflicts
+      - every unresolved record has a reason code
+    exit_when: all actionable conflicts are resolved
+    next: W6-FINAL-AUDIT-EXPORT
+
+  - code: W6-FINAL-AUDIT-EXPORT
+    work:
+      - reconcile all province and person counts
+      - generate final workbook with master, entrepreneurs, province stats, unresolved/conflicts, evidence ledger
+      - run workbook read-back validation
+      - record final artifact metadata and hash
+    validation:
+      - source coverage complete
+      - counts reconcile
+      - workbook read-back passes
+      - macro project status can be SEALED
+    next: COMPLETE
+
+stop_conditions:
+  - credentials_required
+  - authorization_required
+  - genuinely_ambiguous_human_decision
+  - high_risk_or_irreversible_operation
+  - destructive_git_history_rewrite
+  - production_deployment
+  - external_publication
+  - macro_project_complete
