@@ -1,9 +1,9 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
-current_phase: W2
-current_gate: W2-EXISTING-ABSORB
+current_phase: W3
+current_gate: W3-BATCH-0001
 status: READY
-work_cursor: null
+work_cursor: 0
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
@@ -11,28 +11,27 @@ source_province_sheets: 31
 completed_records: 10644
 verified_records: 0
 entrepreneur_records: 0
+entrepreneur_candidate_records: 418
+existing_organization_records: 507
+existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 101
-last_evidence_at: '2026-09-19T18:49:02+08:00'
-last_commit: 8f1139a125266a042c05eba9b8e106a713836dcb
+unresolved_records: 10644
+last_evidence_at: '2026-09-19T23:22:17+08:00'
+last_commit: 86bc69dd6a83881f4f80828a435738f96328ea93
 
-normalization:
-  person_source_records: 10644
-  annotation_continuation_rows: 90
-  stable_person_ids_unique: 10644
-  severe_source_name_exceptions: 101
-  severe_by_province:
-    河南: 51
-    安徽: 27
-    浙江: 22
-    广东: 1
-  exact_value_duplicate_candidate_groups: 9
-  same_name_review_groups: 1913
-  name_only_auto_merges: 0
+w3_queue:
+  total: 10644
+  next_queue_order: 1
+  batch_size_max: 60
+  priorities:
+    P0_NAME_REPAIR: 101
+    P1_IDENTITY: 4331
+    P2_ORG_TITLE_LOOKUP: 6045
+    P3_CURRENT_VERIFY: 167
 
 notes:
-  - W1-PERSON-NORMALIZE passed deterministic count reconciliation against the frozen W0 workbook.
-  - person_id is source-row based; same names are never automatically merged.
-  - 90 annotation continuation rows map back to their preceding canonical person source row.
-  - 101 severe source-name anomalies remain explicit for later evidence-driven repair; no names were guessed.
-  - W2 must absorb existing organization/title data while preserving W1 source provenance and ambiguity groups.
+  - W2 absorbed only existing source evidence; no current web verification was claimed.
+  - All 10,644 canonical people remain in the W3 current-verification queue.
+  - 507 records carry existing organization evidence; 177 also carry title evidence.
+  - 418 records are enterprise/entrepreneur candidates only, not confirmed entrepreneurs.
+  - Same-name identities remain unmerged; severe source-name anomalies remain explicit.

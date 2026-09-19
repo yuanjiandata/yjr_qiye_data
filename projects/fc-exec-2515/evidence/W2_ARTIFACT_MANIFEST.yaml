@@ -1,0 +1,11 @@
+schema: fc-exec-w2-artifact-manifest-v1
+files:
+  W2_MASTER_ROSTER.csv.gz:
+    rows: 10644
+    stored_sha256: 0ecb67afff9a3b6f2a9e3c6bb7968714e90d67e291a7723a1b32730ffe716668
+  W2_EVIDENCE_LEDGER.csv.gz:
+    rows: 507
+    stored_sha256: fca2e38bba402a7c7912c49e9ce73bb71b4c79785287e7abee5f1b2087813bed
+  W2_UNRESOLVED_QUEUE.csv.gz:
+    rows: 10644
+    stored_sha256: 30b4eb7ef952fcb4886d18d68d37619fc38932b709053e1dc12d7d9e30a20099

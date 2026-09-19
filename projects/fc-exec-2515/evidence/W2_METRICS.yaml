@@ -1,0 +1,28 @@
+schema: fc-exec-w2-metrics-v1
+project_id: FC-EXEC-2515-01
+input:
+  w1_person_records: 10644
+  supplement_file_id: 10Zc9caTUy4eJITc802cisKSCQhuOJsEp
+  supplement_sha256: 136998b03210bd5144be16df3e964c64cae94581170268bc00764a041f596316
+matching:
+  AMBIGUOUS_GROUP_NOT_ABSORBED: 120
+  ORDERED_EQUAL_CARDINALITY_MATCH: 2
+  UNIQUE_KEY_MATCH: 8080
+absorption:
+  FINAL_SEPARATE_FIELDS: 177
+  SUPPLEMENT_COMBINED_FIELD: 330
+  records_with_organization: 507
+  records_with_title: 177
+  evidence_ledger_rows: 507
+  unresolved_queue_rows: 10644
+  entrepreneur_candidate_rows: 418
+person_type_counts:
+  "unclassified": 10060
+  "entrepreneur_candidate": 408
+  "federation_staff": 86
+  "federation_staff_candidate": 80
+  "enterprise_affiliated_candidate": 10
+artifacts:
+  W2_MASTER_ROSTER.csv.gz: 0ecb67afff9a3b6f2a9e3c6bb7968714e90d67e291a7723a1b32730ffe716668
+  W2_EVIDENCE_LEDGER.csv.gz: fca2e38bba402a7c7912c49e9ce73bb71b4c79785287e7abee5f1b2087813bed
+  W2_UNRESOLVED_QUEUE.csv.gz: 30b4eb7ef952fcb4886d18d68d37619fc38932b709053e1dc12d7d9e30a20099

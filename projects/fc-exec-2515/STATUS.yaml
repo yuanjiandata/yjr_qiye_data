@@ -8,12 +8,13 @@ lifecycle: ACTIVE
 auto_continue: true
 
 latest_gate:
-  code: W1-PERSON-NORMALIZE
+  code: W2-EXISTING-ABSORB
   status: SEALED
   validation: PASS
 
 next_gate:
-  code: W2-EXISTING-ABSORB
+  code: W3-BATCH-0001
+  phase: W3-EVIDENCE-ENRICH
   status: READY
 
 blocker: null
@@ -30,6 +31,11 @@ source:
     physical_rows_after_header: 10762
     nonempty_rows: 10744
     named_rows: 10743
+  existing_unit_supplement:
+    file_id: 10Zc9caTUy4eJITc802cisKSCQhuOJsEp
+    title: 名单汇总表_补全单位.xlsx
+    sha256: 136998b03210bd5144be16df3e964c64cae94581170268bc00764a041f596316
+    province_sheets: 31
   province_enrichment_folder:
     folder_id: 1Acztp5072E4_CuYMSR8FcSvBGv-Su6Y0
     canonical_final_files: 28
@@ -37,30 +43,40 @@ source:
 
 w1:
   person_source_records: 10644
-  annotation_continuation_rows: 90
-  non_person_marker_rows: 10
-  blank_rows: 18
-  name_quality_ok: 10448
-  malformed_parenthesis_repaired: 95
   severe_source_name_exceptions: 101
-  source_split_or_truncated: 70
-  source_compound_or_shifted: 31
   exact_value_duplicate_candidate_groups: 9
   same_name_review_groups: 1913
   name_only_auto_merges: 0
 
+w2:
+  canonical_person_records: 10644
+  records_with_existing_organization: 507
+  records_with_existing_title: 177
+  evidence_ledger_rows: 507
+  entrepreneur_candidate_rows: 418
+  confirmed_entrepreneur_rows: 0
+  current_verification_queue_rows: 10644
+  queue_priority:
+    P0_NAME_REPAIR: 101
+    P1_IDENTITY: 4331
+    P2_ORG_TITLE_LOOKUP: 6045
+    P3_CURRENT_VERIFY: 167
+  absorption_method:
+    FINAL_SEPARATE_FIELDS: 177
+    SUPPLEMENT_COMBINED_FIELD: 330
+  supplement_matching:
+    UNIQUE_KEY_MATCH: 8080
+    ORDERED_EQUAL_CARDINALITY_MATCH: 2
+    AMBIGUOUS_GROUP_NOT_ABSORBED: 120
+
 artifacts:
-  source_inventory: projects/fc-exec-2515/evidence/W0_SOURCE_INVENTORY.yaml
-  baseline_metrics: projects/fc-exec-2515/evidence/W0_BASELINE.csv
-  w0_validation: projects/fc-exec-2515/evidence/W0_VALIDATION.md
   master_person_roster: projects/fc-exec-2515/evidence/W1_MASTER_PERSON_ROSTER.csv.gz
-  source_row_map: projects/fc-exec-2515/evidence/W1_SOURCE_ROW_MAP.csv.gz
-  duplicate_review: projects/fc-exec-2515/evidence/W1_DUPLICATE_REVIEW.csv.gz
-  normalization_exceptions: projects/fc-exec-2515/evidence/W1_NORMALIZATION_EXCEPTIONS.csv
-  normalization_rules: projects/fc-exec-2515/evidence/W1_NORMALIZATION_RULES.yaml
-  w1_metrics: projects/fc-exec-2515/evidence/W1_METRICS.yaml
-  w1_artifact_manifest: projects/fc-exec-2515/evidence/W1_ARTIFACT_MANIFEST.yaml
-  w1_validation: projects/fc-exec-2515/evidence/W1_VALIDATION.md
+  w2_master_roster: projects/fc-exec-2515/evidence/W2_MASTER_ROSTER.csv.gz
+  w2_evidence_ledger: projects/fc-exec-2515/evidence/W2_EVIDENCE_LEDGER.csv.gz
+  w2_unresolved_queue: projects/fc-exec-2515/evidence/W2_UNRESOLVED_QUEUE.csv.gz
+  w2_metrics: projects/fc-exec-2515/evidence/W2_METRICS.yaml
+  w2_artifact_manifest: projects/fc-exec-2515/evidence/W2_ARTIFACT_MANIFEST.yaml
+  w2_validation: projects/fc-exec-2515/evidence/W2_VALIDATION.md
 
 rgac:
   at_most_one_complete_gate_per_run: true
