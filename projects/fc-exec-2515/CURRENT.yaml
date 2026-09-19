@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0009
+current_gate: W3-BATCH-0010
 status: READY
-work_cursor: 480
+work_cursor: 540
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 204
+verified_records: 260
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10440
-last_evidence_at: 2026-09-20T06:50:33+08:00
-last_input_head: a6ce82ac4806e9eeba2e7e6b197ae2c2cd63f5ff
+unresolved_records: 10384
+last_evidence_at: 2026-09-20T07:53:42+08:00
+last_input_head: edcf8f84c99298372ffa0dcf88facb12f7a31e37
 
 w3_queue:
   total: 10644
-  processed: 480
-  actionable_remaining: 10164
-  next_queue_order: 481
+  processed: 540
+  actionable_remaining: 10104
+  next_queue_order: 541
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 379
-      remaining: 3952
+      processed: 439
+      remaining: 3892
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -133,6 +133,20 @@ w3_batch_0008:
   current_org_title_unresolved_rows: 3
   unsupported_current_title_claims: 0
 
+
+w3_batch_0009:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 59
+  b_grade_rows: 1
+  current_org_title_confirmed_rows: 55
+  no_current_role_confirmed_rows: 1
+  current_org_title_unresolved_rows: 4
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -176,3 +190,9 @@ notes:
   - The July-2026 Jiangsu official roster was authoritative for current federation/chamber roles; stale source labels were not mechanically carried forward.
   - 王益冰、李兰翔、李厚林 were updated through role-history bridges plus current official sources; the 江苏高院王红卫 homonym was explicitly rejected rather than name-matched.
   - Next deterministic queue order is 481.
+  - W3-BATCH-0009 processed queue orders 481-540 exactly, all 江苏 P1 identity/current-role rows.
+  - The live Jiangsu federation roster advanced again to September 2026 (120 members), and this newer roster superseded July labels for current federation/chamber roles.
+  - 55 rows received current organization/title confirmation: 52 directly from the latest roster plus 陈湘珍、施勇、顾万峰 via historical identity bridges and current official-role evidence.
+  - 钟雨 is evidence-resolved as NO_CURRENT_ROLE_CONFIRMED after listed-company announcement 2026-003 documented retirement and resignation from all company roles; no replacement employer/title was invented.
+  - 张惠扬、陈军、周洁、查艳 remain explicit current-role unresolved cases; name-only search hits were rejected.
+  - Next deterministic queue order is 541.
