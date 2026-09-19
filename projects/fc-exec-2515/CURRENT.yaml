@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0005
+current_gate: W3-BATCH-0006
 status: READY
-work_cursor: 240
+work_cursor: 300
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 45
+verified_records: 67
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10599
-last_evidence_at: '2026-09-20T02:49:57+08:00'
-last_input_head: 5a510ef785118199b42b0b0444fb16f1481db647
+unresolved_records: 10577
+last_evidence_at: 2026-09-20T03:58:58+08:00
+last_input_head: ae2818b476cf0bab94685b059491dfe6a192fd87
 
 w3_queue:
   total: 10644
-  processed: 240
-  actionable_remaining: 10404
-  next_queue_order: 241
+  processed: 300
+  actionable_remaining: 10344
+  next_queue_order: 301
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 139
-      remaining: 4192
+      processed: 199
+      remaining: 4132
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -85,6 +85,18 @@ w3_batch_0004:
   current_org_title_unresolved_rows: 46
   unsupported_current_title_claims: 0
 
+w3_batch_0005:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 52
+  b_grade_rows: 8
+  current_org_title_confirmed_rows: 22
+  current_org_title_unresolved_rows: 38
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -105,3 +117,9 @@ notes:
   - The 2026 邢台工商联换届 was honored: 王建江 is retained as 邢台市政协副主席 rather than incorrectly carrying forward the former federation-chair role.
   - No current organization/title was assigned from a name-only hit; common-name records remain unresolved unless federation/province/person context closed identity.
   - Next deterministic queue order is 241.
+  - W3-BATCH-0005 processed queue orders 241-300 exactly, all 河北 P1 identity/current-role rows.
+  - 22 rows received current organization/title confirmation; 38 remain explicitly unresolved where current evidence was insufficiently specific.
+  - Thirteen confirmations reuse prior sealed current-role evidence only after same-roster cross-list identity closure; no person_id merge was performed.
+  - Fresh current-role evidence was added for 王力崇、王大玮、王英其、王季文、尤文武、卢庆国、田纯刚、刘宏志、李鹏亮; 孙清良 remains unresolved because the freshest strong title evidence found was not recent enough for a current-title claim.
+  - No current organization/title was assigned from a name-only hit; high-frequency names remain unresolved without cross-source context.
+  - Next deterministic queue order is 301.
