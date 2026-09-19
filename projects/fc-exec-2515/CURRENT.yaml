@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0003
+current_gate: W3-BATCH-0004
 status: READY
-work_cursor: 120
+work_cursor: 180
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 13
+verified_records: 31
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10631
-last_evidence_at: '2026-09-20T00:46:56+08:00'
-last_input_head: d658bd5c9a024595882b59490cdaa87337e7c8b8
+unresolved_records: 10613
+last_evidence_at: '2026-09-20T01:56:34+08:00'
+last_input_head: 97aa202d82f44096594d105d4cafe01068b7e094
 
 w3_queue:
   total: 10644
-  processed: 120
-  actionable_remaining: 10524
-  next_queue_order: 121
+  processed: 180
+  actionable_remaining: 10464
+  next_queue_order: 181
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 19
-      remaining: 4312
+      processed: 79
+      remaining: 4252
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -61,6 +61,18 @@ w3_batch_0002:
   current_org_title_unresolved_rows: 6
   unsupported_current_title_claims: 0
 
+w3_batch_0003:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 55
+  b_grade_rows: 5
+  current_org_title_confirmed_rows: 18
+  current_org_title_unresolved_rows: 42
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -71,3 +83,8 @@ notes:
   - 13 P1 rows received current organization/title confirmation; 6 were explicitly left unresolved where evidence was stale, ambiguous, or insufficiently specific.
   - Tianjin same-name records retained source qualifiers and were not merged by name; Chongqing 王敏 ambiguity was preserved.
   - Next deterministic queue order is 121.
+  - W3-BATCH-0003 processed queue orders 121-180 exactly, all P1 identity/current-role rows.
+  - 18 rows received current organization/title confirmation; 42 remain explicitly unresolved where current evidence was insufficiently specific.
+  - 河北 identities were anchored to the official ACFIC XIII executive roster; enterprise roles were only written with corroborating current evidence and federation/province context.
+  - 重庆 王敏 remains ambiguous between two official-roster identities; no name-only employer assignment was made.
+  - Next deterministic queue order is 181.
