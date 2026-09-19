@@ -1,9 +1,9 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0001
+current_gate: W3-BATCH-0002
 status: READY
-work_cursor: 0
+work_cursor: 60
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
@@ -16,22 +16,38 @@ existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
 unresolved_records: 10644
-last_evidence_at: '2026-09-19T23:22:17+08:00'
-last_commit: 86bc69dd6a83881f4f80828a435738f96328ea93
+last_evidence_at: '2026-09-19T23:46:19+08:00'
+last_input_head: 68cd8da24e1d7449ad1e9f99ed12b3aba1527e65
 
 w3_queue:
   total: 10644
-  next_queue_order: 1
+  processed: 60
+  actionable_remaining: 10584
+  next_queue_order: 61
   batch_size_max: 60
   priorities:
-    P0_NAME_REPAIR: 101
+    P0_NAME_REPAIR:
+      initial: 101
+      processed: 60
+      remaining: 41
     P1_IDENTITY: 4331
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
+w3_batch_0001:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  evidence_backed_rows: 60
+  identity_candidate_mentions: 97
+  unique_identity_candidates: 82
+  structural_deferred_rows: 60
+  current_org_title_confirmed_rows: 0
+  unsupported_current_title_claims: 0
+
 notes:
-  - W2 absorbed only existing source evidence; no current web verification was claimed.
-  - All 10,644 canonical people remain in the W3 current-verification queue.
-  - 507 records carry existing organization evidence; 177 also carry title evidence.
-  - 418 records are enterprise/entrepreneur candidates only, not confirmed entrepreneurs.
-  - Same-name identities remain unmerged; severe source-name anomalies remain explicit.
+  - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
+  - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
+  - Current organization/title assignment was intentionally deferred for all 60 because their canonical person_id is attached to malformed fragment/compound source rows; assigning employment data before canonical split/merge risks cross-person contamination.
+  - These rows are processed for W3 active-queue cursor purposes and remain explicit structural conflicts for later canonical resolution.
+  - Next deterministic queue order is 61.

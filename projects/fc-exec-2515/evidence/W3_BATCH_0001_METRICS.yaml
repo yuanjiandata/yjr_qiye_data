@@ -1,0 +1,58 @@
+schema: fc-exec-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0001
+phase: W3-EVIDENCE-ENRICH
+queue:
+  start_order: 1
+  end_order: 60
+  touched_rows: 60
+  batch_size_max: 60
+  next_queue_order: 61
+  actionable_remaining: 10584
+priority:
+  selected: P0_NAME_REPAIR
+  initial_rows: 101
+  processed_rows: 60
+  remaining_rows: 41
+identity_evidence:
+  evidence_backed_rows: 60
+  candidate_name_mentions: 97
+  unique_candidate_names: 82
+  by_province:
+    浙江: 22
+    安徽: 27
+    河南: 11
+  resolution_classes:
+    MULTIPERSON_SOURCE_ROW: 28
+    CONTAMINATED_MULTIPERSON: 1
+    SHIFT_FRAGMENT: 13
+    FRAGMENT_HEAD: 9
+    FRAGMENT_TAIL: 9
+current_org_title:
+  confirmed_rows: 0
+  unsupported_claims: 0
+  deferred_rows: 60
+  deferral_reason: canonical identity is structurally malformed; assigning organization/title before split/merge risks cross-person contamination
+validation:
+  every_touched_row_has_A_grade_identity_evidence: true
+  every_touched_row_has_explicit_current_org_title_reason: true
+  name_only_identity_inference: false
+  current_title_overclaim: false
+  gate_result: PASS
+sources:
+  - province: 浙江
+    title: 浙江省工商业联合会第十二届执行委员会名单
+    date: 2022-09-19
+    url: https://www.acfic.org.cn/ztzlhz/2022gslhj/2022gslhj_zj/202209/t20220919_313059.html
+  - province: 安徽
+    title: 安徽省工商联第十二届执行委员会名单
+    date: 2022-08-12
+    url: https://www.acfic.org.cn/ztzlhz/2022gslhj/2022gslhj_ah/202208/t20220812_312855.html
+  - province: 河南
+    title: 河南省工商业联合会第十三届执行委员会名单
+    date: 2022-08-29
+    url: https://www.acfic.org.cn/ztzlhz/2022gslhj/2022gslhj_ha/202208/t20220829_113897.html
+artifacts:
+  results: projects/fc-exec-2515/evidence/W3_BATCH_0001_RESULTS.csv
+  evidence_ledger: projects/fc-exec-2515/evidence/W3_EVIDENCE_LEDGER.csv
+  validation: projects/fc-exec-2515/evidence/W3_BATCH_0001_VALIDATION.md
