@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0008
+current_gate: W3-BATCH-0009
 status: READY
-work_cursor: 420
+work_cursor: 480
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 147
+verified_records: 204
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10497
-last_evidence_at: 2026-09-20T05:53:47+08:00
-last_input_head: 79603b7c559d0da203a0babc68608fe0b68a55e1
+unresolved_records: 10440
+last_evidence_at: 2026-09-20T06:50:33+08:00
+last_input_head: a6ce82ac4806e9eeba2e7e6b197ae2c2cd63f5ff
 
 w3_queue:
   total: 10644
-  processed: 420
-  actionable_remaining: 10224
-  next_queue_order: 421
+  processed: 480
+  actionable_remaining: 10164
+  next_queue_order: 481
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 319
-      remaining: 4012
+      processed: 379
+      remaining: 3952
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -121,6 +121,18 @@ w3_batch_0007:
   current_org_title_unresolved_rows: 6
   unsupported_current_title_claims: 0
 
+w3_batch_0008:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 60
+  b_grade_rows: 0
+  current_org_title_confirmed_rows: 57
+  current_org_title_unresolved_rows: 3
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -159,3 +171,8 @@ notes:
   - 郭东升、熊杰、顾万峰、李兰翔 source roles were not carried forward when unsupported by the latest Jiangsu official roster; 顾万峰 in particular was not retained as 常务副主席 because the current roster names 刘军.
   - 吉林 leadership claims were refreshed from 2026 evidence; cross-listed source rows reuse evidence without person_id merge.
   - Next deterministic queue order is 421.
+  - W3-BATCH-0008 processed queue orders 421-480 exactly, all 江苏 P1 identity/current-role rows.
+  - 57 rows received current organization/title confirmation; 3 remain explicitly unresolved (王红卫、孙振东、李建) because current evidence could not safely close identity/current role.
+  - The July-2026 Jiangsu official roster was authoritative for current federation/chamber roles; stale source labels were not mechanically carried forward.
+  - 王益冰、李兰翔、李厚林 were updated through role-history bridges plus current official sources; the 江苏高院王红卫 homonym was explicitly rejected rather than name-matched.
+  - Next deterministic queue order is 481.
