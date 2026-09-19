@@ -1,0 +1,16 @@
+schema: rgac-current-v1
+project_id: FC-EXEC-2515-01
+current_phase: W0
+current_gate: W0-SOURCE-FREEZE
+status: READY
+work_cursor: null
+completed_records: 0
+verified_records: 0
+entrepreneur_records: 0
+conflict_records: 0
+unresolved_records: 0
+last_evidence_at: null
+last_commit: e495c8869e412c8231a2631b68f42f89cffb9604
+notes:
+  - Google Drive is source input, not project state authority.
+  - Project state authority is repository main HEAD under projects/fc-exec-2515/.
