@@ -1,0 +1,122 @@
+schema: fc-exec-source-inventory-v1
+project_id: FC-EXEC-2515-01
+as_of: '2026-09-19'
+google_drive:
+  root_folder:
+    id: 15PUQLLT9IXVQOeTvyFPop4e4EgUbIm8i
+    name: 2515各省工商联
+  membership_baseline:
+    file_id: 1jlNP_ENJzQgBsMgZ2bwR6ZoiUdNZhqzR
+    title: 名单汇总表_final.xlsx
+    modified_time: '2026-02-23T08:23:45Z'
+    sha256: 86ada49718551b560cbb1385a5cd776db271b894d773bd7e643093e583648f3b
+    sheet_count: 31
+    sheet_order:
+    - 北京
+    - 上海
+    - 天津
+    - 重庆
+    - 河北
+    - 山西
+    - 辽宁
+    - 吉林
+    - 黑龙江
+    - 江苏
+    - 浙江
+    - 安徽
+    - 福建
+    - 江西
+    - 山东
+    - 河南
+    - 湖北
+    - 湖南
+    - 广东
+    - 海南
+    - 四川
+    - 贵州
+    - 云南
+    - 陕西
+    - 甘肃
+    - 青海
+    - 内蒙古
+    - 广西
+    - 宁夏
+    - 新疆
+    - 西藏
+    row_locator: file_id + sheet + excel_row
+    role: authoritative raw membership baseline for W1
+  province_enrichment_folder:
+    id: 1Acztp5072E4_CuYMSR8FcSvBGv-Su6Y0
+    name: 各省
+    child_item_count: 34
+    canonical_final_file_count: 28
+    canonical_province_file_ids:
+      浙江: 1066FVCK9kbw9QB9Lp4-953jIa9Vl6Kxv
+      天津: 1Rk2LjagmvTMTWcw8b6AN11U-fjsoL7ae
+      四川: 12le7Vuzjon9R3NRVNTrZEE5idaLoPC3-
+      上海: 1DEjUIGT-lZWPyt6G_IMveentVOUsoZ5p
+      山西: 1lgB8KwlBEUIcGNMIo1dn02Y7UgPFMRSz
+      山东: 1hYKlCfBqpkYTp3yskUianPGOYmLRUpx2
+      内蒙古: 1TmZ8ch5Vi5sXLjnHnPxTyXuuGZZMQ3mk
+      辽宁: 1H4lqUt9dKlm3Z5jxPvVLyuAC0Lqzlj-m
+      江西: 1wCgPfm7fOPYRq8xsZeTU_UTASbRTfBJH
+      江苏: 1t8NQjxiW4GP6qe0f6cMH1lspc_pSFVBY
+      吉林: 1nSa36vfMrBP0M3NgkA9198vSLbYtdQKV
+      湖南: 1DU1LlbV13VdPRX7cl7PKWOa9MWBxL5LA
+      湖北: 1hDWqvJhDDTn1o5E4jS8C4GHa571k4_TH
+      河南: 1LXWYlSY5bw0OXGwln2VKZcXbcWByQUnw
+      河北: 1nkI3S6CjQwPWA-Iw748QKLxL7RdeguP4
+      海南: 1G4tIIxZv-n7sufBBOqAk7fsgKOASd4HQ
+      贵州: 1JkvgdxicrmpLgHriJz1o1ntdNbO8GsZV
+      广西: 13HNWJziKyHcQc1i8VSxKtN-m1Gjwk0CA
+      广东: 1fWr62fTHvrKIYWbVUACi0LQTnwjK-65c
+      福建: 14IO8tUSFySlXYiQ7KufdgUpD8--00hji
+      重庆: 1SRpwhy9YjCbJ7JtYGlZWXr6WuT9gUGUH
+      北京: 19gSMwBMS2OryUs9DnkhQdS5YvxxouHuF
+      安徽: 1WEyIXYNzoqpQpN0qqt5bCUdmMdR13bhq
+      青海: 1iPb3bcgxPjM2TxbN1h1WMdmGk2nbJxQq
+      新疆: 1AuHCwc6k9bJywsPvAP5vwJDFrt9IWb4N
+      宁夏: 1hvWW-6fEiO-4NnuM6Mm_xuCLUac4fSjT
+      甘肃: 1fkn6NFClGq5Lw4uKek9_9hmvZjTGqmzd
+      陕西: 1BynxbwMmOiu7b6YWAz6wHNztP17JtNgw
+    canonical_missing_provinces:
+    - 黑龙江
+    - 云南
+    - 西藏
+    duplicate_copy_files:
+      新疆: 1zLzV-gydFGyInb25ySQf0WXXtX4bACdJ
+      青海: 1R2OZsTH4Yv1U4uCelF_thDeAUMuRGceq
+      宁夏: 1oSwk-0TFQOyzb-ycOqPvmn_sm6EGAUSo
+    supplemental_files:
+      补齐单位-陕西-最终版-20250307.xlsx: 1m-doAYb6gUc3OGrukhv7oHLpYKfEbTuD
+      补齐单位-陕西.xlsx: 1CIeMVSuvGQKmEW4KaTyBzSUi6gnQqMCx
+      海南_补全_b1.csv: 16d1OmykK0iuoTt9veeOYNCZRLk9H76cA
+    role: enrichment/reference sources; not the raw membership baseline
+  independent_folder:
+    id: 1dc095gls_Zs9Lf2Pknz1YR52jalHiPf3
+    name: 各省独立
+    fallback_candidates:
+      黑龙江:
+        file_id: 1jn1cTfD-SvAvqMIOjGKI_D5wgMi0XwrA
+        title: 黑龙江.xlsx
+      云南:
+        file_id: 1LRAjIaMuyPgVSc07LT3hsHTff-RZ8bc5
+        title: 云南.xlsx
+      西藏: null
+baseline:
+  province_sheet_count: 31
+  physical_rows_after_header: 10762
+  nonempty_rows: 10744
+  named_rows: 10743
+  blank_rows: 18
+  nonempty_without_name:
+  - province: 西藏
+    excel_row: 3
+    raw_role: 不需要
+  populated_named_provinces: 30
+  province_with_zero_named_rows:
+  - 西藏
+freeze_rule:
+  raw_membership_rows: re-read only from frozen baseline workbook id and verify workbook SHA256 or per-sheet row_stream_sha256 before downstream transforms
+  no_silent_row_loss: true
+  do_not_treat_province_enrichment_files_as_complete_membership_lists: true

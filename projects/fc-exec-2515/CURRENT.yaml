@@ -1,16 +1,22 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
-current_phase: W0
-current_gate: W0-SOURCE-FREEZE
+current_phase: W1
+current_gate: W1-PERSON-NORMALIZE
 status: READY
 work_cursor: null
+source_physical_rows: 10762
+source_nonempty_rows: 10744
+source_named_rows: 10743
+source_province_sheets: 31
 completed_records: 0
 verified_records: 0
 entrepreneur_records: 0
 conflict_records: 0
 unresolved_records: 0
-last_evidence_at: null
-last_commit: e495c8869e412c8231a2631b68f42f89cffb9604
+last_evidence_at: '2026-09-19T18:02:26+08:00'
+last_commit: GATE_COMMIT_PENDING_STATE_SYNC
 notes:
+  - W0-SOURCE-FREEZE passed against frozen Google Drive workbook 1jlNP_ENJzQgBsMgZ2bwR6ZoiUdNZhqzR.
   - Google Drive is source input, not project state authority.
   - Project state authority is repository main HEAD under projects/fc-exec-2515/.
+  - W1 must preserve source workbook id, source sheet, and source Excel row for every transformed record.

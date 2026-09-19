@@ -8,25 +8,44 @@ lifecycle: ACTIVE
 auto_continue: true
 
 latest_gate:
-  code: BOOTSTRAP
+  code: W0-SOURCE-FREEZE
   status: SEALED
+  validation: PASS
 
 next_gate:
-  code: W0-SOURCE-FREEZE
+  code: W1-PERSON-NORMALIZE
   status: READY
 
 blocker: null
 
 source:
   provider: google_drive
-  folder_id: 15PUQLLT9IXVQOeTvyFPop4e4EgUbIm8i
-  folder_name: 2515各省工商联
-  canonical_input_subfolder: 各省
-  reference_files:
-    - 名单汇总表_补全单位.xlsx
-    - 名单汇总表_去重.xlsx
-    - 名单汇总表_final.xlsx
-    - 官网汇总_final.xlsx
+  root_folder_id: 15PUQLLT9IXVQOeTvyFPop4e4EgUbIm8i
+  root_folder_name: 2515各省工商联
+  membership_baseline:
+    file_id: 1jlNP_ENJzQgBsMgZ2bwR6ZoiUdNZhqzR
+    title: 名单汇总表_final.xlsx
+    sha256: 86ada49718551b560cbb1385a5cd776db271b894d773bd7e643093e583648f3b
+    province_sheets: 31
+    physical_rows_after_header: 10762
+    nonempty_rows: 10744
+    named_rows: 10743
+  province_enrichment_folder:
+    folder_id: 1Acztp5072E4_CuYMSR8FcSvBGv-Su6Y0
+    canonical_final_files: 28
+    canonical_missing:
+      - 黑龙江
+      - 云南
+      - 西藏
+  source_scope_notes:
+    - all 31 province-level scopes are represented as sheets in the membership baseline workbook
+    - 西藏 has zero named rows; source contains a non-person marker "不需要"
+    - province-level files are enrichment/reference sources and must not override raw membership rows without reconciliation
+
+artifacts:
+  source_inventory: projects/fc-exec-2515/evidence/W0_SOURCE_INVENTORY.yaml
+  baseline_metrics: projects/fc-exec-2515/evidence/W0_BASELINE.csv
+  validation: projects/fc-exec-2515/evidence/W0_VALIDATION.md
 
 rgac:
   at_most_one_complete_gate_per_run: true
