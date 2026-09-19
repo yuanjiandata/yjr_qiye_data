@@ -14,7 +14,7 @@ entrepreneur_records: 0
 conflict_records: 0
 unresolved_records: 0
 last_evidence_at: '2026-09-19T18:02:26+08:00'
-last_commit: GATE_COMMIT_PENDING_STATE_SYNC
+last_commit: ebafd9f29cede2dd27e9522a13a2e6c53f966aa4
 notes:
   - W0-SOURCE-FREEZE passed against frozen Google Drive workbook 1jlNP_ENJzQgBsMgZ2bwR6ZoiUdNZhqzR.
   - Google Drive is source input, not project state authority.
