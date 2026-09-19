@@ -1,0 +1,38 @@
+schema: rgac-project-status-v1
+project_id: FC-EXEC-2515-01
+project_name: 31省工商联执委全名单企业任职核验工程
+repository: yuanjiandata/yjr_qiye_data
+truth_scope: projects/fc-exec-2515
+as_of: 2026-09-19
+lifecycle: ACTIVE
+auto_continue: true
+
+latest_gate:
+  code: BOOTSTRAP
+  status: SEALED
+
+next_gate:
+  code: W0-SOURCE-FREEZE
+  status: READY
+
+blocker: null
+
+source:
+  provider: google_drive
+  folder_id: 15PUQLLT9IXVQOeTvyFPop4e4EgUbIm8i
+  folder_name: 2515各省工商联
+  canonical_input_subfolder: 各省
+  reference_files:
+    - 名单汇总表_补全单位.xlsx
+    - 名单汇总表_去重.xlsx
+    - 名单汇总表_final.xlsx
+    - 官网汇总_final.xlsx
+
+rgac:
+  at_most_one_complete_gate_per_run: true
+  repository_truth_wins: true
+  commit_only_on_pass: true
+  stop_on_need_input: true
+  no_make: true
+  no_feishu: true
+  no_external_control_sheet: true
