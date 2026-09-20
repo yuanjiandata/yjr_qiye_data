@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0024
+current_gate: W3-BATCH-0025
 status: READY
-work_cursor: 1380
+work_cursor: 1440
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 812
+verified_records: 827
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9832
-last_evidence_at: 2026-09-20T21:55:48+08:00
-last_input_head: fd480fd85b1f6961711b721ab8bebf47c9f0b9a5
+unresolved_records: 9817
+last_evidence_at: 2026-09-20T22:56:19+08:00
+last_input_head: 5e8d9e3ffa0c308a1befc5406bd4de03b0a48b00
 
 w3_queue:
   total: 10644
-  processed: 1380
-  actionable_remaining: 9264
-  next_queue_order: 1381
+  processed: 1440
+  actionable_remaining: 9204
+  next_queue_order: 1441
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 1279
-      remaining: 3052
+      processed: 1339
+      remaining: 2992
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -346,6 +346,21 @@ w3_batch_0023:
   current_org_title_unresolved_rows: 37
   unsupported_current_title_claims: 0
 
+
+w3_batch_0024:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  fujian_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 52
+  b_grade_rows: 8
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 15
+  current_org_title_unresolved_rows: 45
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -490,3 +505,10 @@ notes:
   - Strong primary closures include 李有财 via 2026-04 Shenzhen Stock Exchange annual-report filing and 吴刘驰 via 2026-01 福建省政府 current-role reporting.
   - Current federation-context closures also include 许文显、孙福、杜锦祥、杨静、吴家莹、沈木辉、陈文、陈必松、陈成辉、陈建华、陈祖元、陈银平.
   - Evidence grades are A=46, B=14, C=0; next deterministic queue order is 1381.
+  - W3-BATCH-0024 processed queue orders 1381-1440 exactly, all 60 福建 P1 identity/current-role rows.
+  - 15 rows received current organization/title confirmation; 45 remain explicit unresolved; unsupported current-title claims remain zero.
+  - Thirteen rows reused prior sealed evidence only through exact repository ambiguity_group_id + normalized name + province match; each source record retains its independent person_id.
+  - The other 47 rows received fresh current-web review; 7 were safely closed and 40 remain unresolved rather than inferred from name.
+  - Strong current closures include 郭建涛、胡鹄、翁冠枢、郭恒禄; each has an enterprise/listed-company/government source that also supplies a federation-context identity bridge.
+  - Current federation-context closures also include 林从金、蒋海鸿; 林谋悦 uses an explicit historical 福建省工商联常委+enterprise bridge followed by 2026 current reporting.
+  - Evidence grades are A=52, B=8, C=0; next deterministic queue order is 1441.
