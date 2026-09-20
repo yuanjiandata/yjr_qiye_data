@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0015
+current_gate: W3-BATCH-0016
 status: READY
-work_cursor: 840
+work_cursor: 900
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 503
+verified_records: 540
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10141
-last_evidence_at: 2026-09-20T12:53:24+08:00
-last_input_head: 35302277b720b2c448d016c73dff2d1137d127f9
+unresolved_records: 10104
+last_evidence_at: 2026-09-20T13:58:26+08:00
+last_input_head: 462b748b1a8624029971a6d982563dc564690009
 
 w3_queue:
   total: 10644
-  processed: 840
-  actionable_remaining: 9804
-  next_queue_order: 841
+  processed: 900
+  actionable_remaining: 9744
+  next_queue_order: 901
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 739
-      remaining: 3592
+      processed: 799
+      remaining: 3532
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -213,6 +213,19 @@ w3_batch_0014:
   current_org_title_unresolved_rows: 32
   unsupported_current_title_claims: 0
 
+
+w3_batch_0015:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 51
+  b_grade_rows: 9
+  current_org_title_confirmed_rows: 37
+  current_org_title_unresolved_rows: 23
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -292,3 +305,10 @@ notes:
   - Same-name or weakly bridged hits for the remaining rows were preserved as unresolved rather than guessed.
   - Evidence grades are A=50, B=10, C=0; unsupported current-title claims=0.
   - Next deterministic queue order is 841.
+  - W3-BATCH-0015 processed queue orders 841-900 exactly, all 60 浙江 P1 identity/current-role rows.
+  - 37 rows received current organization/title confirmation; 23 remain explicit unresolved where current evidence was stale, ambiguous, region-mismatched, or insufficiently linked to the source identity.
+  - The live Zhejiang federation/chamber leadership page directly closed 16 current roles; a further 21 were closed only with contextual current evidence and historical federation identity anchors.
+  - Strong current closures include 林福江、项建忠、项炯炯、胡柏剡、胡煜鐄、俞有强、徐国龙、徐燕峰、章卡鹏、蔡晓春、丁列明、丁泽成; no name-only assignment was permitted.
+  - Same-name/weakly bridged hits including 袁海波、潘云峰、王炜、王文胜 were preserved as unresolved rather than guessed.
+  - Evidence grades are A=51, B=9, C=0; unsupported current-title claims=0.
+  - Next deterministic queue order is 901.
