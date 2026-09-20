@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0018
+current_gate: W3-BATCH-0019
 status: READY
-work_cursor: 1020
+work_cursor: 1080
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 611
+verified_records: 659
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10033
-last_evidence_at: 2026-09-20T15:55:07+08:00
-last_input_head: c824c8d3c838a564c37fa35d9b577841d8f7f20a
+unresolved_records: 9985
+last_evidence_at: 2026-09-20T16:52:10+08:00
+last_input_head: 7f01f67213e48af96c1e896921d60d3f4466b378
 
 w3_queue:
   total: 10644
-  processed: 1020
-  actionable_remaining: 9624
-  next_queue_order: 1021
+  processed: 1080
+  actionable_remaining: 9564
+  next_queue_order: 1081
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 919
-      remaining: 3412
+      processed: 979
+      remaining: 3352
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -254,6 +254,22 @@ w3_batch_0017:
   current_org_title_unresolved_rows: 26
   unsupported_current_title_claims: 0
 
+
+w3_batch_0018:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  zhejiang_rows: 22
+  anhui_rows: 38
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 55
+  b_grade_rows: 5
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 48
+  current_org_title_unresolved_rows: 12
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -356,3 +372,11 @@ notes:
   - All other previously unresolved touched identities were re-searched and remained unresolved where current identity-to-role linkage was stale, same-name-only, or insufficiently specific.
   - Evidence grades are A=53, B=7, C=0; unsupported current-title claims=0.
   - Next deterministic queue order is 1021.
+  - W3-BATCH-0018 processed queue orders 1021-1080 exactly: 22 Zhejiang and 38 Anhui P1 identity/current-role rows.
+  - 48 rows received current organization/title confirmation; 12 remain explicit unresolved with no unsupported current-title claims.
+  - Zhejiang cross-listed identities were reused only through exact name + province + the same ambiguity_group_id; person_id values remain source-row distinct.
+  - Anhui current roles were grounded primarily in the live official 安徽省工商联（总商会） leadership surface, which directly links federation identities to current enterprise roles.
+  - 胡春华、高维民、尹正龙、周勇、林巨广 were not on the current Anhui official leadership surface and remain unresolved; absence was not converted into a no-current-role claim.
+  - 高君 is conflict-held rather than promoted because official federation listing and later 2026 status reporting diverge.
+  - 邰紫鹏 was refreshed from older 总经理 wording to current enterprise-official 党委书记、董事长 evidence.
+  - Evidence grades are A=55, B=5, C=0; next deterministic queue order is 1081.
