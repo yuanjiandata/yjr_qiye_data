@@ -13,7 +13,7 @@ HIST='https://www.acfic.org.cn/ztzlhz/2022gslhj/2022gslhj_zj/202209/t20220919_31
 # Live current Zhejiang federation/chamber leadership. Source rows are independently retained; no person_id merge.
 live_fed={'李书福','宋汉平','张天任','张晓平','陈仲尼','陈建成','林俊波'}
 live_ch={'励行根','吴淑英','余震','张亚波','张林松','陈保华','邵法平'}
-live_dual={'林建良'}
+live_dual=set()
 FIELDS=['queue_order','person_id','province','excel_row','name_normalized','source_federation_role','identity_resolution','candidate_names','current_organization','current_title','current_verification_status','evidence_type','evidence_grade','evidence_title','evidence_url','evidence_date','unresolved_reason','research_notes']
 special={}
 def add(q,org,title,grade,url,date,etype,etitle,notes): special[q]=(org,title,grade,url,date,etype,etitle,notes)
@@ -42,8 +42,8 @@ for r in rows:
         out.update(identity_resolution='CURRENT_ROLE_CONFIRMED_BY_LIVE_OFFICIAL_PROVINCIAL_LEADERSHIP_PAGE',current_organization='浙江省工商业联合会',current_title='副主席',current_verification_status='CURRENT_ORG_TITLE_CONFIRMED',evidence_type='federation_official',evidence_grade='A',evidence_title='浙江省工商业联合会（浙江省商会）商会领导',evidence_url=LIVE,evidence_date='2026-09-20',unresolved_reason='',research_notes='Live official provincial federation page directly names the person and current role; mapping uses name+province+federation context and preserves the source person_id.')
     elif name in live_ch:
         out.update(identity_resolution='CURRENT_ROLE_CONFIRMED_BY_LIVE_OFFICIAL_PROVINCIAL_LEADERSHIP_PAGE',current_organization='浙江省商会',current_title='副会长',current_verification_status='CURRENT_ORG_TITLE_CONFIRMED',evidence_type='federation_official',evidence_grade='A',evidence_title='浙江省工商业联合会（浙江省商会）商会领导',evidence_url=LIVE,evidence_date='2026-09-20',unresolved_reason='',research_notes='Live official provincial chamber page directly names the person as current vice-chair; source person_id remains distinct.')
-    elif name in live_dual:
-        out.update(identity_resolution='CURRENT_ROLE_CONFIRMED_BY_LIVE_OFFICIAL_PROVINCIAL_LEADERSHIP_PAGE',current_organization='浙江省工商业联合会 / 浙江省商会',current_title='党组成员、副主席 / 副会长',current_verification_status='CURRENT_ORG_TITLE_CONFIRMED',evidence_type='federation_official',evidence_grade='A',evidence_title='浙江省工商业联合会（浙江省商会）商会领导',evidence_url=LIVE,evidence_date='2026-09-20',unresolved_reason='',research_notes='Live official page directly supplies current federation/chamber roles; no name-only employer inference is made.')
+    elif name=='林建良':
+        out.update(identity_resolution='CURRENT_ROLE_CONFIRMED_BY_LIVE_OFFICIAL_PROVINCIAL_LEADERSHIP_PAGE',current_organization='浙江省工商业联合会',current_title='党组成员、一级巡视员',current_verification_status='CURRENT_ORG_TITLE_CONFIRMED',evidence_type='federation_official',evidence_grade='A',evidence_title='浙江省工商业联合会（浙江省商会）商会领导',evidence_url=LIVE,evidence_date='2026-09-20',unresolved_reason='',research_notes='Live official provincial leadership page lists 林建良 as 浙江省工商联党组成员、一级巡视员; the older deputy-chair/chamber title is not carried forward.')
     elif name=='宋立':
         out.update(identity_resolution='CURRENT_ROLE_CONFIRMED_BY_LIVE_OFFICIAL_PROVINCIAL_LEADERSHIP_PAGE',current_organization='浙江省工商业联合会 / 浙江省商会',current_title='党组成员、秘书长 / 秘书长',current_verification_status='CURRENT_ORG_TITLE_CONFIRMED',evidence_type='federation_official',evidence_grade='A',evidence_title='浙江省工商业联合会（浙江省商会）商会领导',evidence_url=LIVE,evidence_date='2026-09-20',unresolved_reason='',research_notes='Live official provincial page directly confirms current secretary-general roles.')
     else:
