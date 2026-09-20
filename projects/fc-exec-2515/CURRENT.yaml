@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0010
+current_gate: W3-BATCH-0011
 status: READY
-work_cursor: 540
+work_cursor: 600
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 260
+verified_records: 317
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10384
-last_evidence_at: 2026-09-20T07:53:42+08:00
-last_input_head: edcf8f84c99298372ffa0dcf88facb12f7a31e37
+unresolved_records: 10327
+last_evidence_at: 2026-09-20T08:51:18+08:00
+last_input_head: 565a50b46904107791766d627ae21a8c0af433ae
 
 w3_queue:
   total: 10644
-  processed: 540
-  actionable_remaining: 10104
-  next_queue_order: 541
+  processed: 600
+  actionable_remaining: 10044
+  next_queue_order: 601
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 439
-      remaining: 3892
+      processed: 499
+      remaining: 3832
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -147,6 +147,19 @@ w3_batch_0009:
   current_org_title_unresolved_rows: 4
   unsupported_current_title_claims: 0
 
+
+w3_batch_0010:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 60
+  b_grade_rows: 0
+  current_org_title_confirmed_rows: 57
+  current_org_title_unresolved_rows: 3
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -196,3 +209,8 @@ notes:
   - 钟雨 is evidence-resolved as NO_CURRENT_ROLE_CONFIRMED after listed-company announcement 2026-003 documented retirement and resignation from all company roles; no replacement employer/title was invented.
   - 张惠扬、陈军、周洁、查艳 remain explicit current-role unresolved cases; name-only search hits were rejected.
   - Next deterministic queue order is 541.
+  - W3-BATCH-0010 processed queue orders 541-600 exactly, all 江苏 P1 identity/current-role rows.
+  - 53 rows were refreshed directly from the live Sep-2026 Jiangsu standing-committee roster; stale source roles were replaced by the current federation/chamber role.
+  - Four additional identities were safely bridged to current roles: 奚爱国、黄一新、黄东峰、王益冰; public current claims are backed by federation/party/enterprise/government official evidence and are not name-only assignments.
+  - 郭东升、熊杰、王红卫 remain explicit current-role unresolved cases because newer composition evidence removed/superseded older roles or a known homonym prevented safe linkage.
+  - Next deterministic queue order is 601.
