@@ -8,13 +8,13 @@ lifecycle: ACTIVE
 auto_continue: true
 
 latest_gate:
-  code: W3-BATCH-0013
+  code: W3-BATCH-0014
   phase: W3-EVIDENCE-ENRICH
   status: SEALED
   validation: PASS
 
 next_gate:
-  code: W3-BATCH-0014
+  code: W3-BATCH-0015
   phase: W3-EVIDENCE-ENRICH
   status: READY
 
@@ -71,22 +71,22 @@ w2:
     AMBIGUOUS_GROUP_NOT_ABSORBED: 120
 
 w3:
-  batches_sealed: 13
-  processed_queue_rows: 780
-  next_queue_order: 781
-  actionable_queue_remaining: 9864
+  batches_sealed: 14
+  processed_queue_rows: 840
+  next_queue_order: 841
+  actionable_queue_remaining: 9804
   p0_name_repair:
     initial: 101
     processed: 101
     remaining: 0
   p1_identity:
     initial: 4331
-    processed: 679
-    remaining: 3652
-  identity_evidence_rows: 780
+    processed: 739
+    remaining: 3592
+  identity_evidence_rows: 840
   structural_deferred_rows: 101
-  current_org_title_confirmed_rows: 473
-  current_org_title_unresolved_rows: 204
+  current_org_title_confirmed_rows: 501
+  current_org_title_unresolved_rows: 236
   no_current_role_confirmed_rows: 2
   unsupported_current_title_claims: 0
 
@@ -136,6 +136,9 @@ artifacts:
   w3_batch_0013_results: projects/fc-exec-2515/evidence/W3_BATCH_0013_RESULTS.csv
   w3_batch_0013_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0013_METRICS.yaml
   w3_batch_0013_validation: projects/fc-exec-2515/evidence/W3_BATCH_0013_VALIDATION.md
+  w3_batch_0014_results: projects/fc-exec-2515/evidence/W3_BATCH_0014_RESULTS.csv
+  w3_batch_0014_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0014_METRICS.yaml
+  w3_batch_0014_validation: projects/fc-exec-2515/evidence/W3_BATCH_0014_VALIDATION.md
   w3_verification_overlay: projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv
 
 rgac:
