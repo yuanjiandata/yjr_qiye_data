@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0012
+current_gate: W3-BATCH-0013
 status: READY
-work_cursor: 660
+work_cursor: 720
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 369
+verified_records: 425
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10275
-last_evidence_at: 2026-09-20T09:53:49+08:00
-last_input_head: 981f994de8aee7729ce0e801bff2ce009cd3903c
+unresolved_records: 10219
+last_evidence_at: 2026-09-20T10:58:56+08:00
+last_input_head: fc942efc87ec6d6321943ee1c2340f32cb07aa11
 
 w3_queue:
   total: 10644
-  processed: 660
-  actionable_remaining: 9984
-  next_queue_order: 661
+  processed: 720
+  actionable_remaining: 9924
+  next_queue_order: 721
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 559
-      remaining: 3772
+      processed: 619
+      remaining: 3712
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -174,6 +174,19 @@ w3_batch_0011:
   current_org_title_unresolved_rows: 8
   unsupported_current_title_claims: 0
 
+
+w3_batch_0012:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 59
+  b_grade_rows: 1
+  current_org_title_confirmed_rows: 56
+  current_org_title_unresolved_rows: 4
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -233,3 +246,9 @@ notes:
   - Four non-roster current roles were safely bridged for 李兰翔、李厚林、陈湘珍、施勇; 钟雨 is resolved as no-current-role from the original CNINFO filing 2026-003.
   - 孙振东、李建、张飞×2、张惠扬、陈军、周洁、查艳 remain explicit unresolved current-role cases; the two 张飞 source rows are exact-value duplicate candidates and were not arbitrarily mapped to the current 淮/盐 homonyms.
   - Next deterministic queue order is 661.
+  - W3-BATCH-0012 processed queue orders 661-720 exactly: 40 江苏 + 20 浙江 P1 identity/current-role rows.
+  - 56 rows received current organization/title confirmation; 4 remain explicit unresolved current-role cases (郭东升、黄东峰、熊杰、吕晓峰).
+  - Jiangsu used the live Sep-2026 standing/executive composition as current-state authority; the Jul-2026 黄东峰 executive status was not carried forward after the updated Sep list removed it.
+  - Zhejiang used the 2022 ACFIC election roster only as a historical identity anchor and refreshed current roles from 2026 evidence; the live provincial leadership page supersedes stale source titles and confirms the current vice-chair cohort from 李书福 through 宗馥莉.
+  - No current organization/title was assigned from a name-only hit; evidence grades are A=59, B=1, C=0.
+  - Next deterministic queue order is 721.
