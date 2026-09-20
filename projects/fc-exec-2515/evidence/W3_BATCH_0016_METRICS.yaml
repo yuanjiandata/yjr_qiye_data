@@ -1,0 +1,23 @@
+schema: fc2515-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0016
+status: PASS
+queue_range: [901, 960]
+batch_rows: 60
+p1_identity_rows: 60
+evidence_backed_rows: 60
+a_grade_rows: 48
+b_grade_rows: 12
+c_grade_rows: 0
+structural_deferred_rows: 0
+current_org_title_confirmed_rows: 37
+no_current_role_confirmed_rows: 0
+current_org_title_unresolved_rows: 23
+unsupported_current_title_claims: 0
+post_batch:
+  processed_queue_rows: 960
+  actionable_queue_remaining: 9684
+  next_queue_order: 961
+  p1_processed: 859
+  p1_remaining: 3472
+next_gate: W3-BATCH-0017
