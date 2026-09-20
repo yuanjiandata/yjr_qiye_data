@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0017
+current_gate: W3-BATCH-0018
 status: READY
-work_cursor: 960
+work_cursor: 1020
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 577
+verified_records: 611
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10067
-last_evidence_at: 2026-09-20T14:54:12+08:00
-last_input_head: 7d4120f0e33e5f8f88ba2dbda96112e3dc624525
+unresolved_records: 10033
+last_evidence_at: 2026-09-20T15:55:07+08:00
+last_input_head: c824c8d3c838a564c37fa35d9b577841d8f7f20a
 
 w3_queue:
   total: 10644
-  processed: 960
-  actionable_remaining: 9684
-  next_queue_order: 961
+  processed: 1020
+  actionable_remaining: 9624
+  next_queue_order: 1021
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 859
-      remaining: 3472
+      processed: 919
+      remaining: 3412
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -240,6 +240,20 @@ w3_batch_0016:
   current_org_title_unresolved_rows: 23
   unsupported_current_title_claims: 0
 
+
+w3_batch_0017:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 53
+  b_grade_rows: 7
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 34
+  current_org_title_unresolved_rows: 26
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -334,3 +348,11 @@ notes:
   - Same-name hits for 王敏良、朱立科、阮福德 and other unresolved records were rejected where federation-to-current-role identity linkage remained insufficient.
   - Evidence grades are A=48, B=12, C=0; unsupported current-title claims=0.
   - Next deterministic queue order is 961.
+  - W3-BATCH-0017 processed queue orders 961-1020 exactly, all 60 浙江 P1 identity/current-role rows.
+  - 34 rows received current organization/title confirmation; 26 remain explicit unresolved where current evidence lacked a sufficiently specific identity bridge.
+  - Cross-listed identities were reused only through exact name + province + the same ambiguity_group_id; source person_id values were preserved and never merged by name.
+  - The live Zhejiang federation/chamber leadership page was refreshed for touched cross-listed current roles.
+  - 邵云东 was newly confirmed from 2026 ACFIC federation-context evidence; 徐立勋 from current 2026 role evidence plus Huamao's federation-congress identity bridge; 夏赛丽 from 2026 Zhejiang federation official evidence.
+  - All other previously unresolved touched identities were re-searched and remained unresolved where current identity-to-role linkage was stale, same-name-only, or insufficiently specific.
+  - Evidence grades are A=53, B=7, C=0; unsupported current-title claims=0.
+  - Next deterministic queue order is 1021.
