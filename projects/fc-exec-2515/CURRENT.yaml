@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0021
+current_gate: W3-BATCH-0022
 status: READY
-work_cursor: 1200
+work_cursor: 1260
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 729
+verified_records: 769
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9915
-last_evidence_at: 2026-09-20T18:54:52+08:00
-last_input_head: 6c190cdb77530ca81234a7242d3b34bf61650219
+unresolved_records: 9875
+last_evidence_at: 2026-09-20T19:58:34+08:00
+last_input_head: da90d9648560196eb9819dd40894fbf01aa30a4b
 
 w3_queue:
   total: 10644
-  processed: 1200
-  actionable_remaining: 9444
-  next_queue_order: 1201
+  processed: 1260
+  actionable_remaining: 9384
+  next_queue_order: 1261
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 1099
-      remaining: 3232
+      processed: 1159
+      remaining: 3172
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -300,6 +300,22 @@ w3_batch_0020:
   current_org_title_unresolved_rows: 27
   unsupported_current_title_claims: 0
 
+
+w3_batch_0021:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  anhui_rows: 34
+  fujian_rows: 26
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 51
+  b_grade_rows: 9
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 40
+  current_org_title_unresolved_rows: 20
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -424,3 +440,9 @@ notes:
   - 曹金栋 is current 安庆市委统战部副部长 via 2026 official evidence and a 2025 市工商联党组书记 bridge; 韩东成 is current 东超科技董事长; 程景梁 is current 黄山市工商联主席.
   - 殷金宝、曹建、梁万标、梁红群、彭友、韩家林、戴正刚 remain unresolved where recency or identity linkage was insufficient.
   - Evidence grades are A=58, B=2, C=0; next deterministic queue order is 1201.
+  - W3-BATCH-0021 processed queue orders 1201-1260 exactly: 34 安徽 + 26 福建 P1 identity/current-role rows.
+  - 40 rows received current organization/title confirmation; 20 remain explicit unresolved; unsupported current-title claims remain zero.
+  - 34 安徽 cross-list rows reused sealed evidence only when repository ambiguity_group_id + normalized name + province matched; every source row retains an independent person_id.
+  - All 26 福建 first-occurrence identities received fresh public-web research. Twenty were safely closed with current federation/government/enterprise/authoritative evidence; six remain unresolved rather than inferred by name.
+  - 黄世霖 was corrected from stale 宁德时代副董事长 to current 福建时代星云科技有限公司董事长; 蔡劲军 and 邹剑寒 were likewise refreshed to current corporate roles.
+  - Evidence grades are A=51, B=9, C=0; next deterministic queue order is 1261.
