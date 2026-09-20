@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0019
+current_gate: W3-BATCH-0020
 status: READY
-work_cursor: 1080
+work_cursor: 1140
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 659
+verified_records: 696
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9985
-last_evidence_at: 2026-09-20T16:52:10+08:00
-last_input_head: 7f01f67213e48af96c1e896921d60d3f4466b378
+unresolved_records: 9948
+last_evidence_at: 2026-09-20T17:52:33+08:00
+last_input_head: 8a5dc82dd8ef8001e12b57db7438e5515262d056
 
 w3_queue:
   total: 10644
-  processed: 1080
-  actionable_remaining: 9564
-  next_queue_order: 1081
+  processed: 1140
+  actionable_remaining: 9504
+  next_queue_order: 1141
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 979
-      remaining: 3352
+      processed: 1039
+      remaining: 3292
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -270,6 +270,21 @@ w3_batch_0018:
   current_org_title_unresolved_rows: 12
   unsupported_current_title_claims: 0
 
+
+w3_batch_0019:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  anhui_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 59
+  b_grade_rows: 1
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 37
+  current_org_title_unresolved_rows: 23
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -380,3 +395,10 @@ notes:
   - 高君 is conflict-held rather than promoted because official federation listing and later 2026 status reporting diverge.
   - 邰紫鹏 was refreshed from older 总经理 wording to current enterprise-official 党委书记、董事长 evidence.
   - Evidence grades are A=55, B=5, C=0; next deterministic queue order is 1081.
+  - W3-BATCH-0019 processed queue orders 1081-1140 exactly, all 60 安徽 P1 identity/current-role rows.
+  - 37 rows received current organization/title confirmation; 23 remain explicit unresolved with no unsupported current-title claims.
+  - The live 安徽省工商联（总商会） leadership surface directly closed current enterprise/organization roles for 26 touched source rows, including the duplicate 周伊凡 source rows without merging person_id values.
+  - Fresh contextual closures include 徐善水、朱有为、孙四平、李颖、杨乐、吴涛、杜本硕、邵迪、胡守斌、姚亚妹; each required a federation-history/context bridge and current public evidence.
+  - 胡守斌 was refreshed from the older 工商联主席 role to current 淮北市政协副主席/致公党市委会主委; 邰紫鹏 remains current 泰尔重工党委书记、董事长.
+  - Same-name-only and weakly bridged hits were rejected; the 2026 procurator-system 杜本硕 hit was not linked to the source identity.
+  - Evidence grades are A=59, B=1, C=0; next deterministic queue order is 1141.
