@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0011
+current_gate: W3-BATCH-0012
 status: READY
-work_cursor: 600
+work_cursor: 660
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 317
+verified_records: 369
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 10327
-last_evidence_at: 2026-09-20T08:51:18+08:00
-last_input_head: 565a50b46904107791766d627ae21a8c0af433ae
+unresolved_records: 10275
+last_evidence_at: 2026-09-20T09:53:49+08:00
+last_input_head: 981f994de8aee7729ce0e801bff2ce009cd3903c
 
 w3_queue:
   total: 10644
-  processed: 600
-  actionable_remaining: 10044
-  next_queue_order: 601
+  processed: 660
+  actionable_remaining: 9984
+  next_queue_order: 661
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 499
-      remaining: 3832
+      processed: 559
+      remaining: 3772
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -160,6 +160,20 @@ w3_batch_0010:
   current_org_title_unresolved_rows: 3
   unsupported_current_title_claims: 0
 
+
+w3_batch_0011:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 60
+  b_grade_rows: 0
+  current_org_title_confirmed_rows: 51
+  no_current_role_confirmed_rows: 1
+  current_org_title_unresolved_rows: 8
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -214,3 +228,8 @@ notes:
   - Four additional identities were safely bridged to current roles: 奚爱国、黄一新、黄东峰、王益冰; public current claims are backed by federation/party/enterprise/government official evidence and are not name-only assignments.
   - 郭东升、熊杰、王红卫 remain explicit current-role unresolved cases because newer composition evidence removed/superseded older roles or a known homonym prevented safe linkage.
   - Next deterministic queue order is 601.
+  - W3-BATCH-0011 processed queue orders 601-660 exactly, all 江苏 P1 identity/current-role rows.
+  - 47 rows were refreshed from the live Sep-2026 Jiangsu standing-committee roster; current higher federation/chamber roles supersede stale 执委 labels.
+  - Four non-roster current roles were safely bridged for 李兰翔、李厚林、陈湘珍、施勇; 钟雨 is resolved as no-current-role from the original CNINFO filing 2026-003.
+  - 孙振东、李建、张飞×2、张惠扬、陈军、周洁、查艳 remain explicit unresolved current-role cases; the two 张飞 source rows are exact-value duplicate candidates and were not arbitrarily mapped to the current 淮/盐 homonyms.
+  - Next deterministic queue order is 661.
