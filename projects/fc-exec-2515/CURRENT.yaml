@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0027
+current_gate: W3-BATCH-0028
 status: READY
-work_cursor: 1560
+work_cursor: 1620
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 864
+verified_records: 884
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9780
-last_evidence_at: 2026-09-21T00:53:11+08:00
-last_input_head: f8d4d5ee6f7509d1f5e9b6522f774e5e97ea119e
+unresolved_records: 9760
+last_evidence_at: 2026-09-21T01:53:54+08:00
+last_input_head: 3d6bb8f7bd4e2504f2a4a941e39b9651c3b8bf88
 
 w3_queue:
   total: 10644
-  processed: 1560
-  actionable_remaining: 9084
-  next_queue_order: 1561
+  processed: 1620
+  actionable_remaining: 9024
+  next_queue_order: 1621
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 1459
-      remaining: 2872
+      processed: 1519
+      remaining: 2812
     P2_ORG_TITLE_LOOKUP: 6045
     P3_CURRENT_VERIFY: 167
 
@@ -392,6 +392,22 @@ w3_batch_0026:
   current_org_title_unresolved_rows: 40
   unsupported_current_title_claims: 0
 
+
+w3_batch_0027:
+  status: SEALED
+  validation: PASS
+  touched_rows: 60
+  fujian_rows: 60
+  p1_identity_rows: 60
+  evidence_backed_rows: 60
+  a_grade_rows: 50
+  b_grade_rows: 10
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 20
+  no_current_role_confirmed_rows: 0
+  current_org_title_unresolved_rows: 40
+  unsupported_current_title_claims: 0
+
 notes:
   - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
   - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
@@ -555,3 +571,8 @@ notes:
   - 58 rows reused prior sealed evidence only through exact repository ambiguity_group_id + province + normalized name + region qualifier match; independent person_id values are retained.
   - The two fresh same-name records 林飞(福州) and 林飞(龙岩) were researched separately. 林飞(龙岩) safely closes to 龙岩市交通运输有限公司董事长 via 2026 local entrepreneur context plus 2025 福建省人民政府 corroboration; 林飞(福州) remains unresolved because multiple homonyms exist and no source identity bridge was found.
   - Evidence grades are A=47, B=13, C=0; next deterministic queue order is 1561.
+  - W3-BATCH-0027 processed queue orders 1561-1620 exactly, all 60 福建 P1 identity/current-role rows.
+  - 20 rows received current organization/title confirmation; 40 remain explicit unresolved; 0 have no-current-role confirmation; unsupported current-title claims remain zero.
+  - 58 rows reused prior sealed evidence only through exact repository ambiguity_group_id + province + normalized name + region qualifier match; independent person_id values are retained.
+  - The two fresh same-name records 林锦云(干部) and 林锦云(企业家) were researched separately. 林锦云(企业家) safely closes to 福建闽宁情商贸有限公司董事长 via 2026 福州市政府 current evidence plus 福建省政府 corroboration; 林锦云(干部) remains unresolved because the official roster marks it as a distinct source identity and no safe current cadre bridge was found.
+  - Evidence grades are A=50, B=10, C=0; next deterministic queue order is 1621.
