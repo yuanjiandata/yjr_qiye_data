@@ -1,0 +1,29 @@
+schema: fc-exec-2515-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0031
+status: SEALED
+validation: PASS
+touched_rows: 60
+province_rows:
+  河南: 60
+p1_identity_rows: 60
+distinct_identity_names_researched: 60
+same_batch_reuse_rows: 0
+evidence_backed_rows: 60
+a_grade_rows: 58
+b_grade_rows: 2
+c_grade_rows: 0
+current_org_title_confirmed_rows: 12
+no_current_role_confirmed_rows: 0
+current_org_title_unresolved_rows: 48
+unsupported_current_title_claims: 0
+queue_start: 1801
+queue_end: 1860
+next_queue_order: 1861
+logical_cumulative_rows: 1860
+verified_at: 2026-09-22T15:48:42+08:00
+input_head: afd6b80017721ea3ed9933fa954ffddc09991c75
+results_raw_sha256: 52a2a8e181dfe3d17a219ce5ac78818d98957393f8019e3f7beda55c312860f9
+results_gzip_sha256: 24cb0914926a7dc6e1cea08b3b307770525f4de1bd47829e9abd1fedd13deec0
+research_raw_sha256: 0ea70a95f7ee81f11d0ecee03c29f277a5a0293881e8b1c572a4a7c77964b395
+research_gzip_sha256: dab3dcdf6b17cef1344d590317e7582c98b8ab8556e74572d1d454c9741c2783
