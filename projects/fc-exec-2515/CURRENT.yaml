@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0032
+current_gate: W3-BATCH-0033
 status: READY
-work_cursor: 1860
+work_cursor: 1920
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 963
+verified_records: 1009
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9681
-last_evidence_at: 2026-09-22T15:48:42+08:00
-last_input_head: afd6b80017721ea3ed9933fa954ffddc09991c75
+unresolved_records: 9635
+last_evidence_at: 2026-09-22T16:47:34+08:00
+last_input_head: 5a45950c58b2c91f36c3b3a83cf8a0075c290637
 
 w3_queue:
   total: 10644
-  processed: 1860
-  actionable_remaining: 8784
-  next_queue_order: 1861
+  processed: 1920
+  actionable_remaining: 8724
+  next_queue_order: 1921
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 1759
-      remaining: 2572
+      processed: 1819
+      remaining: 2512
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,53 +44,54 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0031
+  code: W3-BATCH-0032
   status: SEALED
   validation: PASS
-  queue_start: 1801
-  queue_end: 1860
+  queue_start: 1861
+  queue_end: 1920
   touched_rows: 60
   province_rows:
-    河南: 60
+    河南: 8
+    湖北: 52
   p1_identity_rows: 60
-  distinct_identity_names_researched: 60
-  same_batch_reuse_rows: 0
+  distinct_identity_names_researched: 58
+  same_batch_reuse_rows: 2
   evidence_backed_rows: 60
-  a_grade_rows: 58
-  b_grade_rows: 2
+  a_grade_rows: 60
+  b_grade_rows: 0
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 12
+  current_org_title_confirmed_rows: 46
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 48
+  current_org_title_unresolved_rows: 14
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 31
-  identity_evidence_rows: 1860
-  current_org_title_confirmed_rows: 961
+  batches_sealed: 32
+  identity_evidence_rows: 1920
+  current_org_title_confirmed_rows: 1007
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 796
+  current_org_title_unresolved_rows: 810
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 1860
+  logical_end: 1920
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0031
+  detailed_batch_history_through: W3-BATCH-0032
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0031 processed queue orders 1801-1860 exactly, all 60 河南 P1 identity/current-role rows.
-  - All 60 source identities were independently researched in this gate; no current role was assigned from name alone.
-  - 12 rows received current organization/title confirmation; 48 remain explicit unresolved; unsupported current-title claims remain zero.
-  - Strong current closures include 刘文新、李莉、吴鹏斐、宋春华、张付峰、郑文青、赵万俊、侯合柱、秦英林、徐晓、曹永彬、董亚丽.
-  - 秦英林 was refreshed from stale pre-June-2026 董事长/总裁 wording to 深交所 disclosed 终身荣誉董事长、牧原养猪研究院院长.
-  - High-homonym/gender-sensitive rows and candidates without a strong source-identity bridge remain unresolved rather than name-matched.
-  - Older 河南省工商联 leadership labels were not mechanically carried forward where 2026 recency was insufficient or supersession risk existed.
-  - Next deterministic queue order is 1861.
+  - W3-BATCH-0032 processed queue orders 1861-1920 exactly: 8 河南 + 52 湖北 P1 identity/current-role rows.
+  - 46 rows received current organization/title confirmation; 14 remain explicit unresolved; unsupported current-title claims remain zero.
+  - The current 湖北省工商联 official leadership page directly closed 44 distinct current identities represented by 46 source rows; no name-only assignment was permitted.
+  - 河南 8 rows remain unresolved where current public evidence could not safely bridge a 2026 role back to the exact source executive identity.
+  - 刘顺妮 was not carried forward as主席 because the current official湖北 leadership page names党蓁; 胡勇政 was not assigned a candidate new role without a safe transition bridge.
+  - 李玉保、马林武、王旭、王静 remain unresolved because current official federation evidence does not establish a safe current role.
+  - 王仁宗 and 王书会 each have a repeated常委 source row; same-batch reuse required exact ambiguity_group_id + province + normalized name and retained distinct person_id values.
+  - Evidence grades are A=60, B=0, C=0; next deterministic queue order is 1921.
