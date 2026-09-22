@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0038
+current_gate: W3-BATCH-0039
 status: READY
-work_cursor: 2220
+work_cursor: 2280
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1117
+verified_records: 1123
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9527
-last_evidence_at: 2026-09-22T22:19:24+08:00
-last_input_head: f0ce4cb97730d41c02979a42bad44652a687d3a5
+unresolved_records: 9521
+last_evidence_at: 2026-09-22T23:48:15+08:00
+last_input_head: 550830b566fc3bc7e2eaead036ca73d0ee953702
 
 w3_queue:
   total: 10644
-  processed: 2220
-  actionable_remaining: 8424
-  next_queue_order: 2221
+  processed: 2280
+  actionable_remaining: 8364
+  next_queue_order: 2281
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 2119
-      remaining: 2212
+      processed: 2179
+      remaining: 2152
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,16 +44,14 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0037
+  code: W3-BATCH-0038
   status: SEALED
   validation: PASS
-  queue_start: 2161
-  queue_end: 2220
+  queue_start: 2221
+  queue_end: 2280
   touched_rows: 60
   province_rows:
-    湖北: 31
-    湖南: 4
-    广东: 25
+    广东: 60
   p1_identity_rows: 60
   fresh_research_rows: 60
   prior_sealed_reuse_rows: 0
@@ -61,37 +59,37 @@ latest_sealed_batch:
   a_grade_rows: 60
   b_grade_rows: 0
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 24
+  current_org_title_confirmed_rows: 6
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 36
+  current_org_title_unresolved_rows: 54
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 37
-  identity_evidence_rows: 2220
-  current_org_title_confirmed_rows: 1115
+  batches_sealed: 38
+  identity_evidence_rows: 2280
+  current_org_title_confirmed_rows: 1121
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 1002
+  current_org_title_unresolved_rows: 1056
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 2220
+  logical_end: 2280
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0037
+  detailed_batch_history_through: W3-BATCH-0038
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0037 processed queue orders 2161-2220 exactly: 湖北31、湖南4、广东25, all P1 identity/current-role rows.
-  - 24 rows received current organization/title confirmation; 36 remain explicit unresolved; unsupported current-title claims remain zero.
-  - All 60 source identities are anchored against official 全国工商联 provincial executive rosters; no name-only assignment was permitted.
-  - 湖北 current official evidence closes 13 touched identities, including 12 from the live provincial leadership surface and 程春生 from 2026 全国工商联 current-role evidence.
-  - 湖南 4 rows remain unresolved after current official-source checks.
-  - 广东 current government/federation/enterprise/listed-company evidence closes 11 touched identities; the other 14 remain unresolved where the identity bridge or current-role proof is insufficient.
-  - Evidence grades are A=60, B=0, C=0; next deterministic queue order is 2221.
+  - W3-BATCH-0038 processed queue orders 2221-2280 exactly: 广东60, all P1 identity/current-role rows.
+  - 6 rows received current organization/title confirmation; 54 remain explicit unresolved; unsupported current-title claims remain zero.
+  - All 60 source identities are anchored against the official 全国工商联广东省工商联第十三届执委会名单; no name-only assignment was permitted.
+  - Current A-grade evidence closes 王明旺、冯日光、李红、李积回、关向明、魏国华.
+  - 李立勉 remains unresolved because recent same-name legal-representative evidence lacks a safe source-identity bridge; older role evidence is stale.
+  - 徐耀目 remains unresolved because the 2025 discipline notice establishes historical status, not a 2026 current role.
+  - Evidence grades are A=60, B=0, C=0; next deterministic queue order is 2281.
