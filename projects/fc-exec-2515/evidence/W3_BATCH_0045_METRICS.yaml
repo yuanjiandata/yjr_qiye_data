@@ -1,0 +1,35 @@
+schema: fc-exec-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0045
+phase: W3-EVIDENCE-ENRICH
+status: SEALED
+validation: PASS
+input:
+  parent_head: 15d4e784f2ba0707e7cc480d7c0e67d69b078a98
+  queue_start: 2641
+  queue_end: 2700
+  touched_rows: 60
+  membership_source_sha256: 86ada49718551b560cbb1385a5cd776db271b894d773bd7e643093e583648f3b
+  supplement_source_sha256: 136998b03210bd5144be16df3e964c64cae94581170268bc00764a041f596316
+batch:
+  province_rows:
+    海南: 60
+  p1_identity_rows: 60
+  fresh_research_rows: 25
+  prior_sealed_reuse_rows: 35
+  current_source_recheck_rows: 0
+  evidence_backed_rows: 60
+  a_grade_rows: 50
+  b_grade_rows: 10
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 18
+  no_current_role_confirmed_rows: 0
+  current_org_title_unresolved_rows: 42
+  unsupported_current_title_claims: 0
+output:
+  results_path: projects/fc-exec-2515/evidence/W3_BATCH_0045_RESULTS.csv
+  results_sha256: 6c2f45567d33741a59ec4cf8759c912a3b8380597fe7b546a189be7cc1e75b38
+  research_path: projects/fc-exec-2515/evidence/W3_BATCH_0045_RESEARCH.tsv
+  research_sha256: f1703897e4c4a08fc1652fa623948dbcbc749a9404a12eb3766f3337bc558f34
+  logical_end: 2700
+  next_queue_order: 2701
