@@ -5,3 +5,5 @@ overlay,0,projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv,1,1620,1620
 overlay,1,projects/fc-exec-2515/evidence/W3_BATCH_0028_RESULTS.csv.gz,1621,1680,60,result_segment,overlay,W3-BATCH-0028
 ledger,2,projects/fc-exec-2515/evidence/W3_BATCH_0029_RESULTS.csv.gz,1681,1740,60,result_segment,ledger,W3-BATCH-0029
 overlay,2,projects/fc-exec-2515/evidence/W3_BATCH_0029_RESULTS.csv.gz,1681,1740,60,result_segment,overlay,W3-BATCH-0029
+ledger,3,projects/fc-exec-2515/evidence/W3_BATCH_0030_RESULTS.csv.gz,1741,1800,60,result_segment,ledger,W3-BATCH-0030
+overlay,3,projects/fc-exec-2515/evidence/W3_BATCH_0030_RESULTS.csv.gz,1741,1800,60,result_segment,overlay,W3-BATCH-0030
