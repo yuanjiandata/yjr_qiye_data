@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0041
+current_gate: W3-BATCH-0042
 status: READY
-work_cursor: 2400
+work_cursor: 2460
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1140
+verified_records: 1150
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9504
-last_evidence_at: 2026-09-23T01:51:22+08:00
-last_input_head: 86ed4db29d2393a387a26798b74a68bce3fa7154
+unresolved_records: 9494
+last_evidence_at: 2026-09-23T02:51:22+08:00
+last_input_head: 1a46e22bb2b65192760e387e6dc2be22a68dfc67
 
 w3_queue:
   total: 10644
-  processed: 2400
-  actionable_remaining: 8244
-  next_queue_order: 2401
+  processed: 2460
+  actionable_remaining: 8184
+  next_queue_order: 2461
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 2299
-      remaining: 2032
+      processed: 2359
+      remaining: 1972
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,20 +44,20 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0040
+  code: W3-BATCH-0041
   status: SEALED
   validation: PASS
-  queue_start: 2341
-  queue_end: 2400
+  queue_start: 2401
+  queue_end: 2460
   touched_rows: 60
   province_rows:
     广东: 60
   p1_identity_rows: 60
-  fresh_research_rows: 32
-  prior_sealed_reuse_rows: 28
+  fresh_research_rows: 60
+  prior_sealed_reuse_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 57
-  b_grade_rows: 3
+  a_grade_rows: 55
+  b_grade_rows: 5
   c_grade_rows: 0
   current_org_title_confirmed_rows: 10
   no_current_role_confirmed_rows: 0
@@ -65,31 +65,30 @@ latest_sealed_batch:
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 40
-  identity_evidence_rows: 2400
-  current_org_title_confirmed_rows: 1138
+  batches_sealed: 41
+  identity_evidence_rows: 2460
+  current_org_title_confirmed_rows: 1148
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 1159
+  current_org_title_unresolved_rows: 1209
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 2400
+  logical_end: 2460
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0040
+  detailed_batch_history_through: W3-BATCH-0041
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0040 processed queue orders 2341-2400 exactly: 广东60, all P1 identity/current-role rows.
+  - W3-BATCH-0041 processed queue orders 2401-2460 exactly: 广东60, all P1 identity/current-role rows.
   - 10 rows received current organization/title confirmation; 50 remain explicit unresolved; unsupported current-title claims remain zero.
-  - Fresh targeted public-evidence research was performed for 32 new source identities; 28 repeated identities reuse SEALED/PASS outcomes only under exact ambiguity-group controls, with each source row retaining its own person_id.
-  - Current-role confirmations: 赖志光、王诗增、陈丹丹、周厚立、冯日光、关向明、李红、陈丽文、梁耀铭、魏国华.
-  - 陈丽文 is updated to her current 2026 Guangdong Hong Kong and Macao Affairs Office director role; historical federation titles were not carried forward.
-  - Plausible current hits without a safe source-identity bridge remain unresolved; no name-only assignment was permitted.
-  - Evidence grades are A=57, B=3, C=0; next deterministic queue order is 2401.
+  - Fresh targeted public-evidence research was performed for all 60 source identities; no prior sealed outcome was reused for this batch.
+  - Current-role confirmations: 陈志列、郑文强、董凡、李连柱、廖平元、吴丰礼、张燕航、李积回、林水栖、王明旺.
+  - 刘文华、陈涛 and other same-name or single-sided current-role hits remain fail-closed where no safe source-identity bridge exists.
+  - Evidence grades are A=55, B=5, C=0; next deterministic queue order is 2461.
