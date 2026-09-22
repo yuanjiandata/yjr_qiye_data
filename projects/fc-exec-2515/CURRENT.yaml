@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0036
+current_gate: W3-BATCH-0037
 status: READY
-work_cursor: 2100
+work_cursor: 2160
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1073
+verified_records: 1093
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9571
-last_evidence_at: 2026-09-22T20:03:33+08:00
-last_input_head: 9ad12329f2831da8cbf9271e2e246a9c2741e94c
+unresolved_records: 9551
+last_evidence_at: 2026-09-22T20:58:34+08:00
+last_input_head: f6d4f281b495b816426364b03b3f4fec061c9f82
 
 w3_queue:
   total: 10644
-  processed: 2100
-  actionable_remaining: 8544
-  next_queue_order: 2101
+  processed: 2160
+  actionable_remaining: 8484
+  next_queue_order: 2161
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 1999
-      remaining: 2332
+      processed: 2059
+      remaining: 2272
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,11 +44,11 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0035
+  code: W3-BATCH-0036
   status: SEALED
   validation: PASS
-  queue_start: 2041
-  queue_end: 2100
+  queue_start: 2101
+  queue_end: 2160
   touched_rows: 60
   province_rows:
     湖北: 60
@@ -56,39 +56,39 @@ latest_sealed_batch:
   fresh_research_rows: 60
   prior_sealed_reuse_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 60
-  b_grade_rows: 0
+  a_grade_rows: 59
+  b_grade_rows: 1
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 18
+  current_org_title_confirmed_rows: 20
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 42
+  current_org_title_unresolved_rows: 40
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 35
-  identity_evidence_rows: 2100
-  current_org_title_confirmed_rows: 1071
+  batches_sealed: 36
+  identity_evidence_rows: 2160
+  current_org_title_confirmed_rows: 1091
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 926
+  current_org_title_unresolved_rows: 966
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 2100
+  logical_end: 2160
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0035
+  detailed_batch_history_through: W3-BATCH-0036
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0035 processed queue orders 2041-2100 exactly, all 60 湖北 P1 identity/current-role rows.
-  - 18 rows received current organization/title confirmation; 42 remain explicit unresolved; unsupported current-title claims remain zero.
-  - All 60 source identities were re-anchored against the official 湖北省工商联（总商会）第十三届执委名单; no name-only assignment was permitted.
-  - The live 湖北省工商联 leadership page directly closed 16 touched identities and their current organization/title; 代德明 closed from 2026 湖北省经信厅 evidence; 李文喜 closed from the 2026-03-31 Shenzhen Stock Exchange filing whose biography also states his 襄阳市工商联（总商会）兼职副主席 identity.
-  - The other 42 rows remain unresolved where current evidence was stale, name-only, enterprise-only, or lacked a safe federation/source identity bridge.
-  - Evidence grades are A=60, B=0, C=0; next deterministic queue order is 2101.
+  - W3-BATCH-0036 processed queue orders 2101-2160 exactly, all 60 湖北 P1 identity/current-role rows.
+  - 20 rows received current organization/title confirmation; 40 remain explicit unresolved; unsupported current-title claims remain zero.
+  - All 60 source identities are anchored against the official 湖北省工商联（总商会）第十三届执委名单; no name-only assignment was permitted.
+  - The live 湖北省工商联 leadership page directly closed 17 touched identities. 胡勇政 closed through a federation-official historical-role bridge plus 2026 Wuhan government evidence; 柯碧松 closed through current Huangshi government/federation context; 段卫昌 closed from a 2026 source that states both current local federation and enterprise roles.
+  - The other 40 rows remain unresolved where current evidence was stale, same-name-only, enterprise-only, or lacked a safe source-identity bridge.
+  - Evidence grades are A=59, B=1, C=0; next deterministic queue order is 2161.
