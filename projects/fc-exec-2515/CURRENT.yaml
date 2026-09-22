@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0043
+current_gate: W3-BATCH-0045
 status: READY
-work_cursor: 2520
+work_cursor: 2640
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1157
+verified_records: 1191
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9487
-last_evidence_at: 2026-09-23T03:27:26+08:00
-last_input_head: c5a2fe9aab4175fc0ed2c6d3a1a2672cbb608995
+unresolved_records: 9453
+last_evidence_at: 2026-09-23T04:48:01+08:00
+last_input_head: 0271575998c4e6a9d31624aafc4ea1255b9babcf
 
 w3_queue:
   total: 10644
-  processed: 2520
-  actionable_remaining: 8124
-  next_queue_order: 2521
+  processed: 2640
+  actionable_remaining: 8004
+  next_queue_order: 2641
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 2419
-      remaining: 1912
+      processed: 2539
+      remaining: 1792
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,52 +44,53 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0042
+  code: W3-BATCH-0044
   status: SEALED
   validation: PASS
-  queue_start: 2461
-  queue_end: 2520
+  queue_start: 2581
+  queue_end: 2640
   touched_rows: 60
   province_rows:
-    广东: 60
+    海南: 60
   p1_identity_rows: 60
-  fresh_research_rows: 0
-  prior_sealed_reuse_rows: 60
-  current_source_recheck_rows: 7
+  fresh_research_rows: 36
+  prior_sealed_reuse_rows: 24
+  current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 58
-  b_grade_rows: 2
+  a_grade_rows: 52
+  b_grade_rows: 8
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 7
+  current_org_title_confirmed_rows: 13
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 53
+  current_org_title_unresolved_rows: 47
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 42
-  identity_evidence_rows: 2520
-  current_org_title_confirmed_rows: 1155
+  batches_sealed: 44
+  identity_evidence_rows: 2640
+  current_org_title_confirmed_rows: 1189
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 1262
+  current_org_title_unresolved_rows: 1348
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 2520
+  logical_end: 2640
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0042
+  detailed_batch_history_through: W3-BATCH-0044
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0042 processed queue orders 2461-2520 exactly: 广东60, all P1 identity/current-role rows.
-  - All 60 rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each row retains its own person_id.
-  - Seven reused confirmed identities received current-source rechecks; 7 rows remain confirmed and 53 remain explicit unresolved; unsupported current-title claims remain zero.
-  - Current-role confirmations: 何小鹏、蔡光辉、温志芬、王理宗、李婧、陈满新、赖志光.
-  - A separate same-name 2026 李婧 hit was not used because it lacked the sealed identity bridge.
-  - Evidence grades are A=58, B=2, C=0; next deterministic queue order is 2521.
+  - Repository truth at input HEAD had W3-BATCH-0043 already SEALED/PASS despite stale control pointers; this gate reconciles control state without duplicating 0043.
+  - W3-BATCH-0044 processed queue orders 2581-2640 exactly: 海南60, all P1 identity/current-role rows.
+  - 24 rows reuse prior W3-BATCH-0043 SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each row retains its own person_id.
+  - 36 rows received fresh evidence work anchored to the official ACFIC Hainan ninth executive-committee roster.
+  - Fresh current-role confirmations with direct 2026 identity bridges: 林鹏、谭辉.
+  - Batch outcome is 13 confirmed and 47 explicit unresolved; unsupported current-title claims remain zero.
+  - Evidence grades are A=52, B=8, C=0; next deterministic queue order is 2641.
