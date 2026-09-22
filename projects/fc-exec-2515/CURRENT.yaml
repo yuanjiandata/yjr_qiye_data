@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0029
+current_gate: W3-BATCH-0030
 status: READY
-work_cursor: 1680
+work_cursor: 1740
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 912
+verified_records: 933
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9732
-last_evidence_at: 2026-09-22T13:15:54+08:00
-last_input_head: 2e5e817fd854cd6816fef9e03848d33ec37a2afd
+unresolved_records: 9711
+last_evidence_at: 2026-09-22T14:16:31+08:00
+last_input_head: 77576645e241d19a14303f01b62923d5b0f1b00e
 
 w3_queue:
   total: 10644
-  processed: 1680
-  actionable_remaining: 8964
-  next_queue_order: 1681
+  processed: 1740
+  actionable_remaining: 8904
+  next_queue_order: 1741
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 1579
-      remaining: 2752
+      processed: 1639
+      remaining: 2692
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,54 +44,53 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0028
+  code: W3-BATCH-0029
   status: SEALED
   validation: PASS
-  queue_start: 1621
-  queue_end: 1680
+  queue_start: 1681
+  queue_end: 1740
   touched_rows: 60
   province_rows:
-    福建: 25
-    江西: 4
-    山东: 2
-    河南: 29
+    河南: 60
   p1_identity_rows: 60
+  distinct_identity_names_researched: 52
+  same_batch_reuse_rows: 8
   evidence_backed_rows: 60
-  a_grade_rows: 42
-  b_grade_rows: 18
+  a_grade_rows: 49
+  b_grade_rows: 11
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 28
+  current_org_title_confirmed_rows: 21
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 32
+  current_org_title_unresolved_rows: 39
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 28
-  identity_evidence_rows: 1680
-  current_org_title_confirmed_rows: 910
+  batches_sealed: 29
+  identity_evidence_rows: 1740
+  current_org_title_confirmed_rows: 931
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 667
+  current_org_title_unresolved_rows: 706
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 1680
+  logical_end: 1740
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0028
+  detailed_batch_history_through: W3-BATCH-0029
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0028 processed queue orders 1621-1680 exactly: 福建25、江西4、山东2、河南29, all P1 identity/current-role rows.
-  - 28 rows received current organization/title confirmation; 32 remain explicit unresolved; unsupported current-title claims remain zero.
-  - 25 福建 rows reused sealed evidence only through exact repository ambiguity_group_id + province + normalized name + region qualifier match; every source person_id remains independent.
-  - 江西 two literal 名单: source anomalies and two 万红梅 rows remain explicit unresolved; 山东 two 王琳 source identities remain distinct and unresolved.
-  - 河南 current-role claims require source/federation identity context plus current public evidence; name-only hits were rejected.
-  - 秦英林 was refreshed to 牧原食品股份有限公司终身荣誉董事长 after the 2026-06 management transition; stale 董事长/总裁 was not carried forward.
-  - 薛景霞 was recorded from 2026-05 evidence as 河南康利达投资集团董事长; no narrower legal entity was inferred.
-  - Next deterministic queue order is 1681.
+  - W3-BATCH-0029 processed queue orders 1681-1740 exactly, all 60 河南 P1 identity/current-role rows.
+  - 21 rows received current organization/title confirmation; 39 remain explicit unresolved; unsupported current-title claims remain zero.
+  - 52 distinct source identities were researched; 8 later source rows reused an earlier result in the same batch only after exact province + normalized name + ambiguity_group_id match, with independent person_id preserved.
+  - Safe current closures include 石从亮、平本强、乔松涛、刘文新、李静敏、张付峰、薛亚辉、马文超、王爽、王幸福、王若飞、王新奇、李本磊、李圆方、连建伟、吴鹏斐.
+  - Gender-conflicting or weak identity hits including 郭伟（女）、任平（女）、王永利（女） were rejected rather than name-matched.
+  - 刘硕、卢庆中、王泽民、宋占锋 and other plausible homonym hits remain unresolved where current evidence could not safely bridge back to the source federation identity.
+  - 陈占亭 remains unresolved because 2026 provincial federation leadership changed and sufficiently current direct role evidence was not found.
+  - Next deterministic queue order is 1741.
