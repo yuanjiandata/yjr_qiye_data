@@ -1,7 +1,7 @@
 kind,ordinal,path,queue_start,queue_end,row_count,storage_role,projection,base_or_parent_gate
 ledger,0,projects/fc-exec-2515/evidence/W3_EVIDENCE_LEDGER.csv,1,1620,1620,sealed_base,native,W3-BATCH-0027
-ledger,1,projects/fc-exec-2515/evidence/W3_BATCH_0028_RESULTS.csv.gz,1621,1680,60,result_segment,ledger,W3-BATCH-0028
 overlay,0,projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv,1,1620,1620,sealed_base,native,W3-BATCH-0027
+ledger,1,projects/fc-exec-2515/evidence/W3_BATCH_0028_RESULTS.csv.gz,1621,1680,60,result_segment,ledger,W3-BATCH-0028
 overlay,1,projects/fc-exec-2515/evidence/W3_BATCH_0028_RESULTS.csv.gz,1621,1680,60,result_segment,overlay,W3-BATCH-0028
 ledger,2,projects/fc-exec-2515/evidence/W3_BATCH_0029_RESULTS.csv.gz,1681,1740,60,result_segment,ledger,W3-BATCH-0029
 overlay,2,projects/fc-exec-2515/evidence/W3_BATCH_0029_RESULTS.csv.gz,1681,1740,60,result_segment,overlay,W3-BATCH-0029
@@ -31,3 +31,5 @@ ledger,14,projects/fc-exec-2515/evidence/W3_BATCH_0041_RESULTS.csv.gz,2401,2460,
 overlay,14,projects/fc-exec-2515/evidence/W3_BATCH_0041_RESULTS.csv.gz,2401,2460,60,result_segment,overlay,W3-BATCH-0041
 ledger,15,projects/fc-exec-2515/evidence/W3_BATCH_0042_RESULTS.csv,2461,2520,60,result_segment,ledger,W3-BATCH-0042
 overlay,15,projects/fc-exec-2515/evidence/W3_BATCH_0042_RESULTS.csv,2461,2520,60,result_segment,overlay,W3-BATCH-0042
+ledger,16,projects/fc-exec-2515/evidence/W3_BATCH_0043_RESULTS.csv,2521,2580,60,result_segment,ledger,W3-BATCH-0043
+overlay,16,projects/fc-exec-2515/evidence/W3_BATCH_0043_RESULTS.csv,2521,2580,60,result_segment,overlay,W3-BATCH-0043
