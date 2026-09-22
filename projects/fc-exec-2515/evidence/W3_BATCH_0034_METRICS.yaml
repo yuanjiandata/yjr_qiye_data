@@ -1,0 +1,32 @@
+schema: fc-exec-2515-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0034
+status: SEALED
+validation: PASS
+touched_rows: 60
+province_rows:
+  湖北: 60
+p1_identity_rows: 60
+fresh_research_rows: 39
+prior_sealed_reuse_rows: 21
+same_batch_reuse_rows: 0
+evidence_backed_rows: 60
+a_grade_rows: 59
+b_grade_rows: 1
+c_grade_rows: 0
+current_org_title_confirmed_rows: 24
+no_current_role_confirmed_rows: 0
+current_org_title_unresolved_rows: 36
+unsupported_current_title_claims: 0
+queue_start: 1981
+queue_end: 2040
+next_queue_order: 2041
+logical_cumulative_rows: 2040
+verified_at: 2026-09-22T18:51:00+08:00
+input_head: 32cd11da8f43a57428ea1fa0ac9fa9e6b5854061
+source_membership_sha256: 86ada49718551b560cbb1385a5cd776db271b894d773bd7e643093e583648f3b
+source_supplement_sha256: 136998b03210bd5144be16df3e964c64cae94581170268bc00764a041f596316
+results_raw_sha256: 2b4ba95b7822a8e5b2837977e121ccec3e99e9bcea3d4e6538a3b96003de66db
+results_gzip_sha256: 1d1eb5f6db6c7e06b279de121ba3932153597fa7f7b61a6be0a6c6ae20326f99
+research_raw_sha256: 22dc2c55c2fc5c32b35a4a0c258b0e91938e9f874f8d2e2f0262dc2d906c3a6c
+research_gzip_sha256: 237aa1e95be81bd23f149f5c2359505ebd403e478d8069acf55420bd93e899f1
