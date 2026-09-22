@@ -3,18 +3,18 @@ project_id: FC-EXEC-2515-01
 project_name: 31省工商联执委全名单企业任职核验工程
 repository: yuanjiandata/yjr_qiye_data
 truth_scope: projects/fc-exec-2515
-as_of: 2026-09-20
+as_of: 2026-09-22
 lifecycle: ACTIVE
 auto_continue: true
 
 latest_gate:
-  code: W3-BATCH-0027
+  code: W3-BATCH-0028
   phase: W3-EVIDENCE-ENRICH
   status: SEALED
   validation: PASS
 
 next_gate:
-  code: W3-BATCH-0028
+  code: W3-BATCH-0029
   phase: W3-EVIDENCE-ENRICH
   status: READY
 
@@ -71,24 +71,30 @@ w2:
     AMBIGUOUS_GROUP_NOT_ABSORBED: 120
 
 w3:
-  batches_sealed: 27
-  processed_queue_rows: 1620
-  next_queue_order: 1621
-  actionable_queue_remaining: 9024
+  batches_sealed: 28
+  processed_queue_rows: 1680
+  next_queue_order: 1681
+  actionable_queue_remaining: 8964
   p0_name_repair:
     initial: 101
     processed: 101
     remaining: 0
   p1_identity:
     initial: 4331
-    processed: 1519
-    remaining: 2812
-  identity_evidence_rows: 1620
+    processed: 1579
+    remaining: 2752
+  identity_evidence_rows: 1680
   structural_deferred_rows: 101
-  current_org_title_confirmed_rows: 882
-  current_org_title_unresolved_rows: 635
+  current_org_title_confirmed_rows: 910
+  current_org_title_unresolved_rows: 667
   no_current_role_confirmed_rows: 2
   unsupported_current_title_claims: 0
+  cumulative_store:
+    mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
+    sealed_base_end: 1620
+    logical_end: 1680
+    segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
+    reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 artifacts:
   master_person_roster: projects/fc-exec-2515/evidence/W1_MASTER_PERSON_ROSTER.csv.gz
@@ -96,94 +102,21 @@ artifacts:
   w2_evidence_ledger: projects/fc-exec-2515/evidence/W2_EVIDENCE_LEDGER.csv.gz
   w2_unresolved_queue: projects/fc-exec-2515/evidence/W2_UNRESOLVED_QUEUE.csv.gz
   w2_metrics: projects/fc-exec-2515/evidence/W2_METRICS.yaml
-  w3_batch_0001_results: projects/fc-exec-2515/evidence/W3_BATCH_0001_RESULTS.csv
-  w3_evidence_ledger: projects/fc-exec-2515/evidence/W3_EVIDENCE_LEDGER.csv
-  w3_batch_0001_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0001_METRICS.yaml
-  w3_batch_0001_validation: projects/fc-exec-2515/evidence/W3_BATCH_0001_VALIDATION.md
-  w3_batch_0002_results: projects/fc-exec-2515/evidence/W3_BATCH_0002_RESULTS.csv
-  w3_batch_0002_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0002_METRICS.yaml
-  w3_batch_0002_validation: projects/fc-exec-2515/evidence/W3_BATCH_0002_VALIDATION.md
-  w3_batch_0003_results: projects/fc-exec-2515/evidence/W3_BATCH_0003_RESULTS.csv
-  w3_batch_0003_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0003_METRICS.yaml
-  w3_batch_0003_validation: projects/fc-exec-2515/evidence/W3_BATCH_0003_VALIDATION.md
-  w3_batch_0004_results: projects/fc-exec-2515/evidence/W3_BATCH_0004_RESULTS.csv
-  w3_batch_0004_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0004_METRICS.yaml
-  w3_batch_0004_validation: projects/fc-exec-2515/evidence/W3_BATCH_0004_VALIDATION.md
-  w3_batch_0005_results: projects/fc-exec-2515/evidence/W3_BATCH_0005_RESULTS.csv
-  w3_batch_0005_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0005_METRICS.yaml
-  w3_batch_0005_validation: projects/fc-exec-2515/evidence/W3_BATCH_0005_VALIDATION.md
-  w3_batch_0006_results: projects/fc-exec-2515/evidence/W3_BATCH_0006_RESULTS.csv
-  w3_batch_0006_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0006_METRICS.yaml
-  w3_batch_0006_validation: projects/fc-exec-2515/evidence/W3_BATCH_0006_VALIDATION.md
-  w3_batch_0007_results: projects/fc-exec-2515/evidence/W3_BATCH_0007_RESULTS.csv
-  w3_batch_0007_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0007_METRICS.yaml
-  w3_batch_0007_validation: projects/fc-exec-2515/evidence/W3_BATCH_0007_VALIDATION.md
-  w3_batch_0008_results: projects/fc-exec-2515/evidence/W3_BATCH_0008_RESULTS.csv
-  w3_batch_0008_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0008_METRICS.yaml
-  w3_batch_0008_validation: projects/fc-exec-2515/evidence/W3_BATCH_0008_VALIDATION.md
-  w3_batch_0009_results: projects/fc-exec-2515/evidence/W3_BATCH_0009_RESULTS.csv
-  w3_batch_0009_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0009_METRICS.yaml
-  w3_batch_0009_validation: projects/fc-exec-2515/evidence/W3_BATCH_0009_VALIDATION.md
-  w3_batch_0010_results: projects/fc-exec-2515/evidence/W3_BATCH_0010_RESULTS.csv
-  w3_batch_0010_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0010_METRICS.yaml
-  w3_batch_0010_validation: projects/fc-exec-2515/evidence/W3_BATCH_0010_VALIDATION.md
-  w3_batch_0011_results: projects/fc-exec-2515/evidence/W3_BATCH_0011_RESULTS.csv
-  w3_batch_0011_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0011_METRICS.yaml
-  w3_batch_0011_validation: projects/fc-exec-2515/evidence/W3_BATCH_0011_VALIDATION.md
-  w3_batch_0012_results: projects/fc-exec-2515/evidence/W3_BATCH_0012_RESULTS.csv
-  w3_batch_0012_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0012_METRICS.yaml
-  w3_batch_0012_validation: projects/fc-exec-2515/evidence/W3_BATCH_0012_VALIDATION.md
-  w3_batch_0013_results: projects/fc-exec-2515/evidence/W3_BATCH_0013_RESULTS.csv
-  w3_batch_0013_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0013_METRICS.yaml
-  w3_batch_0013_validation: projects/fc-exec-2515/evidence/W3_BATCH_0013_VALIDATION.md
-  w3_batch_0014_results: projects/fc-exec-2515/evidence/W3_BATCH_0014_RESULTS.csv
-  w3_batch_0014_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0014_METRICS.yaml
-  w3_batch_0014_validation: projects/fc-exec-2515/evidence/W3_BATCH_0014_VALIDATION.md
-  w3_batch_0015_results: projects/fc-exec-2515/evidence/W3_BATCH_0015_RESULTS.csv
-  w3_batch_0015_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0015_METRICS.yaml
-  w3_batch_0015_validation: projects/fc-exec-2515/evidence/W3_BATCH_0015_VALIDATION.md
-  w3_batch_0016_results: projects/fc-exec-2515/evidence/W3_BATCH_0016_RESULTS.csv
-  w3_batch_0016_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0016_METRICS.yaml
-  w3_batch_0016_validation: projects/fc-exec-2515/evidence/W3_BATCH_0016_VALIDATION.md
-  w3_batch_0017_results: projects/fc-exec-2515/evidence/W3_BATCH_0017_RESULTS.csv
-  w3_batch_0017_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0017_METRICS.yaml
-  w3_batch_0017_validation: projects/fc-exec-2515/evidence/W3_BATCH_0017_VALIDATION.md
-  w3_batch_0018_results: projects/fc-exec-2515/evidence/W3_BATCH_0018_RESULTS.csv
-  w3_batch_0018_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0018_METRICS.yaml
-  w3_batch_0018_validation: projects/fc-exec-2515/evidence/W3_BATCH_0018_VALIDATION.md
-  w3_batch_0019_results: projects/fc-exec-2515/evidence/W3_BATCH_0019_RESULTS.csv
-  w3_batch_0019_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0019_METRICS.yaml
-  w3_batch_0019_validation: projects/fc-exec-2515/evidence/W3_BATCH_0019_VALIDATION.md
-  w3_batch_0020_results: projects/fc-exec-2515/evidence/W3_BATCH_0020_RESULTS.csv
-  w3_batch_0020_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0020_METRICS.yaml
-  w3_batch_0020_validation: projects/fc-exec-2515/evidence/W3_BATCH_0020_VALIDATION.md
-  w3_batch_0021_results: projects/fc-exec-2515/evidence/W3_BATCH_0021_RESULTS.csv
-  w3_batch_0021_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0021_METRICS.yaml
-  w3_batch_0021_validation: projects/fc-exec-2515/evidence/W3_BATCH_0021_VALIDATION.md
-  w3_batch_0022_results: projects/fc-exec-2515/evidence/W3_BATCH_0022_RESULTS.csv
-  w3_batch_0022_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0022_METRICS.yaml
-  w3_batch_0022_validation: projects/fc-exec-2515/evidence/W3_BATCH_0022_VALIDATION.md
-  w3_batch_0023_research: projects/fc-exec-2515/evidence/W3_BATCH_0023_RESEARCH.tsv
-  w3_batch_0023_results: projects/fc-exec-2515/evidence/W3_BATCH_0023_RESULTS.csv
-  w3_batch_0023_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0023_METRICS.yaml
-  w3_batch_0023_validation: projects/fc-exec-2515/evidence/W3_BATCH_0023_VALIDATION.md
-  w3_batch_0024_research: projects/fc-exec-2515/evidence/W3_BATCH_0024_RESEARCH.tsv
-  w3_batch_0024_results: projects/fc-exec-2515/evidence/W3_BATCH_0024_RESULTS.csv
-  w3_batch_0024_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0024_METRICS.yaml
-  w3_batch_0024_validation: projects/fc-exec-2515/evidence/W3_BATCH_0024_VALIDATION.md
-  w3_batch_0025_research: projects/fc-exec-2515/evidence/W3_BATCH_0025_RESEARCH.tsv
-  w3_batch_0025_results: projects/fc-exec-2515/evidence/W3_BATCH_0025_RESULTS.csv
-  w3_batch_0025_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0025_METRICS.yaml
-  w3_batch_0025_validation: projects/fc-exec-2515/evidence/W3_BATCH_0025_VALIDATION.md
-  w3_batch_0026_research: projects/fc-exec-2515/evidence/W3_BATCH_0026_RESEARCH.tsv
-  w3_batch_0026_results: projects/fc-exec-2515/evidence/W3_BATCH_0026_RESULTS.csv
-  w3_batch_0026_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0026_METRICS.yaml
-  w3_batch_0026_validation: projects/fc-exec-2515/evidence/W3_BATCH_0026_VALIDATION.md
-  w3_batch_0027_research: projects/fc-exec-2515/evidence/W3_BATCH_0027_RESEARCH.tsv
-  w3_batch_0027_results: projects/fc-exec-2515/evidence/W3_BATCH_0027_RESULTS.csv
-  w3_batch_0027_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0027_METRICS.yaml
-  w3_batch_0027_validation: projects/fc-exec-2515/evidence/W3_BATCH_0027_VALIDATION.md
-  w3_verification_overlay: projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv
+  w3_evidence_ledger_base: projects/fc-exec-2515/evidence/W3_EVIDENCE_LEDGER.csv
+  w3_verification_overlay_base: projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv
+  w3_segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
+  w3_batch_0028_research: projects/fc-exec-2515/evidence/W3_BATCH_0028_RESEARCH.tsv.gz
+  w3_batch_0028_results: projects/fc-exec-2515/evidence/W3_BATCH_0028_RESULTS.csv.gz
+  w3_batch_0028_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0028_METRICS.yaml
+  w3_batch_0028_validation: projects/fc-exec-2515/evidence/W3_BATCH_0028_VALIDATION.md
+  w3_batch_0028_script: projects/fc-exec-2515/scripts/w3_batch_0028.py
+  w3_segmented_store_reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
+  historical_gate_artifacts: projects/fc-exec-2515/evidence/W3_BATCH_0001_* through W3_BATCH_0027_*
+
+control_state_compaction:
+  applied_at_gate: W3-BATCH-0028
+  rationale: API-native execution without Remote Desktop; per-gate history remains immutable in evidence artifacts and git history.
+  history_preserved: true
 
 rgac:
   at_most_one_complete_gate_per_run: true
@@ -193,3 +126,4 @@ rgac:
   no_make: true
   no_feishu: true
   no_external_control_sheet: true
+  remote_desktop_required: false

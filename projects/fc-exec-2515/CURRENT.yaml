@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0028
+current_gate: W3-BATCH-0029
 status: READY
-work_cursor: 1620
+work_cursor: 1680
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 884
+verified_records: 912
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9760
-last_evidence_at: 2026-09-21T01:53:54+08:00
-last_input_head: 3d6bb8f7bd4e2504f2a4a941e39b9651c3b8bf88
+unresolved_records: 9732
+last_evidence_at: 2026-09-22T13:15:54+08:00
+last_input_head: 2e5e817fd854cd6816fef9e03848d33ec37a2afd
 
 w3_queue:
   total: 10644
-  processed: 1620
-  actionable_remaining: 9024
-  next_queue_order: 1621
+  processed: 1680
+  actionable_remaining: 8964
+  next_queue_order: 1681
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,547 +32,66 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 1519
-      remaining: 2812
-    P2_ORG_TITLE_LOOKUP: 6045
-    P3_CURRENT_VERIFY: 167
+      processed: 1579
+      remaining: 2752
+    P2_ORG_TITLE_LOOKUP:
+      initial: 6045
+      processed: 0
+      remaining: 6045
+    P3_CURRENT_VERIFY:
+      initial: 167
+      processed: 0
+      remaining: 167
 
-w3_batch_0001:
+latest_sealed_batch:
+  code: W3-BATCH-0028
   status: SEALED
   validation: PASS
+  queue_start: 1621
+  queue_end: 1680
   touched_rows: 60
-  evidence_backed_rows: 60
-  identity_candidate_mentions: 97
-  unique_identity_candidates: 82
-  structural_deferred_rows: 60
-  current_org_title_confirmed_rows: 0
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0002:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p0_name_repair_rows: 41
-  p1_identity_rows: 19
-  evidence_backed_rows: 60
-  structural_deferred_rows: 41
-  current_org_title_confirmed_rows: 13
-  current_org_title_unresolved_rows: 6
-  unsupported_current_title_claims: 0
-
-w3_batch_0003:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
+  province_rows:
+    福建: 25
+    江西: 4
+    山东: 2
+    河南: 29
   p1_identity_rows: 60
   evidence_backed_rows: 60
-  a_grade_rows: 55
-  b_grade_rows: 5
-  current_org_title_confirmed_rows: 18
-  current_org_title_unresolved_rows: 42
-  unsupported_current_title_claims: 0
-
-w3_batch_0004:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 52
-  b_grade_rows: 8
-  current_org_title_confirmed_rows: 14
-  current_org_title_unresolved_rows: 46
-  unsupported_current_title_claims: 0
-
-w3_batch_0005:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 52
-  b_grade_rows: 8
-  current_org_title_confirmed_rows: 22
-  current_org_title_unresolved_rows: 38
-  unsupported_current_title_claims: 0
-
-w3_batch_0006:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 48
-  b_grade_rows: 12
-  current_org_title_confirmed_rows: 26
-  current_org_title_unresolved_rows: 34
-  unsupported_current_title_claims: 0
-
-w3_batch_0007:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 55
-  b_grade_rows: 5
-  current_org_title_confirmed_rows: 54
-  current_org_title_unresolved_rows: 6
-  unsupported_current_title_claims: 0
-
-w3_batch_0008:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 60
-  b_grade_rows: 0
-  current_org_title_confirmed_rows: 57
-  current_org_title_unresolved_rows: 3
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0009:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 59
-  b_grade_rows: 1
-  current_org_title_confirmed_rows: 55
-  no_current_role_confirmed_rows: 1
-  current_org_title_unresolved_rows: 4
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0010:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 60
-  b_grade_rows: 0
-  current_org_title_confirmed_rows: 57
-  current_org_title_unresolved_rows: 3
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0011:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 60
-  b_grade_rows: 0
-  current_org_title_confirmed_rows: 51
-  no_current_role_confirmed_rows: 1
-  current_org_title_unresolved_rows: 8
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0012:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 59
-  b_grade_rows: 1
-  current_org_title_confirmed_rows: 56
-  current_org_title_unresolved_rows: 4
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0013:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 52
-  b_grade_rows: 8
-  current_org_title_confirmed_rows: 50
-  current_org_title_unresolved_rows: 10
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0014:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 50
-  b_grade_rows: 10
+  a_grade_rows: 42
+  b_grade_rows: 18
+  c_grade_rows: 0
   current_org_title_confirmed_rows: 28
+  no_current_role_confirmed_rows: 0
   current_org_title_unresolved_rows: 32
   unsupported_current_title_claims: 0
 
-
-w3_batch_0015:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 51
-  b_grade_rows: 9
-  current_org_title_confirmed_rows: 37
-  current_org_title_unresolved_rows: 23
+w3_cumulative:
+  batches_sealed: 28
+  identity_evidence_rows: 1680
+  current_org_title_confirmed_rows: 910
+  no_current_role_confirmed_rows: 2
+  current_org_title_unresolved_rows: 667
+  structural_deferred_rows: 101
   unsupported_current_title_claims: 0
+  storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
+  sealed_base_end: 1620
+  logical_end: 1680
+  segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
+  reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
-
-w3_batch_0016:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 48
-  b_grade_rows: 12
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 37
-  current_org_title_unresolved_rows: 23
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0017:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 53
-  b_grade_rows: 7
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 34
-  current_org_title_unresolved_rows: 26
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0018:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  zhejiang_rows: 22
-  anhui_rows: 38
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 55
-  b_grade_rows: 5
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 48
-  current_org_title_unresolved_rows: 12
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0019:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  anhui_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 59
-  b_grade_rows: 1
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 37
-  current_org_title_unresolved_rows: 23
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0020:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  anhui_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 58
-  b_grade_rows: 2
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 33
-  current_org_title_unresolved_rows: 27
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0021:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  anhui_rows: 34
-  fujian_rows: 26
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 51
-  b_grade_rows: 9
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 40
-  current_org_title_unresolved_rows: 20
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0022:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  fujian_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 46
-  b_grade_rows: 14
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 20
-  current_org_title_unresolved_rows: 40
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0023:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  fujian_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 46
-  b_grade_rows: 14
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 23
-  current_org_title_unresolved_rows: 37
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0024:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  fujian_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 52
-  b_grade_rows: 8
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 15
-  current_org_title_unresolved_rows: 45
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0025:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  fujian_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 49
-  b_grade_rows: 11
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 17
-  current_org_title_unresolved_rows: 43
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0026:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  fujian_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 47
-  b_grade_rows: 13
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 20
-  no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 40
-  unsupported_current_title_claims: 0
-
-
-w3_batch_0027:
-  status: SEALED
-  validation: PASS
-  touched_rows: 60
-  fujian_rows: 60
-  p1_identity_rows: 60
-  evidence_backed_rows: 60
-  a_grade_rows: 50
-  b_grade_rows: 10
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 20
-  no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 40
-  unsupported_current_title_claims: 0
+history:
+  detailed_batch_history_through: W3-BATCH-0028
+  per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
+  per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
+  git_history_authoritative: true
+  compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0001 processed queue orders 1-60, all P0 source-name structural anomalies.
-  - Official ACFIC provincial rosters supplied A-grade identity evidence for all 60 touched rows.
-  - Current organization/title assignment was intentionally deferred for all 60 because their canonical person_id is attached to malformed fragment/compound source rows; assigning employment data before canonical split/merge risks cross-person contamination.
-  - These rows are processed for W3 active-queue cursor purposes and remain explicit structural conflicts for later canonical resolution.
-  - W3-BATCH-0002 processed queue orders 61-120 exactly: final 41 P0 name-repair anomalies plus first 19 P1 identity rows.
-  - All 41 remaining P0 rows received A-grade official federation identity evidence; current employment remained deferred because canonical person_ids are structurally malformed.
-  - 13 P1 rows received current organization/title confirmation; 6 were explicitly left unresolved where evidence was stale, ambiguous, or insufficiently specific.
-  - Tianjin same-name records retained source qualifiers and were not merged by name; Chongqing 王敏 ambiguity was preserved.
-  - Next deterministic queue order is 121.
-  - W3-BATCH-0003 processed queue orders 121-180 exactly, all P1 identity/current-role rows.
-  - 18 rows received current organization/title confirmation; 42 remain explicitly unresolved where current evidence was insufficiently specific.
-  - 河北 identities were anchored to the official ACFIC XIII executive roster; enterprise roles were only written with corroborating current evidence and federation/province context.
-  - 重庆 王敏 remains ambiguous between two official-roster identities; no name-only employer assignment was made.
-  - Next deterministic queue order is 181.
-  - W3-BATCH-0004 processed queue orders 181-240 exactly, all 河北 P1 identity/current-role rows.
-  - 14 rows received current organization/title confirmation; 46 remain explicitly unresolved where evidence was insufficiently current or specific.
-  - The 2026 邢台工商联换届 was honored: 王建江 is retained as 邢台市政协副主席 rather than incorrectly carrying forward the former federation-chair role.
-  - No current organization/title was assigned from a name-only hit; common-name records remain unresolved unless federation/province/person context closed identity.
-  - Next deterministic queue order is 241.
-  - W3-BATCH-0005 processed queue orders 241-300 exactly, all 河北 P1 identity/current-role rows.
-  - 22 rows received current organization/title confirmation; 38 remain explicitly unresolved where current evidence was insufficiently specific.
-  - Thirteen confirmations reuse prior sealed current-role evidence only after same-roster cross-list identity closure; no person_id merge was performed.
-  - Fresh current-role evidence was added for 王力崇、王大玮、王英其、王季文、尤文武、卢庆国、田纯刚、刘宏志、李鹏亮; 孙清良 remains unresolved because the freshest strong title evidence found was not recent enough for a current-title claim.
-  - No current organization/title was assigned from a name-only hit; high-frequency names remain unresolved without cross-source context.
-  - Next deterministic queue order is 301.
-  - W3-BATCH-0006 processed queue orders 301-360 exactly: 57 河北 + 3 吉林 P1 identity/current-role rows.
-  - 26 rows received current organization/title confirmation; 34 remain explicitly unresolved where current evidence was insufficiently specific.
-  - Eighteen confirmations reuse prior sealed current-role evidence only after same-roster cross-list identity closure; no person_id merge was performed.
-  - Fresh current-role evidence was added for 张志祥、周超男、霍占利、魏立华、魏海金、李维斗、唐庆会、吕兵.
-  - 吉林 leadership claims were refreshed from 2026 evidence; 河北 common-name rows remain unresolved unless identity-to-role linkage is safe.
-  - Next deterministic queue order is 361.
-  - W3-BATCH-0007 processed queue orders 361-420 exactly: 7 吉林 + 53 江苏 P1 identity/current-role rows.
-  - 54 rows received current organization/title confirmation; 6 remain explicitly unresolved where latest current evidence contradicts or no longer supports the stale source role.
-  - The live Jiangsu federation official roster is labeled July 2026 and supersedes the older source list for current federation/chamber-role claims.
-  - 郭东升、熊杰、顾万峰、李兰翔 source roles were not carried forward when unsupported by the latest Jiangsu official roster; 顾万峰 in particular was not retained as 常务副主席 because the current roster names 刘军.
-  - 吉林 leadership claims were refreshed from 2026 evidence; cross-listed source rows reuse evidence without person_id merge.
-  - Next deterministic queue order is 421.
-  - W3-BATCH-0008 processed queue orders 421-480 exactly, all 江苏 P1 identity/current-role rows.
-  - 57 rows received current organization/title confirmation; 3 remain explicitly unresolved (王红卫、孙振东、李建) because current evidence could not safely close identity/current role.
-  - The July-2026 Jiangsu official roster was authoritative for current federation/chamber roles; stale source labels were not mechanically carried forward.
-  - 王益冰、李兰翔、李厚林 were updated through role-history bridges plus current official sources; the 江苏高院王红卫 homonym was explicitly rejected rather than name-matched.
-  - Next deterministic queue order is 481.
-  - W3-BATCH-0009 processed queue orders 481-540 exactly, all 江苏 P1 identity/current-role rows.
-  - The live Jiangsu federation roster advanced again to September 2026 (120 members), and this newer roster superseded July labels for current federation/chamber roles.
-  - 55 rows received current organization/title confirmation: 52 directly from the latest roster plus 陈湘珍、施勇、顾万峰 via historical identity bridges and current official-role evidence.
-  - 钟雨 is evidence-resolved as NO_CURRENT_ROLE_CONFIRMED after listed-company announcement 2026-003 documented retirement and resignation from all company roles; no replacement employer/title was invented.
-  - 张惠扬、陈军、周洁、查艳 remain explicit current-role unresolved cases; name-only search hits were rejected.
-  - Next deterministic queue order is 541.
-  - W3-BATCH-0010 processed queue orders 541-600 exactly, all 江苏 P1 identity/current-role rows.
-  - 53 rows were refreshed directly from the live Sep-2026 Jiangsu standing-committee roster; stale source roles were replaced by the current federation/chamber role.
-  - Four additional identities were safely bridged to current roles: 奚爱国、黄一新、黄东峰、王益冰; public current claims are backed by federation/party/enterprise/government official evidence and are not name-only assignments.
-  - 郭东升、熊杰、王红卫 remain explicit current-role unresolved cases because newer composition evidence removed/superseded older roles or a known homonym prevented safe linkage.
-  - Next deterministic queue order is 601.
-  - W3-BATCH-0011 processed queue orders 601-660 exactly, all 江苏 P1 identity/current-role rows.
-  - 47 rows were refreshed from the live Sep-2026 Jiangsu standing-committee roster; current higher federation/chamber roles supersede stale 执委 labels.
-  - Four non-roster current roles were safely bridged for 李兰翔、李厚林、陈湘珍、施勇; 钟雨 is resolved as no-current-role from the original CNINFO filing 2026-003.
-  - 孙振东、李建、张飞×2、张惠扬、陈军、周洁、查艳 remain explicit unresolved current-role cases; the two 张飞 source rows are exact-value duplicate candidates and were not arbitrarily mapped to the current 淮/盐 homonyms.
-  - Next deterministic queue order is 661.
-  - W3-BATCH-0012 processed queue orders 661-720 exactly: 40 江苏 + 20 浙江 P1 identity/current-role rows.
-  - 56 rows received current organization/title confirmation; 4 remain explicit unresolved current-role cases (郭东升、黄东峰、熊杰、吕晓峰).
-  - Jiangsu used the live Sep-2026 standing/executive composition as current-state authority; the Jul-2026 黄东峰 executive status was not carried forward after the updated Sep list removed it.
-  - Zhejiang used the 2022 ACFIC election roster only as a historical identity anchor and refreshed current roles from 2026 evidence; the live provincial leadership page supersedes stale source titles and confirms the current vice-chair cohort from 李书福 through 宗馥莉.
-  - No current organization/title was assigned from a name-only hit; evidence grades are A=59, B=1, C=0.
-  - Next deterministic queue order is 721.
-  - W3-BATCH-0013 processed queue orders 721-780 exactly, all 60 浙江 P1 identity/current-role rows.
-  - 50 rows received current organization/title confirmation; 10 remain explicit unresolved because identity-to-current-role linkage was not strong enough for a safe write.
-  - The live Zhejiang federation/chamber leadership page supplied authoritative current federation/chamber roles; cross-listed rows preserve distinct person_id values.
-  - Fresh high-confidence closures include 丁泽成 and 方朝阳 from 2026-filed listed-company reports that explicitly state both 浙江省工商联常委 identity and current company roles; additional safe bridges closed 丁列明、王克飞、王轶磊、朱柏荣、庄耀中.
-  - Plausible current corporate roles for 王敏良、方能斌、朱立科 were deliberately not assigned because public evidence did not safely bridge them to the source federation row. 王建云 homonym/gender ambiguity was explicitly rejected.
-  - No current organization/title was assigned from a name-only hit; evidence grades are A=52, B=8, C=0.
-  - Next deterministic queue order is 781.
-  - W3-BATCH-0014 processed queue orders 781-840 exactly, all 60 浙江 P1 identity/current-role rows.
-  - 28 rows received current organization/title confirmation; 32 remain explicit unresolved where current evidence was stale, ambiguous, or insufficiently linked to the source identity.
-  - The live Zhejiang federation/chamber leadership page directly closed 16 current roles; a further 12 were closed only with contextual current evidence and historical federation identity anchors.
-  - Strong 2026 closures include 阮伟祥、杨和荣、邱奕博、余谷峰、沈志刚、张彦、张江平、张鹏飞、陈志军、陈春明、陈越孟; no name-only assignment was permitted.
-  - Same-name or weakly bridged hits for the remaining rows were preserved as unresolved rather than guessed.
-  - Evidence grades are A=50, B=10, C=0; unsupported current-title claims=0.
-  - Next deterministic queue order is 841.
-  - W3-BATCH-0015 processed queue orders 841-900 exactly, all 60 浙江 P1 identity/current-role rows.
-  - 37 rows received current organization/title confirmation; 23 remain explicit unresolved where current evidence was stale, ambiguous, region-mismatched, or insufficiently linked to the source identity.
-  - The live Zhejiang federation/chamber leadership page directly closed 16 current roles; a further 21 were closed only with contextual current evidence and historical federation identity anchors.
-  - Strong current closures include 林福江、项建忠、项炯炯、胡柏剡、胡煜鐄、俞有强、徐国龙、徐燕峰、章卡鹏、蔡晓春、丁列明、丁泽成; no name-only assignment was permitted.
-  - Same-name/weakly bridged hits including 袁海波、潘云峰、王炜、王文胜 were preserved as unresolved rather than guessed.
-  - Evidence grades are A=51, B=9, C=0; unsupported current-title claims=0.
-  - Next deterministic queue order is 901.
-  - W3-BATCH-0016 processed queue orders 901-960 exactly, all 60 浙江 P1 identity/current-role rows.
-  - 37 rows received current organization/title confirmation; 23 remain explicit unresolved where current evidence lacked a sufficiently specific identity bridge.
-  - Cross-listed identities were reused only through exact name + province + the same ambiguity_group_id; source person_id values were preserved and never merged by name.
-  - The live Zhejiang leadership page was refreshed. 元成茂 is now recorded as 浙江省工商联党组成员、一级巡视员 for this touched row, superseding the older vice-chair label.
-  - 王建云 was newly confirmed from 2026 Zhejiang federation official evidence; 方能斌 was newly confirmed from an original listed-company filing that also records current local federation roles.
-  - Same-name hits for 王敏良、朱立科、阮福德 and other unresolved records were rejected where federation-to-current-role identity linkage remained insufficient.
-  - Evidence grades are A=48, B=12, C=0; unsupported current-title claims=0.
-  - Next deterministic queue order is 961.
-  - W3-BATCH-0017 processed queue orders 961-1020 exactly, all 60 浙江 P1 identity/current-role rows.
-  - 34 rows received current organization/title confirmation; 26 remain explicit unresolved where current evidence lacked a sufficiently specific identity bridge.
-  - Cross-listed identities were reused only through exact name + province + the same ambiguity_group_id; source person_id values were preserved and never merged by name.
-  - The live Zhejiang federation/chamber leadership page was refreshed for touched cross-listed current roles.
-  - 邵云东 was newly confirmed from 2026 ACFIC federation-context evidence; 徐立勋 from current 2026 role evidence plus Huamao's federation-congress identity bridge; 夏赛丽 from 2026 Zhejiang federation official evidence.
-  - All other previously unresolved touched identities were re-searched and remained unresolved where current identity-to-role linkage was stale, same-name-only, or insufficiently specific.
-  - Evidence grades are A=53, B=7, C=0; unsupported current-title claims=0.
-  - Next deterministic queue order is 1021.
-  - W3-BATCH-0018 processed queue orders 1021-1080 exactly: 22 Zhejiang and 38 Anhui P1 identity/current-role rows.
-  - 48 rows received current organization/title confirmation; 12 remain explicit unresolved with no unsupported current-title claims.
-  - Zhejiang cross-listed identities were reused only through exact name + province + the same ambiguity_group_id; person_id values remain source-row distinct.
-  - Anhui current roles were grounded primarily in the live official 安徽省工商联（总商会） leadership surface, which directly links federation identities to current enterprise roles.
-  - 胡春华、高维民、尹正龙、周勇、林巨广 were not on the current Anhui official leadership surface and remain unresolved; absence was not converted into a no-current-role claim.
-  - 高君 is conflict-held rather than promoted because official federation listing and later 2026 status reporting diverge.
-  - 邰紫鹏 was refreshed from older 总经理 wording to current enterprise-official 党委书记、董事长 evidence.
-  - Evidence grades are A=55, B=5, C=0; next deterministic queue order is 1081.
-  - W3-BATCH-0019 processed queue orders 1081-1140 exactly, all 60 安徽 P1 identity/current-role rows.
-  - 37 rows received current organization/title confirmation; 23 remain explicit unresolved with no unsupported current-title claims.
-  - The live 安徽省工商联（总商会） leadership surface directly closed current enterprise/organization roles for 26 touched source rows, including the duplicate 周伊凡 source rows without merging person_id values.
-  - Fresh contextual closures include 徐善水、朱有为、孙四平、李颖、杨乐、吴涛、杜本硕、邵迪、胡守斌、姚亚妹; each required a federation-history/context bridge and current public evidence.
-  - 胡守斌 was refreshed from the older 工商联主席 role to current 淮北市政协副主席/致公党市委会主委; 邰紫鹏 remains current 泰尔重工党委书记、董事长.
-  - Same-name-only and weakly bridged hits were rejected; the 2026 procurator-system 杜本硕 hit was not linked to the source identity.
-  - Evidence grades are A=59, B=1, C=0; next deterministic queue order is 1141.
-  - W3-BATCH-0020 processed queue orders 1141-1200 exactly, all 60 安徽 P1 identity/current-role rows.
-  - 33 rows received current organization/title confirmation; 27 remain explicit unresolved with no unsupported current-title claims.
-  - 50 cross-list rows reused sealed evidence only when repository ambiguity_group_id + normalized name + province matched; each source row retains its independent person_id.
-  - Fresh research covered all 10 first-occurrence identities; only 曹金栋、韩东成、程景梁 received safe current-role closure.
-  - 曹金栋 is current 安庆市委统战部副部长 via 2026 official evidence and a 2025 市工商联党组书记 bridge; 韩东成 is current 东超科技董事长; 程景梁 is current 黄山市工商联主席.
-  - 殷金宝、曹建、梁万标、梁红群、彭友、韩家林、戴正刚 remain unresolved where recency or identity linkage was insufficient.
-  - Evidence grades are A=58, B=2, C=0; next deterministic queue order is 1201.
-  - W3-BATCH-0021 processed queue orders 1201-1260 exactly: 34 安徽 + 26 福建 P1 identity/current-role rows.
-  - 40 rows received current organization/title confirmation; 20 remain explicit unresolved; unsupported current-title claims remain zero.
-  - 34 安徽 cross-list rows reused sealed evidence only when repository ambiguity_group_id + normalized name + province matched; every source row retains an independent person_id.
-  - All 26 福建 first-occurrence identities received fresh public-web research. Twenty were safely closed with current federation/government/enterprise/authoritative evidence; six remain unresolved rather than inferred by name.
-  - 黄世霖 was corrected from stale 宁德时代副董事长 to current 福建时代星云科技有限公司董事长; 蔡劲军 and 邹剑寒 were likewise refreshed to current corporate roles.
-  - Evidence grades are A=51, B=9, C=0; next deterministic queue order is 1261.
-  - W3-BATCH-0022 processed queue orders 1261-1320 exactly, all 60 福建 P1 identity/current-role rows.
-  - 20 rows received current organization/title confirmation; 40 remain explicit unresolved; unsupported current-title claims remain zero.
-  - 王光远、叶善青 reused sealed evidence only through exact repository ambiguity_group_id + normalized name + province match; each source record retains its independent person_id.
-  - The other 58 rows received fresh current-web review: 18 were safely closed and 40 remain unresolved rather than inferred from name.
-  - Current-role refreshes include 许阳阳→达利食品集团总裁、谢伟东→海斯福董事长、章高路→安井食品联席董事长/执行董事、赖世贤→安踏集团执行董事/联席CEO并代理安踏品牌CEO.
-  - 王文礼 homonyms were explicitly rejected; 方华玉、吴有林、张桂潮 remain unresolved where legal-entity continuity or current replacement role is not safely proven.
-  - Evidence grades are A=46, B=14, C=0; next deterministic queue order is 1321.
-  - W3-BATCH-0023 processed queue orders 1321-1380 exactly, all 60 福建 P1 identity/current-role rows.
-  - 23 rows received current organization/title confirmation; 37 remain explicit unresolved; unsupported current-title claims remain zero.
-  - Nine rows reused prior sealed evidence only through exact repository ambiguity_group_id + normalized name + province match; each source record retains its independent person_id.
-  - The other 51 rows received fresh current-web review; 14 were safely closed and 37 remain unresolved rather than inferred from name.
-  - Strong primary closures include 李有财 via 2026-04 Shenzhen Stock Exchange annual-report filing and 吴刘驰 via 2026-01 福建省政府 current-role reporting.
-  - Current federation-context closures also include 许文显、孙福、杜锦祥、杨静、吴家莹、沈木辉、陈文、陈必松、陈成辉、陈建华、陈祖元、陈银平.
-  - Evidence grades are A=46, B=14, C=0; next deterministic queue order is 1381.
-  - W3-BATCH-0024 processed queue orders 1381-1440 exactly, all 60 福建 P1 identity/current-role rows.
-  - 15 rows received current organization/title confirmation; 45 remain explicit unresolved; unsupported current-title claims remain zero.
-  - Thirteen rows reused prior sealed evidence only through exact repository ambiguity_group_id + normalized name + province match; each source record retains its independent person_id.
-  - The other 47 rows received fresh current-web review; 7 were safely closed and 40 remain unresolved rather than inferred from name.
-  - Strong current closures include 郭建涛、胡鹄、翁冠枢、郭恒禄; each has an enterprise/listed-company/government source that also supplies a federation-context identity bridge.
-  - Current federation-context closures also include 林从金、蒋海鸿; 林谋悦 uses an explicit historical 福建省工商联常委+enterprise bridge followed by 2026 current reporting.
-  - Evidence grades are A=52, B=8, C=0; next deterministic queue order is 1441.
-  - W3-BATCH-0025 processed queue orders 1441-1500 exactly, all 60 福建 P1 identity/current-role rows.
-  - 17 rows received current organization/title confirmation; 43 remain explicit unresolved; unsupported current-title claims remain zero.
-  - Fifty-two rows reused prior sealed evidence only through exact repository ambiguity_group_id + normalized name + province match; each source record retains its independent person_id.
-  - The other 8 rows received fresh current-web review; 3 were safely closed and 5 remain unresolved rather than inferred from name.
-  - Fresh safe closures are 曾俩相、谢金鉴、廖志南; each has current/recent public evidence plus explicit 福建/federation or industry context sufficient to bridge the source identity.
-  - A current 2026 bank role hit for 蔡海防 was deliberately rejected because no source-identity bridge was found; 雷敏、雷祖云、蔡裕泰、缪品章 also remain unresolved under the no-name-only rule.
-  - Evidence grades are A=49, B=11, C=0; next deterministic queue order is 1501.
-  - W3-BATCH-0026 processed queue orders 1501-1560 exactly, all 60 福建 P1 identity/current-role rows.
-  - 20 rows received current organization/title confirmation; 40 remain explicit unresolved; 0 have no-current-role confirmation; unsupported current-title claims remain zero.
-  - 58 rows reused prior sealed evidence only through exact repository ambiguity_group_id + province + normalized name + region qualifier match; independent person_id values are retained.
-  - The two fresh same-name records 林飞(福州) and 林飞(龙岩) were researched separately. 林飞(龙岩) safely closes to 龙岩市交通运输有限公司董事长 via 2026 local entrepreneur context plus 2025 福建省人民政府 corroboration; 林飞(福州) remains unresolved because multiple homonyms exist and no source identity bridge was found.
-  - Evidence grades are A=47, B=13, C=0; next deterministic queue order is 1561.
-  - W3-BATCH-0027 processed queue orders 1561-1620 exactly, all 60 福建 P1 identity/current-role rows.
-  - 20 rows received current organization/title confirmation; 40 remain explicit unresolved; 0 have no-current-role confirmation; unsupported current-title claims remain zero.
-  - 58 rows reused prior sealed evidence only through exact repository ambiguity_group_id + province + normalized name + region qualifier match; independent person_id values are retained.
-  - The two fresh same-name records 林锦云(干部) and 林锦云(企业家) were researched separately. 林锦云(企业家) safely closes to 福建闽宁情商贸有限公司董事长 via 2026 福州市政府 current evidence plus 福建省政府 corroboration; 林锦云(干部) remains unresolved because the official roster marks it as a distinct source identity and no safe current cadre bridge was found.
-  - Evidence grades are A=50, B=10, C=0; next deterministic queue order is 1621.
+  - W3-BATCH-0028 processed queue orders 1621-1680 exactly: 福建25、江西4、山东2、河南29, all P1 identity/current-role rows.
+  - 28 rows received current organization/title confirmation; 32 remain explicit unresolved; unsupported current-title claims remain zero.
+  - 25 福建 rows reused sealed evidence only through exact repository ambiguity_group_id + province + normalized name + region qualifier match; every source person_id remains independent.
+  - 江西 two literal 名单: source anomalies and two 万红梅 rows remain explicit unresolved; 山东 two 王琳 source identities remain distinct and unresolved.
+  - 河南 current-role claims require source/federation identity context plus current public evidence; name-only hits were rejected.
+  - 秦英林 was refreshed to 牧原食品股份有限公司终身荣誉董事长 after the 2026-06 management transition; stale 董事长/总裁 was not carried forward.
+  - 薛景霞 was recorded from 2026-05 evidence as 河南康利达投资集团董事长; no narrower legal entity was inferred.
+  - Next deterministic queue order is 1681.

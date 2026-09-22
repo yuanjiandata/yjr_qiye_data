@@ -1,0 +1,5 @@
+﻿kind,ordinal,path,queue_start,queue_end,row_count,storage_role,projection,base_or_parent_gate
+ledger,0,projects/fc-exec-2515/evidence/W3_EVIDENCE_LEDGER.csv,1,1620,1620,sealed_base,native,W3-BATCH-0027
+ledger,1,projects/fc-exec-2515/evidence/W3_BATCH_0028_RESULTS.csv.gz,1621,1680,60,result_segment,ledger,W3-BATCH-0028
+overlay,0,projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv,1,1620,1620,sealed_base,native,W3-BATCH-0027
+overlay,1,projects/fc-exec-2515/evidence/W3_BATCH_0028_RESULTS.csv.gz,1621,1680,60,result_segment,overlay,W3-BATCH-0028
