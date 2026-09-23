@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0049
+current_gate: W3-BATCH-0050
 status: READY
-work_cursor: 2880
+work_cursor: 2940
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1248
+verified_records: 1255
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9396
-last_evidence_at: 2026-09-23T10:49:35+08:00
-last_input_head: daf146cf6bc1adb323c483cbb83d6b95de30da9c
+unresolved_records: 9389
+last_evidence_at: 2026-09-23T11:55:45+08:00
+last_input_head: 77dbd9e319c9b4ff0924b4d2a2fdee2469cfa8a3
 
 w3_queue:
   total: 10644
-  processed: 2880
-  actionable_remaining: 7764
-  next_queue_order: 2881
+  processed: 2940
+  actionable_remaining: 7704
+  next_queue_order: 2941
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 2779
-      remaining: 1552
+      processed: 2839
+      remaining: 1492
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,54 +44,55 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0048
+  code: W3-BATCH-0049
   status: SEALED
   validation: PASS
-  queue_start: 2821
-  queue_end: 2880
+  queue_start: 2881
+  queue_end: 2940
   touched_rows: 60
   province_rows:
     四川: 60
   p1_identity_rows: 60
-  fresh_research_rows: 53
-  prior_sealed_reuse_rows: 7
+  fresh_research_rows: 48
+  prior_sealed_reuse_rows: 12
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 52
-  b_grade_rows: 8
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 8
+  a_grade_rows: 57
+  b_grade_rows: 2
+  c_grade_rows: 1
+  current_org_title_confirmed_rows: 7
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 52
+  current_org_title_unresolved_rows: 53
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 48
-  identity_evidence_rows: 2880
-  current_org_title_confirmed_rows: 1246
+  batches_sealed: 49
+  identity_evidence_rows: 2940
+  current_org_title_confirmed_rows: 1253
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 1531
+  current_org_title_unresolved_rows: 1584
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 2880
+  logical_end: 2940
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0048
+  detailed_batch_history_through: W3-BATCH-0049
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0047 SEALED/PASS and W3-BATCH-0048 READY; this gate executed only 0048.
-  - W3-BATCH-0048 processed queue orders 2821-2880 exactly: 四川60, all P1 identity/current-role rows.
-  - Seven rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each source row retains its independent person_id.
-  - The other 53 rows received fresh targeted public-evidence research after identity anchoring to the official 全国工商联四川第十二届执委会名单.
-  - Fresh 四川 outcomes are 7 confirmed and 46 explicit unresolved; unbridged same-name, stale, organization-only, or role-turnover hits were not promoted.
-  - Current-role bridges include 2026 federation/authoritative sources for 毛熠、刘斌、刘国春、李清华、杨荣春、吴桂芬、张明贵; 吕状文 reuses a prior sealed confirmed outcome.
-  - Batch outcome is 8 confirmed and 52 explicit unresolved; unsupported current-title claims remain zero.
-  - Evidence grades are A=52, B=8, C=0; next deterministic queue order is 2881.
+  - Repository truth at input HEAD had W3-BATCH-0048 SEALED/PASS and W3-BATCH-0049 READY; this gate executed only 0049.
+  - W3-BATCH-0049 processed queue orders 2881-2940 exactly: 四川60, all P1 identity/current-role rows.
+  - Twelve rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each source row retains its independent person_id.
+  - The other 48 rows received fresh targeted public-evidence research after identity anchoring to the official 全国工商联四川第十二届执委会名单.
+  - Fresh 四川 outcomes are 6 confirmed and 42 explicit unresolved; unbridged same-name, stale, organization-only, association-only, or role-only hits were not promoted.
+  - Fresh confirmed federation-context roles are 徐春龙、郭启太、唐晓兵、曹驰宇、龚平、曾雄.
+  - 喻晓春 reuses the prior sealed confirmed outcome 四川省工商联 / 党组成员、副主席.
+  - Batch outcome is 7 confirmed and 53 explicit unresolved; unsupported current-title claims remain zero.
+  - Evidence grades are A=57, B=2, C=1; next deterministic queue order is 2941.
