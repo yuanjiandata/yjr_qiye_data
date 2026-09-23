@@ -1,0 +1,35 @@
+schema: fc-exec-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0051
+phase: W3-EVIDENCE-ENRICH
+status: SEALED
+validation: PASS
+input:
+  parent_head: cc367b89c6bed702331d5a9c45f756cbd7f4d6c9
+  queue_start: 3001
+  queue_end: 3060
+  touched_rows: 60
+  membership_source_sha256: 86ada49718551b560cbb1385a5cd776db271b894d773bd7e643093e583648f3b
+  supplement_source_sha256: 136998b03210bd5144be16df3e964c64cae94581170268bc00764a041f596316
+batch:
+  province_rows:
+    四川: 60
+  p1_identity_rows: 60
+  fresh_research_rows: 2
+  prior_sealed_reuse_rows: 58
+  current_source_recheck_rows: 0
+  evidence_backed_rows: 60
+  a_grade_rows: 53
+  b_grade_rows: 6
+  c_grade_rows: 1
+  current_org_title_confirmed_rows: 7
+  no_current_role_confirmed_rows: 0
+  current_org_title_unresolved_rows: 53
+  unsupported_current_title_claims: 0
+output:
+  results_path: projects/fc-exec-2515/evidence/W3_BATCH_0051_RESULTS.csv
+  results_sha256: 8dce2e782422f0461a437e34f64551533f7207542f5d2edfb353fd01438dea3c
+  research_path: projects/fc-exec-2515/evidence/W3_BATCH_0051_RESEARCH.tsv
+  research_sha256: d77cf6eb3c58204276ced3df7879cf9a558dd790f456533805966695596e582d
+  logical_end: 3060
+  next_queue_order: 3061
