@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0061
+current_gate: W3-BATCH-0062
 status: READY
-work_cursor: 3600
+work_cursor: 3660
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1426
+verified_records: 1446
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9218
-last_evidence_at: 2026-09-24T00:51:43+08:00
-last_input_head: 13e588880aecfbfc15bdb3ec6829a28560a1de18
+unresolved_records: 9198
+last_evidence_at: 2026-09-24T01:51:41+08:00
+last_input_head: c5e406a4104a1f61f64d60a88c9a3cf08ef541b7
 
 w3_queue:
   total: 10644
-  processed: 3600
-  actionable_remaining: 7044
-  next_queue_order: 3601
+  processed: 3660
+  actionable_remaining: 6984
+  next_queue_order: 3661
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 3499
-      remaining: 832
+      processed: 3559
+      remaining: 772
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,54 +44,55 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0060
+  code: W3-BATCH-0061
   status: SEALED
   validation: PASS
-  queue_start: 3541
-  queue_end: 3600
+  queue_start: 3601
+  queue_end: 3660
   touched_rows: 60
   province_rows:
     甘肃: 60
   p1_identity_rows: 60
-  fresh_research_rows: 0
-  prior_sealed_reuse_rows: 60
+  fresh_research_rows: 2
+  prior_sealed_reuse_rows: 58
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 53
-  b_grade_rows: 7
+  a_grade_rows: 46
+  b_grade_rows: 14
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 10
+  current_org_title_confirmed_rows: 20
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 50
+  current_org_title_unresolved_rows: 40
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 60
-  identity_evidence_rows: 3600
-  current_org_title_confirmed_rows: 1424
+  batches_sealed: 61
+  identity_evidence_rows: 3660
+  current_org_title_confirmed_rows: 1444
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 2073
+  current_org_title_unresolved_rows: 2113
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 3600
+  logical_end: 3660
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0060
+  detailed_batch_history_through: W3-BATCH-0061
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0059 SEALED/PASS and W3-BATCH-0060 READY; this gate executed only 0060.
-  - W3-BATCH-0060 processed queue orders 3541-3600 exactly: 甘肃60, all P1 identity/current-role rows.
-  - All 60 rows have an earlier SEALED/PASS peer under exact ambiguity_group_id + province + normalized_name controls; 28 reuse W3-BATCH-0058 and 32 reuse W3-BATCH-0059.
+  - Repository truth at input HEAD had W3-BATCH-0060 SEALED/PASS and W3-BATCH-0061 READY; this gate executed only 0061.
+  - W3-BATCH-0061 processed queue orders 3601-3660 exactly: 甘肃60, all P1 identity/current-role rows.
+  - 58 rows reuse earlier SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; source gates are W3-BATCH-0058 or W3-BATCH-0059.
+  - Fresh research covered two source rows in ANG-1516 (崔明瑞). Official 2025 Gansu material supports a provincial federation vice-chair role, but no sufficiently current 2026 role evidence was found, so both remain unresolved.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
-  - The official 全国工商联 甘肃省工商联（总商会）第十三届执委 roster remained available during this run; current public evidence was sanity-checked without overriding sealed outcomes.
+  - The official 全国工商联 甘肃省工商联（总商会）第十三届执委 roster remained available as the identity anchor.
   - No source-row identities were merged and no name-only inference was introduced.
-  - Batch outcome is 10 confirmed and 50 explicit unresolved; unsupported current-title claims remain zero.
-  - Evidence grades are A=53, B=7, C=0; next deterministic queue order is 3601.
+  - Batch outcome is 20 confirmed and 40 explicit unresolved; unsupported current-title claims remain zero.
+  - Evidence grades are A=46, B=14, C=0; next deterministic queue order is 3661.
