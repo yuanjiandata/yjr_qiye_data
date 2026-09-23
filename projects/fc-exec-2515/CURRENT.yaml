@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0047
+current_gate: W3-BATCH-0048
 status: READY
-work_cursor: 2760
+work_cursor: 2820
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1221
+verified_records: 1240
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9423
-last_evidence_at: 2026-09-23T06:54:43+08:00
-last_input_head: 8b864d652b46e488ed5312d1c01b667c9b5f5f5e
+unresolved_records: 9404
+last_evidence_at: 2026-09-23T08:47:50+08:00
+last_input_head: f8003ca030f562a2bafb5595ce50535857f50299
 
 w3_queue:
   total: 10644
-  processed: 2760
-  actionable_remaining: 7884
-  next_queue_order: 2761
+  processed: 2820
+  actionable_remaining: 7824
+  next_queue_order: 2821
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 2659
-      remaining: 1672
+      processed: 2719
+      remaining: 1612
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,53 +44,55 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0046
+  code: W3-BATCH-0047
   status: SEALED
   validation: PASS
-  queue_start: 2701
-  queue_end: 2760
+  queue_start: 2761
+  queue_end: 2820
   touched_rows: 60
   province_rows:
-    海南: 60
+    海南: 11
+    四川: 49
   p1_identity_rows: 60
-  fresh_research_rows: 0
-  prior_sealed_reuse_rows: 60
-  current_source_recheck_rows: 12
+  fresh_research_rows: 49
+  prior_sealed_reuse_rows: 11
+  current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 53
-  b_grade_rows: 7
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 12
+  a_grade_rows: 43
+  b_grade_rows: 14
+  c_grade_rows: 3
+  current_org_title_confirmed_rows: 19
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 48
+  current_org_title_unresolved_rows: 41
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 46
-  identity_evidence_rows: 2760
-  current_org_title_confirmed_rows: 1219
+  batches_sealed: 47
+  identity_evidence_rows: 2820
+  current_org_title_confirmed_rows: 1238
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 1438
+  current_org_title_unresolved_rows: 1479
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 2760
+  logical_end: 2820
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0046
+  detailed_batch_history_through: W3-BATCH-0047
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0045 SEALED/PASS and W3-BATCH-0046 READY; this gate executed only 0046.
-  - W3-BATCH-0046 processed queue orders 2701-2760 exactly: 海南60, all P1 identity/current-role rows.
-  - All 60 rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each row retains its own person_id.
-  - Twelve prior confirmed outcomes received current-source rechecks; 48 prior unresolved outcomes remain explicitly unresolved.
-  - The two 陈江 source rows remain separate and unresolved; no same-name collapse was performed.
-  - Batch outcome is 12 confirmed and 48 explicit unresolved; unsupported current-title claims remain zero.
-  - Evidence grades are A=53, B=7, C=0; next deterministic queue order is 2761.
+  - Repository truth at input HEAD had W3-BATCH-0046 SEALED/PASS and W3-BATCH-0047 READY; this gate executed only 0047.
+  - W3-BATCH-0047 processed queue orders 2761-2820 exactly: 海南11 and 四川49, all P1 identity/current-role rows.
+  - 海南11 rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each source row retains its own person_id.
+  - 四川49 rows received fresh targeted web research after identity anchoring to the official 全国工商联四川第十二届执委会名单.
+  - Fresh 四川 outcomes are 16 confirmed and 33 explicit unresolved; unbridged same-name or organization-only hits were not promoted.
+  - The second 唐燕 source row remains an independent record; its source carried-forward role cell was not used as a current-title claim and no same-name collapse was performed.
+  - Batch outcome is 19 confirmed and 41 explicit unresolved; unsupported current-title claims remain zero.
+  - Evidence grades are A=43, B=14, C=3; next deterministic queue order is 2821.
