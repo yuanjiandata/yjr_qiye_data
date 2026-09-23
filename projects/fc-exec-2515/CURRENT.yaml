@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0059
+current_gate: W3-BATCH-0060
 status: READY
-work_cursor: 3480
+work_cursor: 3540
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1409
+verified_records: 1416
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9235
-last_evidence_at: 2026-09-23T22:49:33+08:00
-last_input_head: 868a5fc8461204fac2a4c28cdb2b56462b454807
+unresolved_records: 9228
+last_evidence_at: 2026-09-23T23:47:03+08:00
+last_input_head: aa19b4d62e2d49ac51bea73faad91f2e1a84789a
 
 w3_queue:
   total: 10644
-  processed: 3480
-  actionable_remaining: 7164
-  next_queue_order: 3481
+  processed: 3540
+  actionable_remaining: 7104
+  next_queue_order: 3541
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 3379
-      remaining: 952
+      processed: 3439
+      remaining: 892
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,56 +44,55 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0058
+  code: W3-BATCH-0059
   status: SEALED
   validation: PASS
-  queue_start: 3421
-  queue_end: 3480
+  queue_start: 3481
+  queue_end: 3540
   touched_rows: 60
   province_rows:
-    云南: 16
-    陕西: 4
-    甘肃: 40
+    甘肃: 60
   p1_identity_rows: 60
-  fresh_research_rows: 44
-  prior_sealed_reuse_rows: 16
+  fresh_research_rows: 55
+  prior_sealed_reuse_rows: 5
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 49
-  b_grade_rows: 11
+  a_grade_rows: 54
+  b_grade_rows: 6
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 18
+  current_org_title_confirmed_rows: 7
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 42
+  current_org_title_unresolved_rows: 53
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 58
-  identity_evidence_rows: 3480
-  current_org_title_confirmed_rows: 1407
+  batches_sealed: 59
+  identity_evidence_rows: 3540
+  current_org_title_confirmed_rows: 1414
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 1970
+  current_org_title_unresolved_rows: 2023
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 3480
+  logical_end: 3540
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0058
+  detailed_batch_history_through: W3-BATCH-0059
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0057 SEALED/PASS and W3-BATCH-0058 READY; this gate executed only 0058.
-  - W3-BATCH-0058 processed queue orders 3421-3480 exactly: 云南16, 陕西4, 甘肃40, all P1 identity/current-role rows.
-  - 云南16 rows reuse W3-BATCH-0056 SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each source row retains its independent person_id.
-  - 陕西4 rows were freshly researched against the official 全国工商联 source roster; two 王彩凤 and two 马超 rows remain independent and unresolved because no safe current identity bridge exists.
-  - 甘肃40 rows were freshly researched with the official 全国工商联 source roster as the common source-person identity anchor and current public evidence evaluated fail-closed.
-  - Current-role claims were introduced only when the source person was safely bridged by federation role, province context, official enterprise linkage, or current federation-system evidence.
-  - Batch outcome is 18 confirmed and 42 explicit unresolved; unsupported current-title claims remain zero.
-  - Evidence grades are A=49, B=11, C=0; next deterministic queue order is 3481.
+  - Repository truth at input HEAD had W3-BATCH-0058 SEALED/PASS and W3-BATCH-0059 READY; this gate executed only 0059.
+  - W3-BATCH-0059 processed queue orders 3481-3540 exactly: 甘肃60, all P1 identity/current-role rows.
+  - All fresh rows use the official 全国工商联 甘肃省工商联（总商会）第十三届执委会 roster as source-person identity anchor; no source-row identity was merged.
+  - Five rows reuse W3-BATCH-0058 SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
+  - Fresh current-role claims were introduced only when official federation continuity, official united-front enterprise linkage, or current federation-system evidence safely bridged the source person.
+  - "Fresh confirmations: 许文亮、李晓龙、张建忠、岳建武、黄亚新；reused confirmations: 丁小福、马鹏举."
+  - Same-name, cross-province, stale, conflicting-title, or insufficiently bridged hits remain explicit unresolved states.
+  - Batch outcome is 7 confirmed and 53 explicit unresolved; unsupported current-title claims remain zero.
+  - Evidence grades are A=54, B=6, C=0; next deterministic queue order is 3541.
