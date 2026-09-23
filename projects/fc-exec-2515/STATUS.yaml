@@ -8,13 +8,13 @@ lifecycle: ACTIVE
 auto_continue: true
 
 latest_gate:
-  code: W3-BATCH-0051
+  code: W3-BATCH-0052
   phase: W3-EVIDENCE-ENRICH
   status: SEALED
   validation: PASS
 
 next_gate:
-  code: W3-BATCH-0052
+  code: W3-BATCH-0053
   phase: W3-EVIDENCE-ENRICH
   status: READY
 
@@ -71,28 +71,28 @@ w2:
     AMBIGUOUS_GROUP_NOT_ABSORBED: 120
 
 w3:
-  batches_sealed: 51
-  processed_queue_rows: 3060
-  next_queue_order: 3061
-  actionable_queue_remaining: 7584
+  batches_sealed: 52
+  processed_queue_rows: 3120
+  next_queue_order: 3121
+  actionable_queue_remaining: 7524
   p0_name_repair:
     initial: 101
     processed: 101
     remaining: 0
   p1_identity:
     initial: 4331
-    processed: 2959
-    remaining: 1372
-  identity_evidence_rows: 3060
+    processed: 3019
+    remaining: 1312
+  identity_evidence_rows: 3120
   structural_deferred_rows: 101
-  current_org_title_confirmed_rows: 1274
-  current_org_title_unresolved_rows: 1683
+  current_org_title_confirmed_rows: 1294
+  current_org_title_unresolved_rows: 1723
   no_current_role_confirmed_rows: 2
   unsupported_current_title_claims: 0
   cumulative_store:
     mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
     sealed_base_end: 1620
-    logical_end: 3060
+    logical_end: 3120
     segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
     reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
@@ -105,13 +105,13 @@ artifacts:
   w3_evidence_ledger_base: projects/fc-exec-2515/evidence/W3_EVIDENCE_LEDGER.csv
   w3_verification_overlay_base: projects/fc-exec-2515/evidence/W3_VERIFICATION_OVERLAY.csv
   w3_segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
-  w3_batch_0051_research: projects/fc-exec-2515/evidence/W3_BATCH_0051_RESEARCH.tsv
-  w3_batch_0051_results: projects/fc-exec-2515/evidence/W3_BATCH_0051_RESULTS.csv
-  w3_batch_0051_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0051_METRICS.yaml
-  w3_batch_0051_validation: projects/fc-exec-2515/evidence/W3_BATCH_0051_VALIDATION.md
-  w3_batch_0051_script: projects/fc-exec-2515/scripts/w3_batch_0051.py
+  w3_batch_0052_research: projects/fc-exec-2515/evidence/W3_BATCH_0052_RESEARCH.tsv
+  w3_batch_0052_results: projects/fc-exec-2515/evidence/W3_BATCH_0052_RESULTS.csv
+  w3_batch_0052_metrics: projects/fc-exec-2515/evidence/W3_BATCH_0052_METRICS.yaml
+  w3_batch_0052_validation: projects/fc-exec-2515/evidence/W3_BATCH_0052_VALIDATION.md
+  w3_batch_0052_script: projects/fc-exec-2515/scripts/w3_batch_0052.py
   w3_segmented_store_reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
-  historical_gate_artifacts: projects/fc-exec-2515/evidence/W3_BATCH_0001_* through W3_BATCH_0050_*
+  historical_gate_artifacts: projects/fc-exec-2515/evidence/W3_BATCH_0001_* through W3_BATCH_0051_*
 
 control_state_compaction:
   applied_at_gate: W3-BATCH-0028
