@@ -1,0 +1,42 @@
+schema: yj-runtime/v1
+
+project:
+  id: yjr-qiye-data
+  repository: yuanjiandata/yjr_qiye_data
+  type: data
+
+runtime:
+  profile: python312
+  timeout: 60m
+
+source:
+  mode: exact_sha
+  allow_dirty_after: false
+
+network:
+  zone: qa-private
+
+control_plane:
+  mode: centralized_cross_repo
+  authority_repository: yuanjiandata/yj-runtime
+
+executor:
+  command: scripts/yj-runtime-gate.sh
+  shell: bash
+
+evidence:
+  class: rc
+  screenshots: never
+  traces: never
+  video: never
+
+security:
+  production_write: deny
+  destructive_action: deny
+  chaos: deny
+  performance: deny
+
+concurrency:
+  class: light
+
+secrets: []
