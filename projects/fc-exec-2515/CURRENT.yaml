@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0055
+current_gate: W3-BATCH-0056
 status: READY
-work_cursor: 3240
+work_cursor: 3300
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1347
+verified_records: 1360
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9297
-last_evidence_at: 2026-09-23T18:49:14+08:00
-last_input_head: 7b0505a75553e7a7d59fb54e5594554a385235c5
+unresolved_records: 9284
+last_evidence_at: 2026-09-23T19:50:32+08:00
+last_input_head: 6bc9a630c0ac9f12cc776fb2734d754d313d3609
 
 w3_queue:
   total: 10644
-  processed: 3240
-  actionable_remaining: 7404
-  next_queue_order: 3241
+  processed: 3300
+  actionable_remaining: 7344
+  next_queue_order: 3301
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 3139
-      remaining: 1192
+      processed: 3199
+      remaining: 1132
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,56 +44,55 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0054
+  code: W3-BATCH-0055
   status: SEALED
   validation: PASS
-  queue_start: 3181
-  queue_end: 3240
+  queue_start: 3241
+  queue_end: 3300
   touched_rows: 60
   province_rows:
     云南: 60
   p1_identity_rows: 60
-  fresh_research_rows: 45
-  prior_sealed_reuse_rows: 14
-  current_source_recheck_rows: 1
+  fresh_research_rows: 39
+  prior_sealed_reuse_rows: 21
+  current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 51
-  b_grade_rows: 9
+  a_grade_rows: 53
+  b_grade_rows: 7
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 23
+  current_org_title_confirmed_rows: 13
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 37
+  current_org_title_unresolved_rows: 47
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 54
-  identity_evidence_rows: 3240
-  current_org_title_confirmed_rows: 1345
+  batches_sealed: 55
+  identity_evidence_rows: 3300
+  current_org_title_confirmed_rows: 1358
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 1792
+  current_org_title_unresolved_rows: 1839
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 3240
+  logical_end: 3300
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0054
+  detailed_batch_history_through: W3-BATCH-0055
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0053 SEALED/PASS and W3-BATCH-0054 READY; this gate executed only 0054.
-  - W3-BATCH-0054 processed queue orders 3181-3240 exactly: 云南60, all P1 identity/current-role rows.
-  - Fourteen rows reuse W3-BATCH-0053 SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each source row retains its independent person_id.
-  - Forty-five previously untouched rows received fresh targeted public-evidence research; one prior unresolved row, 李莹, received a current-source recheck and was safely closed.
+  - Repository truth at input HEAD had W3-BATCH-0054 SEALED/PASS and W3-BATCH-0055 READY; this gate executed only 0055.
+  - W3-BATCH-0055 processed queue orders 3241-3300 exactly: 云南60, all P1 identity/current-role rows.
+  - Twenty-one rows reuse W3-BATCH-0053/0054 SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; each source row retains its independent person_id.
+  - Thirty-nine rows received fresh targeted public-evidence research.
   - All rows use the official 全国工商联 云南第十三届执委会 page as source-person identity anchor before accepting any current organization/title evidence.
-  - Current 2026 evidence safely closes 王军定、蓝波、郑晓城、王国新、曾新生、郭忠诚、陈苏根、杨朝文、银康、庄哲阳 and 李莹 where identity bridging is sufficient.
-  - Prior sealed current confirmations for 康劲、孔令涌、刘军、阮鸿献、牟洪操、李玉明、李学、李彪、杨利荣 were reused without name-only rematching.
-  - Same-name, stale, insufficient and company/association hits without a safe source-person bridge remain explicit unresolved states.
-  - Batch outcome is 23 confirmed and 37 explicit unresolved; unsupported current-title claims remain zero.
-  - Evidence grades are A=51, B=9, C=0; next deterministic queue order is 3241.
+  - Fresh 2026 evidence safely closes 何卫、张慧 and 章建军; 章建军 additionally uses a 全国工商联 official enterprise bridge before accepting current company evidence.
+  - Current-role hits without a safe source-person bridge remain explicit unresolved states; no name-only current-title claim was promoted.
+  - Batch outcome is 13 confirmed and 47 explicit unresolved; unsupported current-title claims remain zero.
+  - Evidence grades are A=53, B=7, C=0; next deterministic queue order is 3301.
