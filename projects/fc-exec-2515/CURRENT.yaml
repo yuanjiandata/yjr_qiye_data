@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0066
+current_gate: W3-BATCH-0067
 status: READY
-work_cursor: 3900
+work_cursor: 3960
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1484
+verified_records: 1491
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9160
-last_evidence_at: 2026-09-24T05:48:43+08:00
-last_input_head: 23d17c7309fbc2510fd905c79260c3115fc62e2e
+unresolved_records: 9153
+last_evidence_at: 2026-09-24T06:47:45+08:00
+last_input_head: efbac003a3276bc9a93ad842dc4895166b6b2eef
 
 w3_queue:
   total: 10644
-  processed: 3900
-  actionable_remaining: 6744
-  next_queue_order: 3901
+  processed: 3960
+  actionable_remaining: 6684
+  next_queue_order: 3961
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 3799
-      remaining: 532
+      processed: 3859
+      remaining: 472
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,17 +44,17 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0065
+  code: W3-BATCH-0066
   status: SEALED
   validation: PASS
-  queue_start: 3841
-  queue_end: 3900
+  queue_start: 3901
+  queue_end: 3960
   touched_rows: 60
   province_rows:
     内蒙古: 60
   p1_identity_rows: 60
-  fresh_research_rows: 54
-  prior_sealed_reuse_rows: 6
+  fresh_research_rows: 28
+  prior_sealed_reuse_rows: 32
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
   a_grade_rows: 56
@@ -66,34 +66,34 @@ latest_sealed_batch:
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 65
-  identity_evidence_rows: 3900
-  current_org_title_confirmed_rows: 1482
+  batches_sealed: 66
+  identity_evidence_rows: 3960
+  current_org_title_confirmed_rows: 1489
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 2315
+  current_org_title_unresolved_rows: 2368
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 3900
+  logical_end: 3960
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0065
+  detailed_batch_history_through: W3-BATCH-0066
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0064 SEALED/PASS and W3-BATCH-0065 READY; this gate executed only 0065.
-  - W3-BATCH-0065 processed queue orders 3841-3900 exactly: 内蒙古60, all P1 identity/current-role rows.
-  - Six rows reuse W3-BATCH-0064 SEALED/PASS unresolved outcomes only under exact ambiguity_group_id + province + normalized_name controls.
-  - The remaining 54 rows received fresh public-evidence research against the official 2022 内蒙古自治区工商联（总商会）执委 roster and current public sources.
-  - Current 2026 evidence safely confirms 杨永胜、宋和平、高波、丛培智、杜金宏 across seven source rows.
-  - Other same-name, stale or insufficiently bridged cases remain explicit unresolved.
+  - Repository truth at input HEAD had W3-BATCH-0065 SEALED/PASS and W3-BATCH-0066 READY; this gate executed only 0066.
+  - W3-BATCH-0066 processed queue orders 3901-3960 exactly: 内蒙古60, all P1 identity/current-role rows.
+  - Thirty-two rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
+  - The remaining 28 rows received fresh public-evidence research anchored to the official 2022 内蒙古自治区工商联（总商会）执委 roster.
+  - Fresh research yielded no safe new 2026 source-person-to-current-role bridge; all 28 remain explicit unresolved.
+  - Same-name current hits for 韩伟 and 魏晓翔 were rejected because the source-person identity bridge was insufficient.
+  - Seven current organization/title confirmations are exact sealed-evidence reuses; the other 53 rows are explicit unresolved.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
   - No source-row identities were merged and no name-only inference was introduced.
-  - Batch outcome is 7 confirmed and 53 explicit unresolved; unsupported current-title claims remain zero.
-  - Evidence grades are A=56, B=4, C=0; next deterministic queue order is 3901.
+  - Evidence grades are A=56, B=4, C=0; next deterministic queue order is 3961.
