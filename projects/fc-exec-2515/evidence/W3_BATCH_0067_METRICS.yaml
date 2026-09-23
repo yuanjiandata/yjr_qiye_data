@@ -1,0 +1,35 @@
+schema: fc-exec-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0067
+phase: W3-EVIDENCE-ENRICH
+status: SEALED
+validation: PASS
+input:
+  parent_head: 0e00480477167cd30fe542ec7548e247606a4491
+  queue_start: 3961
+  queue_end: 4020
+  touched_rows: 60
+  membership_source_sha256: 86ada49718551b560cbb1385a5cd776db271b894d773bd7e643093e583648f3b
+  supplement_source_sha256: 136998b03210bd5144be16df3e964c64cae94581170268bc00764a041f596316
+batch:
+  province_rows:
+    内蒙古: 60
+  p1_identity_rows: 60
+  fresh_research_rows: 0
+  prior_sealed_reuse_rows: 60
+  current_source_recheck_rows: 0
+  evidence_backed_rows: 60
+  a_grade_rows: 50
+  b_grade_rows: 8
+  c_grade_rows: 2
+  current_org_title_confirmed_rows: 13
+  no_current_role_confirmed_rows: 0
+  current_org_title_unresolved_rows: 47
+  unsupported_current_title_claims: 0
+output:
+  results_path: projects/fc-exec-2515/evidence/W3_BATCH_0067_RESULTS.csv
+  results_sha256: 1b82efaeed45b5029ff65b5d054524a02fd7412231ef1006b4c2ab2dcca6ae4f
+  research_path: projects/fc-exec-2515/evidence/W3_BATCH_0067_RESEARCH.tsv.gz
+  research_sha256: 65a43594eed2bff5c413feee6a7ba83e7a96f2e8e4953c8fe4e2a66d5d48d75b
+  logical_end: 4020
+  next_queue_order: 4021

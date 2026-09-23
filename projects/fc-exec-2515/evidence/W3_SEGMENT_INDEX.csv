@@ -49,8 +49,8 @@ ledger,23,projects/fc-exec-2515/evidence/W3_BATCH_0050_RESULTS.csv,2941,3000,60,
 overlay,23,projects/fc-exec-2515/evidence/W3_BATCH_0050_RESULTS.csv,2941,3000,60,result_segment,overlay,W3-BATCH-0050
 ledger,24,projects/fc-exec-2515/evidence/W3_BATCH_0051_RESULTS.csv,3001,3060,60,result_segment,ledger,W3-BATCH-0051
 overlay,24,projects/fc-exec-2515/evidence/W3_BATCH_0051_RESULTS.csv,3001,3060,60,result_segment,overlay,W3-BATCH-0051
-ledger,25,projects/fc-exec-2515/evidence/W3_BATCH_0052_RESULTS.csv,3061,3120,60,result_segment,ledger,W3-BATCH-0052
-overlay,25,projects/fc-exec-2515/evidence/W3_BATCH_0052_RESULTS.csv,3061,3120,60,result_segment,overlay,W3-BATCH-0052
+ledger,25,projects/fc-exec-2515/evidence/W3_BATCH_0052_RESULTS.csv.gz,3061,3120,60,result_segment,ledger,W3-BATCH-0052
+overlay,25,projects/fc-exec-2515/evidence/W3_BATCH_0052_RESULTS.csv.gz,3061,3120,60,result_segment,overlay,W3-BATCH-0052
 ledger,26,projects/fc-exec-2515/evidence/W3_BATCH_0053_RESULTS.csv,3121,3180,60,result_segment,ledger,W3-BATCH-0053
 overlay,26,projects/fc-exec-2515/evidence/W3_BATCH_0053_RESULTS.csv,3121,3180,60,result_segment,overlay,W3-BATCH-0053
 ledger,27,projects/fc-exec-2515/evidence/W3_BATCH_0054_RESULTS.csv,3181,3240,60,result_segment,ledger,W3-BATCH-0054
@@ -79,3 +79,5 @@ ledger,38,projects/fc-exec-2515/evidence/W3_BATCH_0065_RESULTS.csv,3841,3900,60,
 overlay,38,projects/fc-exec-2515/evidence/W3_BATCH_0065_RESULTS.csv,3841,3900,60,result_segment,overlay,W3-BATCH-0065
 ledger,39,projects/fc-exec-2515/evidence/W3_BATCH_0066_RESULTS.csv,3901,3960,60,result_segment,ledger,W3-BATCH-0066
 overlay,39,projects/fc-exec-2515/evidence/W3_BATCH_0066_RESULTS.csv,3901,3960,60,result_segment,overlay,W3-BATCH-0066
+ledger,40,projects/fc-exec-2515/evidence/W3_BATCH_0067_RESULTS.csv,3961,4020,60,result_segment,ledger,W3-BATCH-0067
+overlay,40,projects/fc-exec-2515/evidence/W3_BATCH_0067_RESULTS.csv,3961,4020,60,result_segment,overlay,W3-BATCH-0067
