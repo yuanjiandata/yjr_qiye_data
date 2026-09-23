@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0062
+current_gate: W3-BATCH-0063
 status: READY
-work_cursor: 3660
+work_cursor: 3720
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1446
+verified_records: 1452
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9198
-last_evidence_at: 2026-09-24T01:51:41+08:00
-last_input_head: c5e406a4104a1f61f64d60a88c9a3cf08ef541b7
+unresolved_records: 9192
+last_evidence_at: 2026-09-24T02:50:19+08:00
+last_input_head: 2dadfbca5a236b842bc084903f566594b58b622d
 
 w3_queue:
   total: 10644
-  processed: 3660
-  actionable_remaining: 6984
-  next_queue_order: 3661
+  processed: 3720
+  actionable_remaining: 6924
+  next_queue_order: 3721
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 3559
-      remaining: 772
+      processed: 3619
+      remaining: 712
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,55 +44,57 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0061
+  code: W3-BATCH-0062
   status: SEALED
   validation: PASS
-  queue_start: 3601
-  queue_end: 3660
+  queue_start: 3661
+  queue_end: 3720
   touched_rows: 60
   province_rows:
-    甘肃: 60
+    甘肃: 5
+    青海: 55
   p1_identity_rows: 60
-  fresh_research_rows: 2
-  prior_sealed_reuse_rows: 58
+  fresh_research_rows: 55
+  prior_sealed_reuse_rows: 5
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 46
-  b_grade_rows: 14
+  a_grade_rows: 56
+  b_grade_rows: 4
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 20
+  current_org_title_confirmed_rows: 6
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 40
+  current_org_title_unresolved_rows: 54
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 61
-  identity_evidence_rows: 3660
-  current_org_title_confirmed_rows: 1444
+  batches_sealed: 62
+  identity_evidence_rows: 3720
+  current_org_title_confirmed_rows: 1450
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 2113
+  current_org_title_unresolved_rows: 2167
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 3660
+  logical_end: 3720
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0061
+  detailed_batch_history_through: W3-BATCH-0062
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0060 SEALED/PASS and W3-BATCH-0061 READY; this gate executed only 0061.
-  - W3-BATCH-0061 processed queue orders 3601-3660 exactly: 甘肃60, all P1 identity/current-role rows.
-  - 58 rows reuse earlier SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; source gates are W3-BATCH-0058 or W3-BATCH-0059.
-  - Fresh research covered two source rows in ANG-1516 (崔明瑞). Official 2025 Gansu material supports a provincial federation vice-chair role, but no sufficiently current 2026 role evidence was found, so both remain unresolved.
+  - Repository truth at input HEAD had W3-BATCH-0061 SEALED/PASS and W3-BATCH-0062 READY; this gate executed only 0062.
+  - W3-BATCH-0062 processed queue orders 3661-3720 exactly: 甘肃5 + 青海55, all P1 identity/current-role rows.
+  - 甘肃5 rows reuse earlier SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls; source gates are W3-BATCH-0058 or W3-BATCH-0059.
+  - 青海55 rows received fresh public-evidence work against the official 2022 province federation roster and current public sources.
+  - Current 2026 evidence safely confirms 李青 (two source rows) as 青海省工商联主席 and 韩文林 as 青海省工商联副主席.
+  - Current 2026 hits for 刘伯林 and 罗顺邦 lacked a sufficient identity bridge to the source federation person and remain unresolved; stale/insufficient cases likewise remain fail-closed.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
-  - The official 全国工商联 甘肃省工商联（总商会）第十三届执委 roster remained available as the identity anchor.
   - No source-row identities were merged and no name-only inference was introduced.
-  - Batch outcome is 20 confirmed and 40 explicit unresolved; unsupported current-title claims remain zero.
-  - Evidence grades are A=46, B=14, C=0; next deterministic queue order is 3661.
+  - Batch outcome is 6 confirmed and 54 explicit unresolved; unsupported current-title claims remain zero.
+  - Evidence grades are A=56, B=4, C=0; next deterministic queue order is 3721.
