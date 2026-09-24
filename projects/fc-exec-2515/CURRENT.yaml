@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0068
+current_gate: W3-BATCH-0069
 status: READY
-work_cursor: 4020
+work_cursor: 4080
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1504
+verified_records: 1519
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9140
-last_evidence_at: 2026-09-24T07:47:27+08:00
-last_input_head: 0e00480477167cd30fe542ec7548e247606a4491
+unresolved_records: 9125
+last_evidence_at: 2026-09-24T09:17:37+08:00
+last_input_head: 6c48f2955c21faa6e375ca0169c6b2c5b0206a22
 
 w3_queue:
   total: 10644
-  processed: 4020
-  actionable_remaining: 6624
-  next_queue_order: 4021
+  processed: 4080
+  actionable_remaining: 6564
+  next_queue_order: 4081
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 3919
-      remaining: 412
+      processed: 3979
+      remaining: 352
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,54 +44,56 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0067
+  code: W3-BATCH-0068
   status: SEALED
   validation: PASS
-  queue_start: 3961
-  queue_end: 4020
+  queue_start: 4021
+  queue_end: 4080
   touched_rows: 60
   province_rows:
-    内蒙古: 60
+    内蒙古: 16
+    广西: 44
   p1_identity_rows: 60
-  fresh_research_rows: 0
-  prior_sealed_reuse_rows: 60
+  fresh_research_rows: 44
+  prior_sealed_reuse_rows: 16
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 50
+  a_grade_rows: 52
   b_grade_rows: 8
-  c_grade_rows: 2
-  current_org_title_confirmed_rows: 13
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 15
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 47
+  current_org_title_unresolved_rows: 45
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 67
-  identity_evidence_rows: 4020
-  current_org_title_confirmed_rows: 1502
+  batches_sealed: 68
+  identity_evidence_rows: 4080
+  current_org_title_confirmed_rows: 1517
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 2415
+  current_org_title_unresolved_rows: 2460
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4020
+  logical_end: 4080
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0067
+  detailed_batch_history_through: W3-BATCH-0068
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0066 SEALED/PASS and W3-BATCH-0067 READY; this gate executed only 0067.
-  - W3-BATCH-0067 processed queue orders 3961-4020 exactly: 内蒙古60, all P1 identity/current-role rows.
-  - All 60 rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
-  - Reuse provenance spans W3-BATCH-0064, W3-BATCH-0065 and W3-BATCH-0066; no fresh public lookup was required because every target row had an exact sealed identity-group predecessor.
-  - Thirteen rows reuse confirmed current organization/title evidence; forty-seven rows preserve explicit unresolved outcomes.
+  - Repository truth at input HEAD had W3-BATCH-0067 SEALED/PASS and W3-BATCH-0068 READY; this gate executed only 0068.
+  - W3-BATCH-0068 processed queue orders 4021-4080 exactly: 内蒙古16 + 广西44, all P1 identity/current-role rows.
+  - The 16 Inner Mongolia rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
+  - The 44 Guangxi rows received fresh public-evidence research anchored to the official ACFIC 13th executive-committee roster.
+  - Fifteen rows have evidence-backed current organization/title; forty-five rows preserve explicit unresolved outcomes.
+  - 韦永山 remains unresolved for September-current status because the May 29 disciplinary announcement gives a then-current union role but no later post-investigation current-role confirmation was found.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
   - No source-row identities were merged and no name-only inference was introduced.
-  - Evidence grades are A=50, B=8, C=2; next deterministic queue order is 4021.
+  - Evidence grades are A=52, B=8, C=0; next deterministic queue order is 4081.
