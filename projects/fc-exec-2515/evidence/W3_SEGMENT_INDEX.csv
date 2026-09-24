@@ -87,3 +87,5 @@ ledger,42,projects/fc-exec-2515/evidence/W3_BATCH_0069_RESULTS.csv,4081,4140,60,
 overlay,42,projects/fc-exec-2515/evidence/W3_BATCH_0069_RESULTS.csv,4081,4140,60,result_segment,overlay,W3-BATCH-0069
 ledger,43,projects/fc-exec-2515/evidence/W3_BATCH_0070_RESULTS.csv,4141,4200,60,result_segment,ledger,W3-BATCH-0070
 overlay,43,projects/fc-exec-2515/evidence/W3_BATCH_0070_RESULTS.csv,4141,4200,60,result_segment,overlay,W3-BATCH-0070
+ledger,44,projects/fc-exec-2515/evidence/W3_BATCH_0071_RESULTS.csv,4201,4260,60,result_segment,ledger,W3-BATCH-0071
+overlay,44,projects/fc-exec-2515/evidence/W3_BATCH_0071_RESULTS.csv,4201,4260,60,result_segment,overlay,W3-BATCH-0071
