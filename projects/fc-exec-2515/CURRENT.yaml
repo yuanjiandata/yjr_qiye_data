@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0069
+current_gate: W3-BATCH-0070
 status: READY
-work_cursor: 4080
+work_cursor: 4140
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1519
+verified_records: 1534
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9125
-last_evidence_at: 2026-09-24T09:17:37+08:00
-last_input_head: 6c48f2955c21faa6e375ca0169c6b2c5b0206a22
+unresolved_records: 9110
+last_evidence_at: 2026-09-24T09:51:10+08:00
+last_input_head: 729601730c93f6842f890f9c2e0e8172beddfcdd
 
 w3_queue:
   total: 10644
-  processed: 4080
-  actionable_remaining: 6564
-  next_queue_order: 4081
+  processed: 4140
+  actionable_remaining: 6504
+  next_queue_order: 4141
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 3979
-      remaining: 352
+      processed: 4039
+      remaining: 292
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,22 +44,21 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0068
+  code: W3-BATCH-0069
   status: SEALED
   validation: PASS
-  queue_start: 4021
-  queue_end: 4080
+  queue_start: 4081
+  queue_end: 4140
   touched_rows: 60
   province_rows:
-    内蒙古: 16
-    广西: 44
+    广西: 60
   p1_identity_rows: 60
-  fresh_research_rows: 44
-  prior_sealed_reuse_rows: 16
+  fresh_research_rows: 32
+  prior_sealed_reuse_rows: 28
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 52
-  b_grade_rows: 8
+  a_grade_rows: 48
+  b_grade_rows: 12
   c_grade_rows: 0
   current_org_title_confirmed_rows: 15
   no_current_role_confirmed_rows: 0
@@ -67,33 +66,33 @@ latest_sealed_batch:
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 68
-  identity_evidence_rows: 4080
-  current_org_title_confirmed_rows: 1517
+  batches_sealed: 69
+  identity_evidence_rows: 4140
+  current_org_title_confirmed_rows: 1532
   no_current_role_confirmed_rows: 2
-  current_org_title_unresolved_rows: 2460
+  current_org_title_unresolved_rows: 2505
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4080
+  logical_end: 4140
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0068
+  detailed_batch_history_through: W3-BATCH-0069
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0067 SEALED/PASS and W3-BATCH-0068 READY; this gate executed only 0068.
-  - W3-BATCH-0068 processed queue orders 4021-4080 exactly: 内蒙古16 + 广西44, all P1 identity/current-role rows.
-  - The 16 Inner Mongolia rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
-  - The 44 Guangxi rows received fresh public-evidence research anchored to the official ACFIC 13th executive-committee roster.
+  - Repository truth at input HEAD had W3-BATCH-0068 SEALED/PASS and W3-BATCH-0069 READY; this gate executed only 0069.
+  - W3-BATCH-0069 processed queue orders 4081-4140 exactly: 广西60, all P1 identity/current-role rows.
+  - Twenty-eight rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
+  - Thirty-two rows received fresh public-evidence research anchored to the official ACFIC Guangxi 13th executive-committee roster.
   - Fifteen rows have evidence-backed current organization/title; forty-five rows preserve explicit unresolved outcomes.
-  - 韦永山 remains unresolved for September-current status because the May 29 disciplinary announcement gives a then-current union role but no later post-investigation current-role confirmation was found.
+  - Fresh closures include 莫玉和、黄绮、林莉、欧宇、黄彩雪、兰吉阳、朱贾莲、胡小丽.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
   - No source-row identities were merged and no name-only inference was introduced.
-  - Evidence grades are A=52, B=8, C=0; next deterministic queue order is 4081.
+  - Evidence grades are A=48, B=12, C=0; next deterministic queue order is 4141.
