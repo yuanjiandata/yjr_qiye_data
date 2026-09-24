@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0076
+current_gate: W3-BATCH-0077
 status: READY
-work_cursor: 4500
+work_cursor: 4560
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1622
+verified_records: 1631
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9022
-last_evidence_at: 2026-09-24T17:45:32+08:00
-last_input_head: c77fe0a7f404f406f9fd7e8725202e985969aeb9
+unresolved_records: 9013
+last_evidence_at: 2026-09-24T21:56:26+08:00
+last_input_head: 58950d59d1faa739feff77395ffc0673e055615f
 
 w3_queue:
   total: 10644
-  processed: 4500
-  actionable_remaining: 6144
-  next_queue_order: 4501
+  processed: 4560
+  actionable_remaining: 6084
+  next_queue_order: 4561
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -36,19 +36,19 @@ w3_queue:
       remaining: 0
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
-      processed: 68
-      remaining: 5977
+      processed: 128
+      remaining: 5917
     P3_CURRENT_VERIFY:
       initial: 167
       processed: 0
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0075
+  code: W3-BATCH-0076
   status: SEALED
   validation: PASS
-  queue_start: 4441
-  queue_end: 4500
+  queue_start: 4501
+  queue_end: 4560
   touched_rows: 60
   province_rows:
     北京: 60
@@ -60,41 +60,40 @@ latest_sealed_batch:
   same_batch_exact_group_reuse_rows: 0
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 53
-  b_grade_rows: 7
+  a_grade_rows: 57
+  b_grade_rows: 3
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 10
-  no_current_role_confirmed_rows: 1
-  current_org_title_unresolved_rows: 49
+  current_org_title_confirmed_rows: 9
+  no_current_role_confirmed_rows: 0
+  current_org_title_unresolved_rows: 51
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 75
-  identity_evidence_rows: 4500
-  current_org_title_confirmed_rows: 1616
+  batches_sealed: 76
+  identity_evidence_rows: 4560
+  current_org_title_confirmed_rows: 1625
   no_current_role_confirmed_rows: 6
-  current_org_title_unresolved_rows: 2777
+  current_org_title_unresolved_rows: 2828
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4500
+  logical_end: 4560
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0075
+  detailed_batch_history_through: W3-BATCH-0076
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0074 SEALED/PASS and W3-BATCH-0075 READY; this gate executed only 0075.
-  - W3-BATCH-0075 processed queue orders 4441-4500 exactly: 北京60, all P2_ORG_TITLE_LOOKUP.
-  - All 60 rows received fresh public-evidence research anchored to the official ACFIC Beijing 15th executive-committee roster; current-term public evidence was evaluated row by row.
-  - Ten rows have evidence-backed current organization/title: 李平、李志起、彭永东、沈亚楠、孙陶然、夏曙东、周鸿祎、齐向东、薛向东、陈杰.
-  - 邵根伙 is confirmed to have no current role after his death on 2026-02-03; forty-nine rows preserve explicit unresolved outcomes.
-  - Current same-name hits, stale role evidence, and current role hits without a safe source-person identity bridge remained unresolved; no name-only identity inference was introduced.
+  - Repository truth at input HEAD had W3-BATCH-0075 SEALED/PASS and W3-BATCH-0076 READY; this gate executed only 0076.
+  - W3-BATCH-0076 processed queue orders 4501-4560 exactly: 北京60, all P2_ORG_TITLE_LOOKUP.
+  - All 60 rows received fresh public-evidence research anchored to the official ACFIC Beijing 15th executive-committee roster; current public evidence was evaluated row by row.
+  - Nine rows have evidence-backed current organization/title: 梁雪青、林航、林余存、马春秀、沈鹏、宋玫、许泽玮、易月明、张剑辉.
+  - Fifty-one rows preserve explicit unresolved outcomes because the source-person-to-current-role identity bridge was absent or insufficient; no name-only identity inference was introduced.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
-  - Evidence grades are A=53, B=7, C=0; unsupported current-title claims remain zero; next deterministic queue order is 4501.
+  - Evidence grades are A=57, B=3, C=0; unsupported current-title claims remain zero; next deterministic queue order is 4561.
