@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0072
+current_gate: W3-BATCH-0073
 status: READY
-work_cursor: 4260
+work_cursor: 4320
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1571
+verified_records: 1582
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9073
-last_evidence_at: 2026-09-24T11:47:46+08:00
-last_input_head: dab2346cae49737e86a1292499945477ef1d4f6f
+unresolved_records: 9062
+last_evidence_at: 2026-09-24T12:15:00+08:00
+last_input_head: c9a67e2da29975e9ad3765b2c07d2114e02f23ac
 
 w3_queue:
   total: 10644
-  processed: 4260
-  actionable_remaining: 6384
-  next_queue_order: 4261
+  processed: 4320
+  actionable_remaining: 6324
+  next_queue_order: 4321
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,8 +32,8 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 4159
-      remaining: 172
+      processed: 4219
+      remaining: 112
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
       processed: 0
@@ -44,57 +44,57 @@ w3_queue:
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0071
+  code: W3-BATCH-0072
   status: SEALED
   validation: PASS
-  queue_start: 4201
-  queue_end: 4260
+  queue_start: 4261
+  queue_end: 4320
   touched_rows: 60
   province_rows:
-    广西: 39
-    宁夏: 21
+    宁夏: 60
   p1_identity_rows: 60
-  fresh_research_rows: 21
-  prior_sealed_reuse_rows: 39
-  same_batch_exact_group_reuse_rows: 0
+  fresh_research_rows: 44
+  prior_sealed_reuse_rows: 15
+  same_batch_exact_group_reuse_rows: 1
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 52
-  b_grade_rows: 8
+  a_grade_rows: 53
+  b_grade_rows: 7
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 16
+  current_org_title_confirmed_rows: 10
   no_current_role_confirmed_rows: 1
-  current_org_title_unresolved_rows: 43
+  current_org_title_unresolved_rows: 49
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 71
-  identity_evidence_rows: 4260
-  current_org_title_confirmed_rows: 1568
-  no_current_role_confirmed_rows: 3
-  current_org_title_unresolved_rows: 2588
+  batches_sealed: 72
+  identity_evidence_rows: 4320
+  current_org_title_confirmed_rows: 1578
+  no_current_role_confirmed_rows: 4
+  current_org_title_unresolved_rows: 2637
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4260
+  logical_end: 4320
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0071
+  detailed_batch_history_through: W3-BATCH-0072
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0070 SEALED/PASS and W3-BATCH-0071 READY; this gate executed only 0071.
-  - W3-BATCH-0071 processed queue orders 4201-4260 exactly: 广西39、宁夏21, all P1 identity/current-role rows.
-  - Thirty-nine Guangxi rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
-  - Twenty-one first-occurrence Ningxia identity groups received fresh public-evidence research anchored to the official ACFIC Ningxia 11th executive-committee roster.
-  - Sixteen rows have evidence-backed current organization/title; one source-anchored deceased person is NO_CURRENT_ROLE_CONFIRMED; forty-three rows preserve explicit unresolved outcomes.
-  - Fresh Ningxia current-role closures include 党彦宝、郝向峰、张成保、黄添进、张时荣、阮世忠、黄金耀; 何晓勇 is closed as no-current-role by the death notice.
+  - Repository truth at input HEAD had W3-BATCH-0071 SEALED/PASS and W3-BATCH-0072 READY; this gate executed only 0072.
+  - W3-BATCH-0072 processed queue orders 4261-4320 exactly: 宁夏60, all P1 identity/current-role rows.
+  - Fifteen rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
+  - One later 郑子盛 row reuses the same-batch queue-4263 decision under the same exact-group controls.
+  - Forty-four first-occurrence Ningxia identity groups received fresh public-evidence research anchored to the official ACFIC Ningxia 11th executive-committee roster.
+  - Ten rows have evidence-backed current organization/title; one row is NO_CURRENT_ROLE_CONFIRMED; forty-nine rows preserve explicit unresolved outcomes.
+  - Fresh current-role closures include 郑子盛、王心安、朱彦华、杨启云、张言志; the second 郑子盛 row is same-batch exact-group reuse.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
   - No source-row identities were merged and no name-only inference was introduced.
-  - Evidence grades are A=52, B=8, C=0; next deterministic queue order is 4261.
+  - Evidence grades are A=53, B=7, C=0; next deterministic queue order is 4321.
