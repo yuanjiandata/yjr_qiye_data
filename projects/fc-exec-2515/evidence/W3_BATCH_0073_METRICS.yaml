@@ -1,0 +1,36 @@
+schema: fc-exec-w3-batch-metrics-v1
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0073
+phase: W3-EVIDENCE-ENRICH
+status: SEALED
+validation: PASS
+input:
+  parent_head: df088fd886472a66b0febd241c80dc16af5a7e3c
+  queue_start: 4321
+  queue_end: 4380
+  touched_rows: 60
+  membership_source_sha256: 86ada49718551b560cbb1385a5cd776db271b894d773bd7e643093e583648f3b
+  supplement_source_sha256: 136998b03210bd5144be16df3e964c64cae94581170268bc00764a041f596316
+batch:
+  province_rows:
+    宁夏: 60
+  p1_identity_rows: 60
+  fresh_research_rows: 11
+  prior_sealed_reuse_rows: 49
+  same_batch_exact_group_reuse_rows: 0
+  current_source_recheck_rows: 0
+  evidence_backed_rows: 60
+  a_grade_rows: 56
+  b_grade_rows: 4
+  c_grade_rows: 0
+  current_org_title_confirmed_rows: 9
+  no_current_role_confirmed_rows: 1
+  current_org_title_unresolved_rows: 50
+  unsupported_current_title_claims: 0
+output:
+  results_path: projects/fc-exec-2515/evidence/W3_BATCH_0073_RESULTS.csv
+  results_sha256: 4a9327918c218729239a05590238bdc0cc0f746d18b9a3d6bca00fce573075ed
+  research_path: projects/fc-exec-2515/evidence/W3_BATCH_0073_RESEARCH.tsv.gz
+  research_sha256: 0f545e6e034d2da01f5963bfced8ac806b5d77684cb264d850c60ae355aca3d1
+  logical_end: 4380
+  next_queue_order: 4381
