@@ -3,7 +3,7 @@ project_id: FC-EXEC-2515-01
 project_name: 31省工商联执委全名单企业任职核验工程
 repository: yuanjiandata/yjr_qiye_data
 truth_scope: projects/fc-exec-2515
-as_of: 2026-09-24
+as_of: 2026-09-25
 lifecycle: ACTIVE
 auto_continue: true
 
@@ -18,7 +18,13 @@ next_gate:
   phase: W3-EVIDENCE-ENRICH
   status: READY
 
-blocker: null
+blocker:
+  code: GITHUB_WRITE_AUTHORIZATION_SAFETY_BLOCK
+  category: authorization
+  first_observed_at: 2026-09-25T07:47:20+08:00
+  gate: W3-BATCH-0079
+  detail: Approved GitHub evidence write was rejected by the execution platform authorization and safety layer; no tree, commit, or branch ref mutation occurred.
+  recovery_condition: Resume only when the approved GitHub connector can persist W3 evidence artifacts without write rejection.
 
 source:
   provider: google_drive
