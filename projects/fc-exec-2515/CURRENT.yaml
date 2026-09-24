@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0074
+current_gate: W3-BATCH-0075
 status: READY
-work_cursor: 4380
+work_cursor: 4440
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1592
+verified_records: 1611
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9052
-last_evidence_at: 2026-09-24T12:50:43+08:00
-last_input_head: df088fd886472a66b0febd241c80dc16af5a7e3c
+unresolved_records: 9033
+last_evidence_at: 2026-09-24T13:53:00+08:00
+last_input_head: 8e0dea7fea770e629a18e382e2a3f6beca907b40
 
 w3_queue:
   total: 10644
-  processed: 4380
-  actionable_remaining: 6264
-  next_queue_order: 4381
+  processed: 4440
+  actionable_remaining: 6204
+  next_queue_order: 4441
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -32,67 +32,72 @@ w3_queue:
       remaining: 0
     P1_IDENTITY:
       initial: 4331
-      processed: 4279
-      remaining: 52
+      processed: 4331
+      remaining: 0
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
-      processed: 0
-      remaining: 6045
+      processed: 8
+      remaining: 6037
     P3_CURRENT_VERIFY:
       initial: 167
       processed: 0
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0073
+  code: W3-BATCH-0074
   status: SEALED
   validation: PASS
-  queue_start: 4321
-  queue_end: 4380
+  queue_start: 4381
+  queue_end: 4440
   touched_rows: 60
   province_rows:
-    宁夏: 60
-  p1_identity_rows: 60
-  fresh_research_rows: 11
-  prior_sealed_reuse_rows: 49
-  same_batch_exact_group_reuse_rows: 0
+    宁夏: 36
+    新疆: 16
+    北京: 8
+  p1_identity_rows: 52
+  p2_org_title_lookup_rows: 8
+  fresh_research_rows: 15
+  source_placeholder_review_rows: 1
+  prior_sealed_reuse_rows: 36
+  same_batch_exact_group_reuse_rows: 8
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 56
-  b_grade_rows: 4
-  c_grade_rows: 0
-  current_org_title_confirmed_rows: 9
-  no_current_role_confirmed_rows: 1
-  current_org_title_unresolved_rows: 50
+  a_grade_rows: 50
+  b_grade_rows: 8
+  c_grade_rows: 2
+  current_org_title_confirmed_rows: 19
+  no_current_role_confirmed_rows: 0
+  current_org_title_unresolved_rows: 41
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 73
-  identity_evidence_rows: 4380
-  current_org_title_confirmed_rows: 1587
+  batches_sealed: 74
+  identity_evidence_rows: 4440
+  current_org_title_confirmed_rows: 1606
   no_current_role_confirmed_rows: 5
-  current_org_title_unresolved_rows: 2687
+  current_org_title_unresolved_rows: 2728
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4380
+  logical_end: 4440
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0073
+  detailed_batch_history_through: W3-BATCH-0074
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0072 SEALED/PASS and W3-BATCH-0073 READY; this gate executed only 0073.
-  - W3-BATCH-0073 processed queue orders 4321-4380 exactly: 宁夏60, all P1 identity/current-role rows.
-  - Forty-nine rows reuse prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
-  - Eleven first-occurrence Ningxia identity groups received fresh public-evidence research anchored to the official ACFIC Ningxia 11th executive-committee roster.
-  - Fresh public hits lacking a safe source-person identity bridge or sufficiently current 2026 confirmation remained explicitly unresolved; no name-only inference was introduced.
-  - Nine rows have evidence-backed current organization/title; one row is NO_CURRENT_ROLE_CONFIRMED; fifty rows preserve explicit unresolved outcomes.
+  - Repository truth at input HEAD had W3-BATCH-0073 SEALED/PASS and W3-BATCH-0074 READY; this gate executed only 0074.
+  - W3-BATCH-0074 processed queue orders 4381-4440 exactly: 宁夏36、新疆16、北京8.
+  - Fifty-two rows completed the remaining P1 identity queue; P1 is now 4331/4331 complete. Eight Beijing rows started P2 organization/title lookup.
+  - Thirty-six Ningxia rows reused prior SEALED/PASS outcomes only under exact ambiguity_group_id + province + normalized_name controls.
+  - Fifteen first-occurrence rows received fresh public-evidence research; one literal source placeholder received deterministic source-only review; eight repeated Xinjiang rows reused same-batch decisions only under exact identity-group controls.
+  - Current public hits without a safe source-person identity bridge or sufficiently current confirmation remained explicitly unresolved; no name-only inference was introduced.
+  - Nineteen rows have evidence-backed current organization/title; forty-one rows preserve explicit unresolved outcomes.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
-  - Evidence grades are A=56, B=4, C=0; next deterministic queue order is 4381.
+  - Evidence grades are A=50, B=8, C=2; unsupported current-title claims remain zero; next deterministic queue order is 4441.
