@@ -1,29 +1,29 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0078
+current_gate: W3-BATCH-0079
 status: READY
-work_cursor: 4620
+work_cursor: 4680
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
 source_province_sheets: 31
 completed_records: 10644
-verified_records: 1633
+verified_records: 1635
 entrepreneur_records: 0
 entrepreneur_candidate_records: 418
 existing_organization_records: 507
 existing_title_records: 177
 conflict_records: 1913
-unresolved_records: 9011
-last_evidence_at: 2026-09-24T22:47:50+08:00
-last_input_head: 24757001f0d08155337096870dc4e6352cf94c48
+unresolved_records: 9009
+last_evidence_at: 2026-09-24T23:47:50+08:00
+last_input_head: c42e4eb56fd8515802a5b528b31dcf30b147ea02
 
 w3_queue:
   total: 10644
-  processed: 4620
-  actionable_remaining: 6024
-  next_queue_order: 4621
+  processed: 4680
+  actionable_remaining: 5964
+  next_queue_order: 4681
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -36,19 +36,19 @@ w3_queue:
       remaining: 0
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
-      processed: 188
-      remaining: 5857
+      processed: 248
+      remaining: 5797
     P3_CURRENT_VERIFY:
       initial: 167
       processed: 0
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0077
+  code: W3-BATCH-0078
   status: SEALED
   validation: PASS
-  queue_start: 4561
-  queue_end: 4620
+  queue_start: 4621
+  queue_end: 4680
   touched_rows: 60
   province_rows:
     北京: 60
@@ -69,31 +69,31 @@ latest_sealed_batch:
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 77
-  identity_evidence_rows: 4620
-  current_org_title_confirmed_rows: 1627
+  batches_sealed: 78
+  identity_evidence_rows: 4680
+  current_org_title_confirmed_rows: 1629
   no_current_role_confirmed_rows: 6
-  current_org_title_unresolved_rows: 2886
+  current_org_title_unresolved_rows: 2944
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4620
+  logical_end: 4680
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0077
+  detailed_batch_history_through: W3-BATCH-0078
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - Repository truth at input HEAD had W3-BATCH-0076 SEALED/PASS and W3-BATCH-0077 READY; this gate executed only 0077.
-  - W3-BATCH-0077 processed queue orders 4561-4620 exactly: 北京60, all P2_ORG_TITLE_LOOKUP.
-  - Source-row coverage is Beijing rows 133-193 with blank row 138 excluded; all 60 rows received fresh public-evidence research anchored to the official ACFIC Beijing 15th executive-committee roster.
-  - Two rows have evidence-backed current organization/title: 钟竹、鲍啸峰.
+  - Repository truth at input HEAD had W3-BATCH-0077 SEALED/PASS and W3-BATCH-0078 READY; this gate executed only 0078.
+  - W3-BATCH-0078 processed queue orders 4621-4680 exactly: 北京60, all P2_ORG_TITLE_LOOKUP.
+  - Source-row coverage is Beijing rows 194-253; all 60 rows received fresh public-evidence research anchored to the official ACFIC Beijing 15th executive-committee roster.
+  - Two rows have evidence-backed current organization/title: 刘百奇、史晓刚.
   - Fifty-eight rows preserve explicit unresolved outcomes because the source-person-to-current-role identity bridge was absent, stale, or insufficient; no name-only identity inference was introduced.
   - Source inputs were re-read from Google Drive and both frozen SHA-256 values matched repository truth.
-  - Evidence grades are A=60, B=0, C=0; unsupported current-title claims remain zero; next deterministic queue order is 4621.
+  - Evidence grades are A=60, B=0, C=0; unsupported current-title claims remain zero; next deterministic queue order is 4681.
