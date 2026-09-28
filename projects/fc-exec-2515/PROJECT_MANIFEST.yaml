@@ -166,14 +166,14 @@ stop_conditions:
   - external_publication
   - macro_project_complete
 execution_state:
-  latest_gate: W3-BATCH-0080
+  latest_gate: W3-BATCH-0081
   latest_gate_status: SEALED
   latest_gate_validation: PASS
-  next_gate: W3-BATCH-0081
+  next_gate: W3-BATCH-0082
   next_gate_status: READY
-  processed_queue_rows: 4800
-  actionable_queue_remaining: 5844
-  p2_org_title_lookup_processed: 368
-  p2_org_title_lookup_remaining: 5677
-  logical_end: 4800
+  processed_queue_rows: 4860
+  actionable_queue_remaining: 5784
+  p2_org_title_lookup_processed: 428
+  p2_org_title_lookup_remaining: 5617
+  logical_end: 4860
   as_of: 2026-09-28
