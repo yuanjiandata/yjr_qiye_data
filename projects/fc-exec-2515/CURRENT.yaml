@@ -1,9 +1,9 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0082
+current_gate: W3-BATCH-0083
 status: READY
-work_cursor: 4860
+work_cursor: 4920
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
@@ -21,9 +21,9 @@ last_input_head: c42e4eb56fd8515802a5b528b31dcf30b147ea02
 
 w3_queue:
   total: 10644
-  processed: 4860
-  actionable_remaining: 5784
-  next_queue_order: 4861
+  processed: 4920
+  actionable_remaining: 5724
+  next_queue_order: 4921
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -36,19 +36,19 @@ w3_queue:
       remaining: 0
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
-      processed: 428
-      remaining: 5617
+      processed: 488
+      remaining: 5557
     P3_CURRENT_VERIFY:
       initial: 167
       processed: 0
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0081
+  code: W3-BATCH-0082
   status: SEALED
   validation: PASS
-  queue_start: 4801
-  queue_end: 4860
+  queue_start: 4861
+  queue_end: 4920
   touched_rows: 60
   province_rows:
     上海: 60
@@ -63,36 +63,36 @@ latest_sealed_batch:
   a_grade_rows: 60
   b_grade_rows: 0
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 5
+  current_org_title_confirmed_rows: 9
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 55
+  current_org_title_unresolved_rows: 51
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 81
-  identity_evidence_rows: 4860
-  current_org_title_confirmed_rows: 1637
+  batches_sealed: 82
+  identity_evidence_rows: 4920
+  current_org_title_confirmed_rows: 1646
   no_current_role_confirmed_rows: 6
-  current_org_title_unresolved_rows: 3116
+  current_org_title_unresolved_rows: 3167
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4860
+  logical_end: 4920
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0081
+  detailed_batch_history_through: W3-BATCH-0082
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0081 processed queue orders 4801-4860 exactly: 上海60, all P2_ORG_TITLE_LOOKUP.
-  - Frozen source rows are Shanghai 79-85, 88-92, 94-134, 137-143.
+  - W3-BATCH-0082 processed queue orders 4861-4920 exactly: 上海60, all P2_ORG_TITLE_LOOKUP.
+  - Frozen source rows are Shanghai workbook rows 144-203.
   - All 60 rows received fresh public research anchored to the official ACFIC Shanghai 15th executive-committee roster.
-  - Five rows have sufficiently bridged current organization/title evidence: 谭黎敏、王文其、王宇伟、姚琼、张晓磊.
-  - Fifty-five rows remain explicit unresolved; name-only inference=0; unsupported current-title claims=0.
-  - Next deterministic queue order is 4861.
+  - Nine rows have sufficiently bridged current organization/title evidence: 陈湖雄、陈运文、杜军红、范立涛、范晔平、高宝霖、侯义宏、胡军擎、胡睿.
+  - Fifty-one rows remain explicit unresolved; name-only inference=0; unsupported current-title claims=0.
+  - Next deterministic queue order is 4921.
