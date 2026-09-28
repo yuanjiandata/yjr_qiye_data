@@ -1,9 +1,9 @@
 schema: rgac-current-v1
 project_id: FC-EXEC-2515-01
 current_phase: W3
-current_gate: W3-BATCH-0080
+current_gate: W3-BATCH-0081
 status: READY
-work_cursor: 4740
+work_cursor: 4800
 source_physical_rows: 10762
 source_nonempty_rows: 10744
 source_named_rows: 10743
@@ -21,9 +21,9 @@ last_input_head: c42e4eb56fd8515802a5b528b31dcf30b147ea02
 
 w3_queue:
   total: 10644
-  processed: 4740
-  actionable_remaining: 5904
-  next_queue_order: 4741
+  processed: 4800
+  actionable_remaining: 5844
+  next_queue_order: 4801
   batch_size_max: 60
   priorities:
     P0_NAME_REPAIR:
@@ -36,22 +36,23 @@ w3_queue:
       remaining: 0
     P2_ORG_TITLE_LOOKUP:
       initial: 6045
-      processed: 308
-      remaining: 5737
+      processed: 368
+      remaining: 5677
     P3_CURRENT_VERIFY:
       initial: 167
       processed: 0
       remaining: 167
 
 latest_sealed_batch:
-  code: W3-BATCH-0079
+  code: W3-BATCH-0080
   status: SEALED
   validation: PASS
-  queue_start: 4681
-  queue_end: 4740
+  queue_start: 4741
+  queue_end: 4800
   touched_rows: 60
   province_rows:
-    北京: 60
+    北京: 28
+    上海: 32
   p1_identity_rows: 0
   p2_org_title_lookup_rows: 60
   fresh_research_rows: 60
@@ -60,39 +61,39 @@ latest_sealed_batch:
   same_batch_exact_group_reuse_rows: 0
   current_source_recheck_rows: 0
   evidence_backed_rows: 60
-  a_grade_rows: 60
-  b_grade_rows: 0
+  a_grade_rows: 58
+  b_grade_rows: 2
   c_grade_rows: 0
-  current_org_title_confirmed_rows: 0
+  current_org_title_confirmed_rows: 3
   no_current_role_confirmed_rows: 0
-  current_org_title_unresolved_rows: 60
+  current_org_title_unresolved_rows: 57
   unsupported_current_title_claims: 0
 
 w3_cumulative:
-  batches_sealed: 79
-  identity_evidence_rows: 4740
-  current_org_title_confirmed_rows: 1629
+  batches_sealed: 80
+  identity_evidence_rows: 4800
+  current_org_title_confirmed_rows: 1632
   no_current_role_confirmed_rows: 6
-  current_org_title_unresolved_rows: 3004
+  current_org_title_unresolved_rows: 3061
   structural_deferred_rows: 101
   unsupported_current_title_claims: 0
   storage_mode: SEALED_BASE_PLUS_RESULT_SEGMENTS
   sealed_base_end: 1620
-  logical_end: 4740
+  logical_end: 4800
   segment_index: projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv
   reader: projects/fc-exec-2515/scripts/w3_segmented_store.py
 
 history:
-  detailed_batch_history_through: W3-BATCH-0079
+  detailed_batch_history_through: W3-BATCH-0080
   per_gate_metrics: projects/fc-exec-2515/evidence/W3_BATCH_####_METRICS.yaml
   per_gate_validation: projects/fc-exec-2515/evidence/W3_BATCH_####_VALIDATION.md
   git_history_authoritative: true
   compacted_at_gate: W3-BATCH-0028
 
 notes:
-  - W3-BATCH-0079 processed queue orders 4681-4740 exactly: 北京60, all P2_ORG_TITLE_LOOKUP.
-  - Frozen source rows are Beijing 254-313 from work/W3_BATCH_0079_INPUT.csv.
-  - All 60 rows received fresh public search anchored to the official ACFIC Beijing 15th executive-committee roster.
-  - Zero current organization/title claims were promoted because no searched hit supplied a sufficiently safe identity bridge.
-  - Explicit unresolved=60; name-only inference=0; unsupported current-title claims=0.
-  - Next deterministic queue order is 4741.
+  - W3-BATCH-0080 processed queue orders 4741-4800 exactly: 北京28 + 上海32, all P2_ORG_TITLE_LOOKUP.
+  - Frozen source rows are Beijing 314-341 and Shanghai 25, 47-73, 75-78.
+  - All 60 rows received fresh public research anchored to official ACFIC provincial executive-committee rosters.
+  - Three rows have sufficiently bridged current organization/title evidence: 张京湘、张辛泽、王霄汉.
+  - Fifty-seven rows remain explicit unresolved; name-only inference=0; unsupported current-title claims=0.
+  - Next deterministic queue order is 4801.
