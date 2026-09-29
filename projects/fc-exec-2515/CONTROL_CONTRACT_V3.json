@@ -33,5 +33,28 @@
     "standalone_create_blob_for_text": "FORBIDDEN_AS_NORMAL_PATH",
     "atomic_tree_commit_when_multiple_files_required": true
   },
-  "transition": "W3-BATCH-0083 business outcome is preserved. The failed Contents create_file path is retired; materialize 0083 via inline create_tree content on a fresh exact main, then one commit and non-force ref update. Do not redo broad research merely to change transport."
+  "transition": "W3-BATCH-0083 business outcome is preserved. The failed Contents create_file path is retired; materialize 0083 via inline create_tree content on a fresh exact main, then one commit and non-force ref update. Do not redo broad research merely to change transport.",
+  "pre_persistence_authority": {
+    "rule_version": "YJ_PREPERSIST_V1",
+    "candidate_blob_sha_before_git_reachability": "NON_AUTHORITATIVE",
+    "binding_git_blob_sha_requires": "OBJECT_REACHABLE_FROM_COMMITTED_AND_EXACT_READBACK_REF",
+    "freeze_before_successful_git_materialization": "FORBIDDEN",
+    "recovery_seed_required": true,
+    "recovery_seed_minimum": [
+      "structured_business_result",
+      "serializer_or_generator_version",
+      "upstream_exact_sha_or_source_identity",
+      "deterministic_transform_or_schema_id"
+    ],
+    "recovery_seed_must_be_sufficient_to_regenerate_bytes": true,
+    "sha_only_handoff_without_regenerable_bytes": "FORBIDDEN",
+    "on_git_write_rejection": "BUSINESS_COMPLETE_MATERIALIZATION_PENDING",
+    "allowed_recovery": "deterministically regenerate identical business payload; if prior candidate bytes were never durable and cannot be reproduced, create an explicit PERSISTENCE_RECOVERY artifact that records and supersedes the unreachable candidate SHAs without changing business semantics",
+    "seal_binding_occurs_after": [
+      "create_tree_success",
+      "create_commit_success",
+      "non_force_ref_update_success",
+      "exact_sha_readback_success"
+    ]
+  }
 }
