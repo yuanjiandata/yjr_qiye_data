@@ -27,7 +27,11 @@
     "expected_head_required": true,
     "ref_update": "NON_FORCE_ONLY",
     "clear_text_create_blob_mandatory": false,
-    "runner_or_test_server_for_repository_write": "FORBIDDEN"
+    "runner_or_test_server_for_repository_write": "FORBIDDEN",
+    "preferred_text_materialization": "INLINE_TREE_CONTENT",
+    "contents_api_create_file_for_text": "FORBIDDEN_AS_NORMAL_PATH",
+    "standalone_create_blob_for_text": "FORBIDDEN_AS_NORMAL_PATH",
+    "atomic_tree_commit_when_multiple_files_required": true
   },
-  "transition": "W3-BATCH-0083 research outcome is preserved; migrate materialization only, do not redo research."
+  "transition": "W3-BATCH-0083 business outcome is preserved. The failed Contents create_file path is retired; materialize 0083 via inline create_tree content on a fresh exact main, then one commit and non-force ref update. Do not redo broad research merely to change transport."
 }
