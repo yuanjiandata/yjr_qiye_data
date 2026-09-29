@@ -166,14 +166,21 @@ stop_conditions:
   - external_publication
   - macro_project_complete
 execution_state:
-  latest_gate: W3-BATCH-0082
+  latest_gate: W3-BATCH-0083
   latest_gate_status: SEALED
   latest_gate_validation: PASS
-  next_gate: W3-BATCH-0083
-  next_gate_status: READY
-  processed_queue_rows: 4920
-  actionable_queue_remaining: 5724
-  p2_org_title_lookup_processed: 488
-  p2_org_title_lookup_remaining: 5557
-  logical_end: 4920
-  as_of: 2026-09-28
+  next_gate: W3-BATCH-0084
+  next_gate_status: PAUSED_BY_USER
+  processed_queue_rows: 4980
+  actionable_queue_remaining: 5664
+  p2_org_title_lookup_processed: 548
+  p2_org_title_lookup_remaining: 5497
+  current_org_title_confirmed_rows: 1661
+  current_org_title_unresolved_rows: 3212
+  no_current_role_confirmed_rows: 6
+  unsupported_current_title_claims: 0
+  logical_end: 4980
+  lifecycle: PAUSED_BY_USER
+  auto_continue: false
+  stop_reason: USER_REQUESTED_STOP
+  as_of: 2026-09-29
