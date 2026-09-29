@@ -1,0 +1,33 @@
+{
+  "schema": "yj-control.v3",
+  "project": "FC-EXEC-2515-01",
+  "effective_from_gate": "W3-BATCH-0083",
+  "gate_unit": "W3_BATCH",
+  "authority": {
+    "gate_status_pattern": "projects/fc-exec-2515/control/gates/<GATE>/gate_status.json",
+    "immutable_event_pattern": "projects/fc-exec-2515/control/events/<GATE>_SEALED_<sha>.json"
+  },
+  "completion": {
+    "required": [
+      "batch business artifacts",
+      "gate_status",
+      "immutable event",
+      "exact-SHA readback"
+    ],
+    "shared_projection_write_required": false
+  },
+  "projections": {
+    "projects/fc-exec-2515/CURRENT.yaml": "periodic/operational projection",
+    "projects/fc-exec-2515/STATUS.yaml": "periodic summary",
+    "projects/fc-exec-2515/PROJECT_MANIFEST.yaml": "periodic project projection",
+    "projects/fc-exec-2515/evidence/W3_SEGMENT_INDEX.csv": "rebuildable projection"
+  },
+  "write_transport": {
+    "primary": "GITHUB_NATIVE_FILE_TREE_COMMIT_API",
+    "expected_head_required": true,
+    "ref_update": "NON_FORCE_ONLY",
+    "clear_text_create_blob_mandatory": false,
+    "runner_or_test_server_for_repository_write": "FORBIDDEN"
+  },
+  "transition": "W3-BATCH-0083 research outcome is preserved; migrate materialization only, do not redo research."
+}
