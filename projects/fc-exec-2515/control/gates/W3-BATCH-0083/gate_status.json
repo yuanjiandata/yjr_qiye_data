@@ -1,0 +1,62 @@
+{
+  "schema": "yj-control.v3.gate-status",
+  "project": "FC-EXEC-2515-01",
+  "gate": "W3-BATCH-0083",
+  "phase": "W3-EVIDENCE-ENRICH",
+  "state": "SEALED",
+  "result": "PASS",
+  "business_status": "PERSISTENCE_RECOVERY_COMPLETE",
+  "repository_complete": true,
+  "sealed_on": "2026-09-29",
+  "parent_main": "afc6cb19214e2376d7f918b982c4b6536b3f98c7",
+  "recovery": {
+    "mode": "PERSISTENCE_RECOVERY",
+    "prior_business_outcome": {
+      "confirmed": 15,
+      "unresolved": 45,
+      "no_current": 0,
+      "unsupported_claims": 0
+    },
+    "broad_rows_researched_again": 0,
+    "preserved_unresolved_rows": 45,
+    "targeted_confirmed_rows_recovered": 15,
+    "exact_input_sha256": "ea7029eb6d6b07cbd05034a0e73f688bcdd95c0ea27614d663829922e4af2388"
+  },
+  "artifacts": {
+    "input": {
+      "path": "projects/fc-exec-2515/work/W3_BATCH_0083_INPUT.csv",
+      "blob": "911d9ab48072a00411bc870709837313d872d068"
+    },
+    "results": {
+      "path": "projects/fc-exec-2515/evidence/W3_BATCH_0083_RESULTS.csv",
+      "blob": "8cb79ca177b596d663a720721fd25e99a67bcdcd"
+    },
+    "research": {
+      "path": "projects/fc-exec-2515/evidence/W3_BATCH_0083_RESEARCH_RECOVERY.tsv",
+      "blob": "ead9df7254254b8e6560af6053b75510cb8bc3ee"
+    },
+    "metrics": {
+      "path": "projects/fc-exec-2515/evidence/W3_BATCH_0083_METRICS.yaml",
+      "blob": "a1405d90cd69a5aa96ac61a61533d8b67f8c7f1e"
+    },
+    "validation": {
+      "path": "projects/fc-exec-2515/evidence/W3_BATCH_0083_VALIDATION.md",
+      "blob": "c14a2fa8894b9b63a18da049935c788dc0bae732"
+    },
+    "manifest": {
+      "path": "projects/fc-exec-2515/evidence/W3_BATCH_0083_RECOVERY_MANIFEST.json",
+      "blob": "5a77d61b5900837f778fd445736bf12692fd937e"
+    },
+    "validator": {
+      "path": "projects/fc-exec-2515/scripts/w3_batch_0083_recovery.py",
+      "blob": "1487a162c8b1c06a53c1a3dab0d2f7fa96af64f4"
+    }
+  },
+  "shared_projection_write_required": false,
+  "next_gate": {
+    "gate": "W3-BATCH-0084",
+    "status": "READY",
+    "queue_order": 4981,
+    "execution_same_run": false
+  }
+}

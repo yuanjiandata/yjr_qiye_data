@@ -1,0 +1,20 @@
+{
+  "schema": "yj-control.v3.gate-event",
+  "project": "FC-EXEC-2515-01",
+  "event_type": "GATE_SEALED",
+  "gate": "W3-BATCH-0083",
+  "result": "PASS",
+  "business_status": "PERSISTENCE_RECOVERY_COMPLETE",
+  "manifest_blob": "5a77d61b5900837f778fd445736bf12692fd937e",
+  "gate_status_path": "projects/fc-exec-2515/control/gates/W3-BATCH-0083/gate_status.json",
+  "business_counts": {
+    "confirmed": 15,
+    "unresolved": 45,
+    "no_current": 0,
+    "unsupported_claims": 0
+  },
+  "recovery_mode": "PERSISTENCE_RECOVERY",
+  "next_gate": "W3-BATCH-0084",
+  "immutable": true,
+  "sealed_on": "2026-09-29"
+}

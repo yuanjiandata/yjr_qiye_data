@@ -1,0 +1,32 @@
+schema: fc-exec-w3-batch-metrics-v3-persistence-recovery
+project_id: FC-EXEC-2515-01
+gate: W3-BATCH-0083
+phase: W3-EVIDENCE-ENRICH
+status: SEALED
+validation: PASS
+recovery_mode: PERSISTENCE_RECOVERY
+input:
+  queue_start: 4921
+  queue_end: 4980
+  touched_rows: 60
+  province: 上海
+  frozen_input_sha256: ea7029eb6d6b07cbd05034a0e73f688bcdd95c0ea27614d663829922e4af2388
+prior_business_outcome:
+  current_org_title_confirmed_rows: 15
+  current_org_title_unresolved_rows: 45
+  no_current_role_confirmed_rows: 0
+  unsupported_current_title_claims: 0
+  prior_reported_evidence_grade_A: 54
+  prior_reported_evidence_grade_B: 6
+  prior_exact_results_sha256_target_unavailable_bytes: 29ac8f91ccec2fced9a146ea533b97ed923b8a875ecf8f8aa2f665cdb42a32f2
+  prior_exact_research_sha256_target_unavailable_bytes: 843b70902df7ab6b136322ead3427792034c1cd720b64bf38c713ad364fc52ba
+recovery:
+  broad_rows_researched_again: 0
+  preserved_unresolved_rows: 45
+  targeted_confirmed_rows_recovered: 15
+  unsupported_current_title_claims: 0
+  note: prior per-row A/B placement was not durably persisted and is not fabricated; prior aggregate 54/6 remains historical truth
+next:
+  gate: W3-BATCH-0084
+  status: READY
+  queue_order: 4981

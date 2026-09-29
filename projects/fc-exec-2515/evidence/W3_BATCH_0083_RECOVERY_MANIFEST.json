@@ -1,0 +1,38 @@
+{
+  "schema": "fc-exec-w3-batch-recovery-manifest-v3",
+  "project_id": "FC-EXEC-2515-01",
+  "gate": "W3-BATCH-0083",
+  "status": "SEALED",
+  "mode": "PERSISTENCE_RECOVERY",
+  "queue": {
+    "start": 4921,
+    "end": 4980,
+    "rows": 60,
+    "province": "上海"
+  },
+  "business_outcome": {
+    "confirmed": 15,
+    "unresolved": 45,
+    "no_current": 0,
+    "unsupported_claims": 0,
+    "prior_evidence_grade_aggregate": {
+      "A": 54,
+      "B": 6
+    }
+  },
+  "artifacts": {
+    "input": "projects/fc-exec-2515/work/W3_BATCH_0083_INPUT.csv",
+    "results": "projects/fc-exec-2515/evidence/W3_BATCH_0083_RESULTS.csv",
+    "research": "projects/fc-exec-2515/evidence/W3_BATCH_0083_RESEARCH_RECOVERY.tsv",
+    "metrics": "projects/fc-exec-2515/evidence/W3_BATCH_0083_METRICS.yaml",
+    "validation": "projects/fc-exec-2515/evidence/W3_BATCH_0083_VALIDATION.md"
+  },
+  "historical_targets": {
+    "input_sha256": "ea7029eb6d6b07cbd05034a0e73f688bcdd95c0ea27614d663829922e4af2388",
+    "results_sha256_unavailable_bytes": "29ac8f91ccec2fced9a146ea533b97ed923b8a875ecf8f8aa2f665cdb42a32f2",
+    "research_sha256_unavailable_bytes": "843b70902df7ab6b136322ead3427792034c1cd720b64bf38c713ad364fc52ba"
+  },
+  "next_gate": "W3-BATCH-0084",
+  "next_queue_order": 4981,
+  "shared_projection_write_required": false
+}
